@@ -31,10 +31,14 @@ class PictureDetailViewController: NSViewController {
     }
     
     func setUpImageView() {
-        imageView.image = picture.image(sizeTo: imageView.frame.size)
+        resizeImage()
         titleTextField.stringValue = picture.title
         dateLabel.stringValue = picture.date.formatted(as: "EEEE, MMMM d, y")
         timeLabel.stringValue = picture.date.formatted(as: "hh:mm:ssa")
+    }
+    
+    func resizeImage() {
+        imageView.image = picture.image(sizeTo: imageView.frame.size)
     }
     
 }

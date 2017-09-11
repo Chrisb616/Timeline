@@ -36,3 +36,11 @@ class PictureWindowController: NSWindowController {
     }
     
 }
+
+extension PictureWindowController: NSWindowDelegate {
+    
+    func windowDidResize(_ notification: Notification) {
+        pictureDetailViewController?.resizeImage()
+    }
+    
+}
