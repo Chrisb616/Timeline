@@ -22,7 +22,7 @@ class SaveDataManager {
     //MARK: - Save Paths
     private var jsonFileExtension: String { return "json" }
     private var infoPath: URL { return userPrefs.directoryHome.appendingPathComponent("Info")}
-    private var picturePath: URL { return userPrefs.directoryHome.appendingPathComponent("Pictures")}
+    var picturePath: URL { return userPrefs.directoryHome.appendingPathComponent("Pictures")}
     private var eventInfoName: String { return "EventInfo" }
     private var pictureInfoName: String { return "PictureInfo" }
     

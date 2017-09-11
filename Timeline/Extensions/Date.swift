@@ -40,8 +40,6 @@ extension Date {
     
     func durationStringSince(pastDate: Date) -> String {
         
-        
-        
         let components = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: pastDate, to: self)
         
         var durationString = ""
