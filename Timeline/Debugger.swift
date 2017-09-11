@@ -23,12 +23,12 @@ class Debugger {
         if logLevel == .none { return }
         
         if Debugger.instance.logLevel.rawValue >= logLevel.rawValue {
-            print(logType.prefix + string + " \(Date().formatted(as: "HH:mm:ss"))")
+            print("\(Date().formatted(as: "[HH:mm:ss.SSS]")) " + logType.prefix + string)
         }
     }
     
     static func log(error: Error) {
-        print("ERROR: \(error)")
+        print("\(Date().formatted(as: "[HH:mm:ss.SSS]")) ERROR: \(error)")
     }
     
     enum LogType {

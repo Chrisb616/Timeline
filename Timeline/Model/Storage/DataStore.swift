@@ -49,10 +49,6 @@ class DataStore {
     }
     
     func storeEvent(_ event: Event, saveData: Bool = true) {
-        if eventDictionary.with(uniqueID: event.uniqueID) != nil {
-            Debugger.log(string: "Overwriting event with unique ID \(event.uniqueID)", logType: .warning, logLevel: .full)
-        }
-        
         eventDictionary.add(event)
         timeline.addEvent(event)
         
@@ -98,10 +94,6 @@ class DataStore {
     }
     
     func storePicture(_ picture: Picture, saveData: Bool = true) {
-        if pictureDictionary.with(uniqueID: picture.uniqueID) != nil {
-            Debugger.log(string: "Overwriting picture with unique ID \(picture.uniqueID)", logType: .warning, logLevel: .full)
-        }
-        
         pictureDictionary.add(picture)
         Debugger.log(string: "Storing picture with unique ID \(picture.uniqueID) into datastore. Datastore now contains: \(pictureDictionary.count) pictures. ", logType: .process, logLevel: .verbose)
         

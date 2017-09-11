@@ -1,16 +1,16 @@
 //
-//  PictureManager.swift
+//  ImageManager.swift
 //  Timeline
 //
-//  Created by Christopher Boynton on 9/8/17.
+//  Created by Christopher Boynton on 9/11/17.
 //  Copyright © 2017 Self. All rights reserved.
 //
 
 import Cocoa
 
-class PictureManager {
+class ImageManager {
     
-    static let instance = PictureManager()
+    static let instance = ImageManager()
     private init() {
         importQueue.qualityOfService = .background
         exportQueue.qualityOfService = .background
@@ -63,3 +63,5 @@ class PictureManager {
     }
     
 }
+
+

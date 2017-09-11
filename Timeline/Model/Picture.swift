@@ -16,6 +16,15 @@ class Picture: HasUniqueID {
     
     var date: Date
     
+    var savePath: URL { return UserPreferences.instance.directoryHome.appendingPathComponent("Pictures").appendingPathComponent(uniqueID).appendingPathExtension("jpg") }
+    
+    func refreshImage() {
+        ImageManager.instance.importSingleImage(withFileURL: savePath) { (image) in
+            self.image = image
+            NotificationManager.instance.postPictureUpdateNotification()
+        }
+    }
+    
     init(uniqueID: UniqueID, title: String, date: Date, image: NSImage) {
         self.uniqueID = uniqueID
         self.title = title

@@ -16,15 +16,11 @@ class SaveDataManager {
     
     //MARK: - Utilities
     private var userPrefs = UserPreferences.instance
-    private var pictureManager = PictureManager.instance
+    private var imageManager = ImageManager.instance
     private var dataStore = DataStore.instance
+    private var directoryManager = DirectoryManager.instance
     
     //MARK: - Save Paths
-    private var jsonFileExtension: String { return "json" }
-    private var infoPath: URL { return userPrefs.directoryHome.appendingPathComponent("Info")}
-    var picturePath: URL { return userPrefs.directoryHome.appendingPathComponent("Pictures")}
-    private var eventInfoName: String { return "EventInfo" }
-    private var pictureInfoName: String { return "PictureInfo" }
     
     private var eventStartKey = "start"
     private var eventEndKey = "end"
@@ -35,11 +31,9 @@ class SaveDataManager {
     private var pictureTitleKey = "title"
     private var pictureDateKey = "date"
     
-    private func write(data: Data, toFileURL url: URL, name: String, fileExtension: String) {
-        
+    private func write(data: Data, toURL url: URL) {
         do {
-            try FileManager.default.createDirectory(atPath: url.path, withIntermediateDirectories: true, attributes: [:])
-            try data.write(to: url.appendingPathComponent(name).appendingPathExtension(fileExtension))
+            try data.write(to: url)
         } catch {
             Debugger.log(string: "Could not save data to \(url)", logType: .failure, logLevel: .minimal)
             Debugger.log(error: error)
@@ -101,7 +95,7 @@ class SaveDataManager {
         
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: eventDictionary, options: [])
-            write(data: jsonData, toFileURL: infoPath, name: eventInfoName, fileExtension: jsonFileExtension)
+            write(data: jsonData, toURL: directoryManager.eventInfoDirectory)
             Debugger.log(string: "Saved Event Info for \(eventDictionary.count) events. ", logType: .success, logLevel: .full)
         } catch {
             Debugger.log(string: "Could not serialize data for events", logType: .failure, logLevel: .minimal)
@@ -110,7 +104,7 @@ class SaveDataManager {
     }
     
     func loadEventInfo() {
-        let dictionary = read(fromURL: infoPath.appendingPathComponent(eventInfoName).appendingPathExtension(jsonFileExtension))
+        let dictionary = read(fromURL: directoryManager.eventInfoDirectory)
         var successCount = 0
         Debugger.log(string: "Loading event info for \(dictionary.count) events", logType: .process, logLevel: .verbose)
         
@@ -167,7 +161,7 @@ class SaveDataManager {
     
     //MARK: - Pictures
     func importNewPicture(fromURL url: URL, completion: @escaping ()->Void = { }) {
-        pictureManager.importSingleImage(withFileURL: url) { (image) in
+        imageManager.importSingleImage(withFileURL: url) { (image) in
             
             Debugger.log(string: "Importing image for picture at \(url)", logType: .process, logLevel: .verbose)
             
@@ -201,7 +195,7 @@ class SaveDataManager {
     }
     
     func saveNewImage(forPicture picture: Picture) {
-        pictureManager.exportSingleImage(toFileURL: picturePath, image: picture.image, name: picture.uniqueID)
+        imageManager.exportSingleImage(toFileURL: directoryManager.picturesDirectory, image: picture.image, name: picture.uniqueID)
     }
     
     func savePictureInfo() {
@@ -225,7 +219,7 @@ class SaveDataManager {
         
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: pictureDictionary, options: [])
-            write(data: jsonData, toFileURL: infoPath, name: pictureInfoName, fileExtension: jsonFileExtension)
+            write(data: jsonData, toURL: directoryManager.pictureInfoDirectory)
             Debugger.log(string: "Saved Picture Info for \(pictureDictionary.count) pictures. ", logType: .success, logLevel: .full)
         } catch {
             Debugger.log(string: "Could not serialize data for pictures", logType: .failure, logLevel: .minimal)
@@ -235,7 +229,7 @@ class SaveDataManager {
     }
     
     func loadPictureInfo(completion: @escaping ()->Void = { }) {
-        let dictionary = read(fromURL: infoPath.appendingPathComponent(pictureInfoName).appendingPathExtension(jsonFileExtension))
+        let dictionary = read(fromURL: directoryManager.pictureInfoDirectory)
         Debugger.log(string: "Loading picture info for \(dictionary.count) pictures", logType: .process, logLevel: .verbose)
         
         let goal = dictionary.count
@@ -250,7 +244,6 @@ class SaveDataManager {
             if goal == current {
                 Debugger.log(string: "Loaded picture info for \(successCount) pictures", logType: .success, logLevel: .verbose)
                 NotificationManager.instance.postPictureUpdateNotification()
-                DataStore.instance.storePictures(pictures, saveData: false)
                 completion()
             }
         }
@@ -281,11 +274,13 @@ class SaveDataManager {
                 continue
             }
             
-            pictureManager.importSingleImage(withFileURL: picturePath.appendingPathComponent(uniqueID).appendingPathExtension("jpg"), completion: { (image) in
+            imageManager.importSingleImage(withFileURL: directoryManager.imageFileURL(forUniqueID: uniqueID), completion: { (image) in
                 let picture = Picture(uniqueID: uniqueID, title: title, date: date, image: image)
-                successCount += 1
                 Debugger.log(string: "Loaded picture with uniqueID \(uniqueID)", logType: .success, logLevel: .verbose)
-                pictures.append(picture)
+                OperationQueue.main.addOperation {
+                    self.dataStore.storePicture(picture, saveData: false)
+                }
+                successCount += 1
                 checkForCompletion()
             })
             

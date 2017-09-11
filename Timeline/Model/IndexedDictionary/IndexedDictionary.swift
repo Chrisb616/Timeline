@@ -30,7 +30,7 @@ struct IndexedDictionary<T: HasUniqueID> {
     //MARK: - Change Values
     mutating func add(_ item: T) {
         
-        if keys[item.uniqueID] != nil { print("WARNING: Unique ID for new item (\(item.uniqueID)) is already present in Indexed Dictionary ") }
+        if keys[item.uniqueID] != nil { Debugger.log(string: "Overwriting item with unique ID \(item.uniqueID)", logType: .warning, logLevel: .full) }
         
         let newIndex = values.count
         values.append(item)

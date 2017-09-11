@@ -22,7 +22,7 @@ class PictureWindowController: NSWindowController {
     var pictureDetailViewController: PictureDetailViewController!
 
     @IBAction func openWithPhotoshop(_ sender: Any) {
-        NSWorkspace.shared.openFile(SaveDataManager.instance.picturePath.appendingPathComponent(picture.uniqueID).appendingPathExtension("jpg").path, withApplication: "/Applications/Adobe Photoshop CC 2017/Adobe Photoshop CC 2017.app", andDeactivate: true)
+        NSWorkspace.shared.openFile(DirectoryManager.instance.imageFileURL(forPicture: picture).path, withApplication: "/Applications/Adobe Photoshop CC 2017/Adobe Photoshop CC 2017.app", andDeactivate: true)
     }
     override func windowDidLoad() {
         super.windowDidLoad()

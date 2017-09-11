@@ -17,7 +17,6 @@
 		1308D73A1F619B910096869E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1308D7391F619B750096869E /* Main.storyboard */; };
 		1364C0B91F619ED800A84271 /* SaveDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364C0B81F619ED800A84271 /* SaveDataManager.swift */; };
 		1364C0BB1F619F5A00A84271 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364C0BA1F619F5A00A84271 /* UserPreferences.swift */; };
-		136CD9F21F62EBD40076A38B /* PictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD9F11F62EBD40076A38B /* PictureManager.swift */; };
 		136CD9F41F62EEBF0076A38B /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD9F31F62EEBF0076A38B /* Picture.swift */; };
 		1383EFD31F6310470025FE4A /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFD11F6310470025FE4A /* PicturesViewController.swift */; };
 		1383EFD41F6310470025FE4A /* PicturesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1383EFD21F6310470025FE4A /* PicturesViewController.xib */; };
@@ -50,6 +49,8 @@
 		13D573191F66EEE400AB8119 /* PictureWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D573171F66EEE400AB8119 /* PictureWindowController.xib */; };
 		13D5731D1F66F10500AB8119 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5731B1F66F10500AB8119 /* PictureDetailViewController.swift */; };
 		13D5731E1F66F10500AB8119 /* PictureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D5731C1F66F10500AB8119 /* PictureDetailViewController.xib */; };
+		13D573251F67140C00AB8119 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D573241F67140C00AB8119 /* DirectoryManager.swift */; };
+		13F33FD11F671F0B00C79490 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33FD01F671F0B00C79490 /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +74,6 @@
 		1308D7391F619B750096869E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1364C0B81F619ED800A84271 /* SaveDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataManager.swift; sourceTree = "<group>"; };
 		1364C0BA1F619F5A00A84271 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
-		136CD9F11F62EBD40076A38B /* PictureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureManager.swift; sourceTree = "<group>"; };
 		136CD9F31F62EEBF0076A38B /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		1383EFD11F6310470025FE4A /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
 		1383EFD21F6310470025FE4A /* PicturesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicturesViewController.xib; sourceTree = "<group>"; };
@@ -111,6 +111,8 @@
 		13D573171F66EEE400AB8119 /* PictureWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureWindowController.xib; sourceTree = "<group>"; };
 		13D5731B1F66F10500AB8119 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
 		13D5731C1F66F10500AB8119 /* PictureDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureDetailViewController.xib; sourceTree = "<group>"; };
+		13D573241F67140C00AB8119 /* DirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryManager.swift; sourceTree = "<group>"; };
+		13F33FD01F671F0B00C79490 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,18 +228,13 @@
 		13A6633A1F60720B00FBEA14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				13A663321F6066A100FBEA14 /* DataStore.swift */,
-				13A663361F6066FE00FBEA14 /* HasUniqueID.swift */,
-				1383EFE81F65E7310025FE4A /* IndexedDictionary.swift */,
-				13A663381F60684E00FBEA14 /* Timeline.swift */,
-				13A663341F6066CC00FBEA14 /* Event.swift */,
 				136CD9F31F62EEBF0076A38B /* Picture.swift */,
+				13A663341F6066CC00FBEA14 /* Event.swift */,
 				13A6633E1F6075F000FBEA14 /* DateRange.swift */,
-				1364C0B81F619ED800A84271 /* SaveDataManager.swift */,
+				13D5731F1F67116B00AB8119 /* Storage */,
+				13D573201F67118400AB8119 /* IndexedDictionary */,
+				13D573211F67119B00AB8119 /* Managers */,
 				1364C0BA1F619F5A00A84271 /* UserPreferences.swift */,
-				13B6C88A1F61C1C4007BB6F3 /* UniqueIDGenerator.swift */,
-				13B6C88C1F61C65E007BB6F3 /* NotificationManager.swift */,
-				136CD9F11F62EBD40076A38B /* PictureManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +324,36 @@
 				13D5731C1F66F10500AB8119 /* PictureDetailViewController.xib */,
 			);
 			path = PictureDetailViewController;
+			sourceTree = "<group>";
+		};
+		13D5731F1F67116B00AB8119 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				13A663321F6066A100FBEA14 /* DataStore.swift */,
+				13A663381F60684E00FBEA14 /* Timeline.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		13D573201F67118400AB8119 /* IndexedDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				13A663361F6066FE00FBEA14 /* HasUniqueID.swift */,
+				1383EFE81F65E7310025FE4A /* IndexedDictionary.swift */,
+			);
+			path = IndexedDictionary;
+			sourceTree = "<group>";
+		};
+		13D573211F67119B00AB8119 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				13B6C88A1F61C1C4007BB6F3 /* UniqueIDGenerator.swift */,
+				13B6C88C1F61C65E007BB6F3 /* NotificationManager.swift */,
+				13F33FD01F671F0B00C79490 /* ImageManager.swift */,
+				1364C0B81F619ED800A84271 /* SaveDataManager.swift */,
+				13D573241F67140C00AB8119 /* DirectoryManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +471,7 @@
 				13D573181F66EEE400AB8119 /* PictureWindowController.swift in Sources */,
 				13A663391F60684E00FBEA14 /* Timeline.swift in Sources */,
 				13D5731D1F66F10500AB8119 /* PictureDetailViewController.swift in Sources */,
+				13D573251F67140C00AB8119 /* DirectoryManager.swift in Sources */,
 				13B6C8961F61D169007BB6F3 /* EventDetailViewController.swift in Sources */,
 				13B6C88D1F61C65E007BB6F3 /* NotificationManager.swift in Sources */,
 				1383EFD31F6310470025FE4A /* PicturesViewController.swift in Sources */,
@@ -461,6 +489,7 @@
 				1308D7301F6194AE0096869E /* EventsCollectionViewItem.swift in Sources */,
 				1383EFE01F63394E0025FE4A /* ImportPhotosViewController.swift in Sources */,
 				136CD9F41F62EEBF0076A38B /* Picture.swift in Sources */,
+				13F33FD11F671F0B00C79490 /* ImageManager.swift in Sources */,
 				1383EFDB1F631BB80025FE4A /* PicturesCollectionViewItem.swift in Sources */,
 				13A663331F6066A100FBEA14 /* DataStore.swift in Sources */,
 				1364C0B91F619ED800A84271 /* SaveDataManager.swift in Sources */,
@@ -468,7 +497,6 @@
 				13B6C88B1F61C1C4007BB6F3 /* UniqueIDGenerator.swift in Sources */,
 				1308D7271F61891A0096869E /* MainWindowController.swift in Sources */,
 				1308D72C1F618B7D0096869E /* EventsViewController.swift in Sources */,
-				136CD9F21F62EBD40076A38B /* PictureManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
