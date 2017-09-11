@@ -66,6 +66,7 @@ extension PicturesViewController: NSCollectionViewDataSource {
         }
         
         collectionViewItem.pictureImageView.image = pictures[indexPath.item].image
+        collectionViewItem.picture = pictures[indexPath.item]
         
         return collectionViewItem
     }

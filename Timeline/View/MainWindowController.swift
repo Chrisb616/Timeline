@@ -21,6 +21,7 @@ class MainWindowController: NSWindowController {
     
     //MARK: - Window Controllers
     var eventWindowController: EventWindowController?
+    var pictureWindowController: PictureWindowController?
     
     //MARK: - On Load
     override func windowDidLoad() {

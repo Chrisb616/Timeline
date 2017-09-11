@@ -46,6 +46,10 @@
 		13B6C8971F61D169007BB6F3 /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B6C8951F61D169007BB6F3 /* EventDetailViewController.xib */; };
 		13BAAEC51F61DB5500465D91 /* EventPicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAAEC31F61DB5500465D91 /* EventPicturesViewController.swift */; };
 		13BAAEC61F61DB5500465D91 /* EventPicturesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BAAEC41F61DB5500465D91 /* EventPicturesViewController.xib */; };
+		13D573181F66EEE400AB8119 /* PictureWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D573161F66EEE400AB8119 /* PictureWindowController.swift */; };
+		13D573191F66EEE400AB8119 /* PictureWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D573171F66EEE400AB8119 /* PictureWindowController.xib */; };
+		13D5731D1F66F10500AB8119 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5731B1F66F10500AB8119 /* PictureDetailViewController.swift */; };
+		13D5731E1F66F10500AB8119 /* PictureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D5731C1F66F10500AB8119 /* PictureDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +107,10 @@
 		13B6C8951F61D169007BB6F3 /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		13BAAEC31F61DB5500465D91 /* EventPicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPicturesViewController.swift; sourceTree = "<group>"; };
 		13BAAEC41F61DB5500465D91 /* EventPicturesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventPicturesViewController.xib; sourceTree = "<group>"; };
+		13D573161F66EEE400AB8119 /* PictureWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureWindowController.swift; sourceTree = "<group>"; };
+		13D573171F66EEE400AB8119 /* PictureWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureWindowController.xib; sourceTree = "<group>"; };
+		13D5731B1F66F10500AB8119 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
+		13D5731C1F66F10500AB8119 /* PictureDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 			children = (
 				1308D7391F619B750096869E /* Main.storyboard */,
 				13B6C8851F61B301007BB6F3 /* Main Window */,
+				13D573151F66EEC000AB8119 /* Picture Window */,
 				13B6C88F1F61CD78007BB6F3 /* Event Window */,
 			);
 			path = View;
@@ -301,6 +310,25 @@
 			path = EventPicturesViewController;
 			sourceTree = "<group>";
 		};
+		13D573151F66EEC000AB8119 /* Picture Window */ = {
+			isa = PBXGroup;
+			children = (
+				13D573161F66EEE400AB8119 /* PictureWindowController.swift */,
+				13D573171F66EEE400AB8119 /* PictureWindowController.xib */,
+				13D5731A1F66F0D300AB8119 /* PictureDetailViewController */,
+			);
+			path = "Picture Window";
+			sourceTree = "<group>";
+		};
+		13D5731A1F66F0D300AB8119 /* PictureDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				13D5731B1F66F10500AB8119 /* PictureDetailViewController.swift */,
+				13D5731C1F66F10500AB8119 /* PictureDetailViewController.xib */,
+			);
+			path = PictureDetailViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -390,9 +418,11 @@
 				1383EFDC1F631BB80025FE4A /* PicturesCollectionViewItem.xib in Resources */,
 				1383EFE11F63394E0025FE4A /* ImportPhotosViewController.xib in Resources */,
 				13BAAEC61F61DB5500465D91 /* EventPicturesViewController.xib in Resources */,
+				13D5731E1F66F10500AB8119 /* PictureDetailViewController.xib in Resources */,
 				1308D73A1F619B910096869E /* Main.storyboard in Resources */,
 				1308D72D1F618B7D0096869E /* EventsViewController.xib in Resources */,
 				1308D7311F6194AE0096869E /* EventsCollectionViewItem.xib in Resources */,
+				13D573191F66EEE400AB8119 /* PictureWindowController.xib in Resources */,
 				1308D7281F61891A0096869E /* MainWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,7 +441,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D573181F66EEE400AB8119 /* PictureWindowController.swift in Sources */,
 				13A663391F60684E00FBEA14 /* Timeline.swift in Sources */,
+				13D5731D1F66F10500AB8119 /* PictureDetailViewController.swift in Sources */,
 				13B6C8961F61D169007BB6F3 /* EventDetailViewController.swift in Sources */,
 				13B6C88D1F61C65E007BB6F3 /* NotificationManager.swift in Sources */,
 				1383EFD31F6310470025FE4A /* PicturesViewController.swift in Sources */,
