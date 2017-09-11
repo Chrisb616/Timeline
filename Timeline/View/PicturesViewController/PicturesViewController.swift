@@ -48,7 +48,7 @@ extension PicturesViewController: NSCollectionViewDataSource {
     
     @objc func update() {
         Debugger.log(string: "Updating pictures collection view", logType: .process, logLevel: .verbose)
-        pictures = DataStore.instance.pictures
+        pictures = DataStore.instance.pictures.chronological
         collectionView?.reloadData()
     }
     

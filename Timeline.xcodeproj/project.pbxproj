@@ -51,6 +51,7 @@
 		13D5731E1F66F10500AB8119 /* PictureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13D5731C1F66F10500AB8119 /* PictureDetailViewController.xib */; };
 		13D573251F67140C00AB8119 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D573241F67140C00AB8119 /* DirectoryManager.swift */; };
 		13F33FD11F671F0B00C79490 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33FD01F671F0B00C79490 /* ImageManager.swift */; };
+		13F33FD31F6723AF00C79490 /* Array<Picture>.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33FD21F6723AF00C79490 /* Array<Picture>.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		13D5731C1F66F10500AB8119 /* PictureDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureDetailViewController.xib; sourceTree = "<group>"; };
 		13D573241F67140C00AB8119 /* DirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryManager.swift; sourceTree = "<group>"; };
 		13F33FD01F671F0B00C79490 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		13F33FD21F6723AF00C79490 /* Array<Picture>.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array<Picture>.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				1308D7331F6196850096869E /* Array<Event>.swift */,
+				13F33FD21F6723AF00C79490 /* Array<Picture>.swift */,
 			);
 			path = Array;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				13D573251F67140C00AB8119 /* DirectoryManager.swift in Sources */,
 				13B6C8961F61D169007BB6F3 /* EventDetailViewController.swift in Sources */,
 				13B6C88D1F61C65E007BB6F3 /* NotificationManager.swift in Sources */,
+				13F33FD31F6723AF00C79490 /* Array<Picture>.swift in Sources */,
 				1383EFD31F6310470025FE4A /* PicturesViewController.swift in Sources */,
 				1364C0BB1F619F5A00A84271 /* UserPreferences.swift in Sources */,
 				13B6C8881F61B329007BB6F3 /* CreateEventViewController.swift in Sources */,

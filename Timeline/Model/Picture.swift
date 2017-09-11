@@ -25,6 +25,24 @@ class Picture: HasUniqueID {
         }
     }
     
+    func image(sizeTo size: CGSize) -> NSImage {
+        
+        let heightFit = size.height / image.size.height
+        let widthFit = size.width / image.size.width
+        
+        var newSize = CGSize()
+        
+        if heightFit > widthFit {
+            newSize.width = size.width
+            newSize.height = image.size.height * widthFit
+        } else {
+            newSize.width = image.size.width * heightFit
+            newSize.height = size.height
+        }
+        image.size = newSize
+        return image
+    }
+    
     init(uniqueID: UniqueID, title: String, date: Date, image: NSImage) {
         self.uniqueID = uniqueID
         self.title = title
