@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13122.17"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="EventDetailViewController" customModule="Timeline" customModuleProvider="target">
+            <connections>
+                <outlet property="eventNameLabel" destination="kBI-u1-xTy" id="e2P-zW-qXY"/>
+                <outlet property="uniqueIDLabel" destination="BQL-eH-Nu1" id="n4p-Op-fr6"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zMI-e8-ydd">
+                    <rect key="frame" x="20" y="340" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="9MO-xK-87C"/>
+                        <constraint firstAttribute="width" secondItem="zMI-e8-ydd" secondAttribute="height" multiplier="1:1" id="Rv7-uq-Xg8"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Dance" id="oHu-Ua-3VH"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BQL-eH-Nu1">
+                    <rect key="frame" x="20" y="20" width="60" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="UniqueID" id="zcy-Mu-eFa">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kBI-u1-xTy">
+                    <rect key="frame" x="150" y="412" width="550" height="48"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Event Name" drawsBackground="YES" id="1li-K7-INi">
+                        <font key="font" metaFont="system" size="40"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                    </textFieldCell>
+                </textField>
+                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uur-uV-aNi">
+                    <rect key="frame" x="150" y="54" width="550" height="350"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="LhW-aO-j5d">
+                        <rect key="frame" x="0.0" y="0.0" width="550" height="350"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView ambiguous="YES" editable="NO" drawsBackground="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="t8O-QV-Cap">
+                                <rect key="frame" x="0.0" y="0.0" width="550" height="350"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="550" height="350"/>
+                                <size key="maxSize" width="550" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Mah-WD-cY5">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="vVZ-es-rUh">
+                        <rect key="frame" x="534" y="0.0" width="16" height="350"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="zMI-e8-ydd" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="6Ro-e7-tpf"/>
+                <constraint firstAttribute="bottom" secondItem="BQL-eH-Nu1" secondAttribute="bottom" constant="20" id="6VM-ia-lCn"/>
+                <constraint firstItem="zMI-e8-ydd" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="GJV-1z-HMk"/>
+                <constraint firstAttribute="trailing" secondItem="kBI-u1-xTy" secondAttribute="trailing" constant="20" id="SJZ-q5-5XP"/>
+                <constraint firstItem="kBI-u1-xTy" firstAttribute="top" secondItem="zMI-e8-ydd" secondAttribute="top" id="f9Z-RE-JwA"/>
+                <constraint firstItem="BQL-eH-Nu1" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="22" id="gZv-zD-9xu"/>
+                <constraint firstItem="kBI-u1-xTy" firstAttribute="leading" secondItem="zMI-e8-ydd" secondAttribute="trailing" constant="10" id="yvN-u2-bCQ"/>
+            </constraints>
+            <point key="canvasLocation" x="376" y="183"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="Dance" width="100" height="100"/>
+    </resources>
+</document>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13122.17"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PicturesCollectionViewItem" customModule="Timeline" customModuleProvider="target">
+            <connections>
+                <outlet property="pictureImageView" destination="ElD-4j-nSD" id="ZGL-aF-gUb"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ElD-4j-nSD">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="W3H-GP-gJE"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ElD-4j-nSD" secondAttribute="bottom" id="EBO-UE-mrS"/>
+                <constraint firstItem="ElD-4j-nSD" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="IdC-x0-Iaf"/>
+                <constraint firstItem="ElD-4j-nSD" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="PYc-o4-PQJ"/>
+                <constraint firstAttribute="trailing" secondItem="ElD-4j-nSD" secondAttribute="trailing" id="tCW-pw-aQ3"/>
+            </constraints>
+        </customView>
+        <collectionViewItem id="CZI-q5-FHr" customClass="PicturesCollectionViewItem" customModule="Timeline" customModuleProvider="target"/>
+    </objects>
+</document>
