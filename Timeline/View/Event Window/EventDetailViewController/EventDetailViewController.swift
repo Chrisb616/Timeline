@@ -10,20 +10,40 @@ import Cocoa
 
 class EventDetailViewController: NSViewController {
     
-    @IBOutlet weak var eventNameLabel: NSTextField!
+    //MARK: - IBOutlets
     
+    @IBOutlet weak var eventNameLabel: NSTextField!
     @IBOutlet weak var uniqueIDLabel: NSTextField!
     
+    @IBOutlet var narrativeTextView: NSTextView!
+    
+    @IBOutlet weak var startDateLabel: NSTextField!
+    @IBOutlet weak var startTimeLabel: NSTextField!
+    
+    @IBOutlet weak var endDateLabel: NSTextField!
+    @IBOutlet weak var endTimeLabel: NSTextField!
+    
+    @IBOutlet weak var startDatePicker: NSDatePicker!
+    
+    @IBOutlet weak var endDatePicker: NSDatePicker!
+    
+    
+    //MARK: - Properties
     weak var event: Event!
     
+    //MARK: - IBACtions
     @IBAction func deleteEvent(_ sender: Any) {
     }
+    
+    //MARK: - Initialiation
     
     static func instanceFromNib(forEvent event: Event) -> EventDetailViewController {
         let vc = EventDetailViewController(nibName: NSNib.Name("EventDetailViewController"), bundle: nil)
         vc.event = event
         return vc
     }
+    
+    //MARK: - Lifecylce
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +56,45 @@ class EventDetailViewController: NSViewController {
     private func configureForEvent() {
         self.eventNameLabel.stringValue = event.name
         self.uniqueIDLabel.stringValue = event.uniqueID
+        self.narrativeTextView.string = event.narrative
+        
+        self.startDateLabel.stringValue = event.dateRange.start.formatted(as: "MMMM dd, yyyy")
+        self.startTimeLabel.stringValue = event.dateRange.start.formatted(as: "h:mma")
+        
+        self.endDateLabel.stringValue = event.dateRange.end.formatted(as: "MMMM dd, yyyy")
+        self.endTimeLabel.stringValue = event.dateRange.end.formatted(as: "h:mma")
+        
+        self.startDatePicker.dateValue = event.dateRange.start
+        self.endDatePicker.dateValue = event.dateRange.end
     }
     
+    //MARK: - Methods
     func saveEventChanges() {
         if eventNameLabel.stringValue != "" {
             event.name = eventNameLabel.stringValue
         }
+        event.narrative = narrativeTextView.string
+        
+        event.dateRange.start = startDatePicker.dateValue
+        event.dateRange.end = endDatePicker.dateValue
+        
+        NotificationManager.instance.postEventUpdateNotification()
+        
+        configureForEvent()
+    }
+    
+    func toggleEditMode() {
+        eventNameLabel.isEditable.toggle()
+        narrativeTextView.isEditable.toggle()
+        
+        startDateLabel.isHidden.toggle()
+        startTimeLabel.isHidden.toggle()
+        
+        endDateLabel.isHidden.toggle()
+        endTimeLabel.isHidden.toggle()
+        
+        startDatePicker.isHidden.toggle()
+        endDatePicker.isHidden.toggle()
     }
     
     

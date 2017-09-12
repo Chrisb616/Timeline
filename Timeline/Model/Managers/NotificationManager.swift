@@ -27,7 +27,7 @@ class NotificationManager {
     }
     
     func postEventUpdateNotification() {
-        NotificationCenter.default.post(name: pictureUpdateName, object: nil)
+        NotificationCenter.default.post(name: eventUpdateName, object: nil)
         Debugger.log(string: "Posting notification for \(eventUpdateName.rawValue)", logType: .process, logLevel: .verbose)
     }
     

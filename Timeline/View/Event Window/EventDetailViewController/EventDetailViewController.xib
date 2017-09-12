@@ -9,7 +9,14 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="EventDetailViewController" customModule="Timeline" customModuleProvider="target">
             <connections>
+                <outlet property="endDateLabel" destination="42I-WK-chR" id="wRT-Sh-vqe"/>
+                <outlet property="endDatePicker" destination="1sL-Ry-0ke" id="q9B-ZD-dig"/>
+                <outlet property="endTimeLabel" destination="SSK-AN-D5S" id="ZaQ-4D-9vV"/>
                 <outlet property="eventNameLabel" destination="kBI-u1-xTy" id="e2P-zW-qXY"/>
+                <outlet property="narrativeTextView" destination="t8O-QV-Cap" id="llQ-v8-kau"/>
+                <outlet property="startDateLabel" destination="cIF-wU-fpX" id="zim-o2-QW1"/>
+                <outlet property="startDatePicker" destination="0N1-Ko-vdH" id="ydQ-Vk-JD0"/>
+                <outlet property="startTimeLabel" destination="Lap-6U-Gy6" id="NmS-5q-dAa"/>
                 <outlet property="uniqueIDLabel" destination="BQL-eH-Nu1" id="n4p-Op-fr6"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -71,14 +78,104 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rpu-IP-15C">
+                    <rect key="frame" x="18" y="315" width="38" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Start:" id="6hL-Wp-nz0">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cIF-wU-fpX">
+                    <rect key="frame" x="36" y="301" width="91" height="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MMMM dd, yyyy" id="Agk-qI-65d">
+                        <font key="font" metaFont="system" size="11"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="42I-WK-chR">
+                    <rect key="frame" x="36" y="231" width="91" height="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MMMM dd, yyyy" id="ohx-To-ja2">
+                        <font key="font" metaFont="system" size="11"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lap-6U-Gy6">
+                    <rect key="frame" x="36" y="287" width="40" height="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="h:mma" id="JCI-lE-zWN">
+                        <font key="font" metaFont="system" size="11"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-AN-D5S">
+                    <rect key="frame" x="36" y="217" width="40" height="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="h:mma" id="igB-MF-bfa">
+                        <font key="font" metaFont="system" size="11"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ogr-Rs-PcX">
+                    <rect key="frame" x="18" y="245" width="31" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="End:" id="bur-d0-z2R">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <datePicker hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0N1-Ko-vdH">
+                    <rect key="frame" x="10" y="292" width="139" height="27"/>
+                    <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="6RQ-EJ-Exg">
+                        <font key="font" metaFont="system" size="9"/>
+                        <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                            <!--1982-02-12 16:00:00 +0000-->
+                        </date>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <datePickerElements key="datePickerElements" year="YES" month="YES" day="YES" hour="YES" minute="YES" second="YES"/>
+                    </datePickerCell>
+                </datePicker>
+                <datePicker hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1sL-Ry-0ke">
+                    <rect key="frame" x="10" y="222" width="139" height="27"/>
+                    <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="Cqj-ct-8KB">
+                        <font key="font" metaFont="system" size="9"/>
+                        <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                            <!--1982-02-12 16:00:00 +0000-->
+                        </date>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <datePickerElements key="datePickerElements" year="YES" month="YES" day="YES" hour="YES" minute="YES" second="YES"/>
+                    </datePickerCell>
+                </datePicker>
             </subviews>
             <constraints>
                 <constraint firstItem="zMI-e8-ydd" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="6Ro-e7-tpf"/>
                 <constraint firstAttribute="bottom" secondItem="BQL-eH-Nu1" secondAttribute="bottom" constant="20" id="6VM-ia-lCn"/>
+                <constraint firstItem="ogr-Rs-PcX" firstAttribute="leading" secondItem="rpu-IP-15C" secondAttribute="leading" id="CkY-RQ-tA7"/>
+                <constraint firstItem="t8O-QV-Cap" firstAttribute="leading" secondItem="0N1-Ko-vdH" secondAttribute="trailing" id="Ctq-3D-9fo"/>
                 <constraint firstItem="zMI-e8-ydd" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="GJV-1z-HMk"/>
+                <constraint firstItem="SSK-AN-D5S" firstAttribute="leading" secondItem="42I-WK-chR" secondAttribute="leading" id="LAk-9s-yaQ"/>
+                <constraint firstItem="cIF-wU-fpX" firstAttribute="top" secondItem="rpu-IP-15C" secondAttribute="bottom" id="OPL-gf-9Q7"/>
+                <constraint firstItem="Lap-6U-Gy6" firstAttribute="top" secondItem="cIF-wU-fpX" secondAttribute="bottom" id="QKM-95-pqi"/>
                 <constraint firstAttribute="trailing" secondItem="kBI-u1-xTy" secondAttribute="trailing" constant="20" id="SJZ-q5-5XP"/>
+                <constraint firstItem="42I-WK-chR" firstAttribute="top" secondItem="ogr-Rs-PcX" secondAttribute="bottom" id="XfS-ad-KxR"/>
+                <constraint firstItem="ogr-Rs-PcX" firstAttribute="top" secondItem="Lap-6U-Gy6" secondAttribute="bottom" constant="25" id="Xzn-4S-6Tf"/>
+                <constraint firstItem="42I-WK-chR" firstAttribute="leading" secondItem="cIF-wU-fpX" secondAttribute="leading" id="bBz-Oj-8gz"/>
+                <constraint firstItem="0N1-Ko-vdH" firstAttribute="leading" secondItem="rpu-IP-15C" secondAttribute="leading" constant="-10" id="d7I-2a-N7z"/>
                 <constraint firstItem="kBI-u1-xTy" firstAttribute="top" secondItem="zMI-e8-ydd" secondAttribute="top" id="f9Z-RE-JwA"/>
                 <constraint firstItem="BQL-eH-Nu1" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="22" id="gZv-zD-9xu"/>
+                <constraint firstItem="cIF-wU-fpX" firstAttribute="leading" secondItem="rpu-IP-15C" secondAttribute="trailing" constant="-16" id="mbM-Kd-wUJ"/>
+                <constraint firstItem="SSK-AN-D5S" firstAttribute="top" secondItem="42I-WK-chR" secondAttribute="bottom" id="nDj-h0-SZ5"/>
+                <constraint firstItem="0N1-Ko-vdH" firstAttribute="top" secondItem="rpu-IP-15C" secondAttribute="bottom" id="nJH-0J-g4M"/>
+                <constraint firstItem="1sL-Ry-0ke" firstAttribute="leading" secondItem="0N1-Ko-vdH" secondAttribute="leading" id="naf-mE-Xlq"/>
+                <constraint firstItem="1sL-Ry-0ke" firstAttribute="trailing" secondItem="0N1-Ko-vdH" secondAttribute="trailing" id="pk8-1m-PqA"/>
+                <constraint firstItem="rpu-IP-15C" firstAttribute="top" secondItem="zMI-e8-ydd" secondAttribute="bottom" constant="8" id="qqJ-2T-nsi"/>
+                <constraint firstItem="Lap-6U-Gy6" firstAttribute="leading" secondItem="cIF-wU-fpX" secondAttribute="leading" id="tvX-x9-q36"/>
+                <constraint firstItem="rpu-IP-15C" firstAttribute="leading" secondItem="zMI-e8-ydd" secondAttribute="leading" id="wnR-1a-uDU"/>
+                <constraint firstItem="1sL-Ry-0ke" firstAttribute="top" secondItem="ogr-Rs-PcX" secondAttribute="bottom" id="yH7-hU-Cnp"/>
                 <constraint firstItem="kBI-u1-xTy" firstAttribute="leading" secondItem="zMI-e8-ydd" secondAttribute="trailing" constant="10" id="yvN-u2-bCQ"/>
             </constraints>
             <point key="canvasLocation" x="376" y="183"/>

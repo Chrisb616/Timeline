@@ -50,7 +50,7 @@ class DataStore {
     
     func storeEvent(_ event: Event, saveData: Bool = true) {
         eventDictionary.add(event)
-        timeline.addEvent(event)
+        //timeline.addEvent(event)
         
         if saveData { SaveDataManager.instance.saveEventInfo() }
     }

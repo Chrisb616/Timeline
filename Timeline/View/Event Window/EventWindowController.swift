@@ -90,15 +90,16 @@ class EventWindowController: NSWindowController {
         
         switchTab(to: .detail)
         
-        eventDetailViewController.eventNameLabel.isEditable = true
+        eventDetailViewController.toggleEditMode()
         
         isInEditMode = !isInEditMode
     }
     
     func saveEvent() {
         editToolbarItem.image = NSImage.init(named: NSImage.Name("Pencil"))
+        editToolbarItem.label = "Edit"
         
-        eventDetailViewController.eventNameLabel.isEditable = false
+        eventDetailViewController.toggleEditMode()
         
         eventDetailViewController.saveEventChanges()
         SaveDataManager.instance.saveEventInfo()
