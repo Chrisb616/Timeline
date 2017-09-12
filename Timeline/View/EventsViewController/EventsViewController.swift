@@ -24,7 +24,6 @@ class EventsViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
         
         self.events = DataStore.instance.events.chronological
         
@@ -66,7 +65,6 @@ extension EventsViewController: NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "EventsCollectionViewItem"), for: indexPath)
     
-        
         guard let collectionViewItem = item as? EventsCollectionViewItem else { return item }
         
         collectionViewItem.load(event: events[indexPath.item])

@@ -16,7 +16,6 @@ class EventsCollectionViewItem: NSCollectionViewItem {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
     }
     
     func load(event: Event) {

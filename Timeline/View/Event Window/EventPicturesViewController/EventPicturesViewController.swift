@@ -25,7 +25,6 @@ class EventPicturesViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
     }
     
     private func configureCollectionView() {
