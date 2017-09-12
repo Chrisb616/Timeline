@@ -11,7 +11,7 @@ import Foundation
 extension Array where Element == Picture {
     
     var chronological: [Picture] {
-        return self.sorted{ $0.date < $1.date }
+        return self.sorted{ $0.date ?? Date() < $1.date ?? Date() }
     }
     
 }

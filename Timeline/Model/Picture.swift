@@ -14,7 +14,7 @@ class Picture: HasUniqueID {
     var title: String
     var uniqueID: UniqueID
     
-    var date: Date
+    var date: Date?
     
     var savePath: URL { return UserPreferences.instance.directoryHome.appendingPathComponent("Pictures").appendingPathComponent(uniqueID).appendingPathExtension("jpg") }
     
@@ -46,7 +46,7 @@ class Picture: HasUniqueID {
         return image
     }
     
-    init(uniqueID: UniqueID, title: String, date: Date, image: NSImage) {
+    init(uniqueID: UniqueID, title: String, date: Date?, image: NSImage) {
         self.uniqueID = uniqueID
         self.title = title
         self.image = image

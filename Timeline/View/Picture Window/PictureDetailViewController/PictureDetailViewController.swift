@@ -36,8 +36,14 @@ class PictureDetailViewController: NSViewController {
         if picture != nil {
             resizeImage()
             titleTextField.stringValue = picture.title
-            dateLabel.stringValue = picture.date.formatted(as: "EEEE, MMMM d, y")
-            timeLabel.stringValue = picture.date.formatted(as: "hh:mm:ssa")
+            
+            if let date = picture.date {
+                dateLabel.stringValue = date.formatted(as: "EEEE, MMMM d, y")
+                timeLabel.stringValue = date.formatted(as: "hh:mm:ssa")
+            } else {
+                dateLabel.stringValue = ""
+                timeLabel.stringValue = ""
+            }
         }
     }
     

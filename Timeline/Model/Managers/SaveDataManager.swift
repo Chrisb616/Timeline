@@ -176,7 +176,7 @@ class SaveDataManager {
             
             let uniqueID = UniqueIDGenerator.instance.picture
             
-            let picture = Picture(uniqueID: uniqueID, title: uniqueID, date: Date(), image: image)
+            let picture = Picture(uniqueID: uniqueID, title: uniqueID, date: nil, image: image)
             
             self.saveNewImage(forPicture: picture)
             DataStore.instance.storePicture(picture)
@@ -220,12 +220,15 @@ class SaveDataManager {
         for picture in pictures {
             let title = picture.title
             let uniqueID = picture.uniqueID
-            let date = picture.date.toSaveString
             
-            let infoDictionary = [
-                pictureTitleKey:title,
-                pictureDateKey: date
+            var infoDictionary = [
+                pictureTitleKey:title
             ]
+            
+            if let date = picture.date {
+                infoDictionary.updateValue(date.toSaveString, forKey: pictureDateKey)
+            }
+            
             
             pictureDictionary.updateValue(infoDictionary, forKey: uniqueID)
         }
@@ -275,16 +278,12 @@ class SaveDataManager {
                 continue
             }
             
-            guard let dateString = pictureInfo[pictureDateKey] else {
-                Debugger.log(string: "Could not extract date string from picture info", logType: .failure, logLevel: .minimal)
-                checkForCompletion()
-                continue
-            }
+            let date: Date?
             
-            guard let date = Date.fromSaveString(dateString) else {
-                Debugger.log(string: "Could not convert date from save string", logType: .failure, logLevel: .minimal)
-                checkForCompletion()
-                continue
+            if let dateString = pictureInfo[pictureDateKey] {
+                date = Date.fromSaveString(dateString)
+            } else {
+                date = nil
             }
             
             imageManager.importSingleImage(withFileURL: directoryManager.imageFileURL(forUniqueID: uniqueID), completion: { (image) in
