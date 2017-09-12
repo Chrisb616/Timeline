@@ -39,7 +39,7 @@ class EventWindowController: NSWindowController {
     }
     
     override func close() {
-        self.close()
+        super.close()
         MainWindowController.instance.eventWindowController = nil
     }
     

@@ -48,7 +48,6 @@ class EventsViewController: NSViewController {
         
         collectionView.layer = CALayer()
         collectionView.layer?.backgroundColor = NSColor.white.cgColor
-        
     }
 }
 

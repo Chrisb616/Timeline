@@ -53,6 +53,7 @@
 		13F33FD11F671F0B00C79490 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33FD01F671F0B00C79490 /* ImageManager.swift */; };
 		13F33FD31F6723AF00C79490 /* Array<Picture>.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33FD21F6723AF00C79490 /* Array<Picture>.swift */; };
 		13F33FD51F6842C600C79490 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33FD41F6842C600C79490 /* Bool.swift */; };
+		13F33FD71F684D9400C79490 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F33FD61F684D9400C79490 /* Int.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		13F33FD01F671F0B00C79490 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		13F33FD21F6723AF00C79490 /* Array<Picture>.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array<Picture>.swift"; sourceTree = "<group>"; };
 		13F33FD41F6842C600C79490 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
+		13F33FD61F684D9400C79490 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 				1308D7321F6196790096869E /* Array */,
 				13A6633C1F6073A100FBEA14 /* Date.swift */,
 				13F33FD41F6842C600C79490 /* Bool.swift */,
+				13F33FD61F684D9400C79490 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				13A663371F6066FE00FBEA14 /* HasUniqueID.swift in Sources */,
 				1308D7341F6196850096869E /* Array<Event>.swift in Sources */,
 				1383EFE91F65E7310025FE4A /* IndexedDictionary.swift in Sources */,
+				13F33FD71F684D9400C79490 /* Int.swift in Sources */,
 				13A6633F1F6075F000FBEA14 /* DateRange.swift in Sources */,
 				1383EFE51F65759D0025FE4A /* Debugger.swift in Sources */,
 				13B6C8921F61CDA5007BB6F3 /* EventWindowController.swift in Sources */,

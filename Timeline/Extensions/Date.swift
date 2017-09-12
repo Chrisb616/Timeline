@@ -60,7 +60,7 @@ extension Date {
         if year == 1 {
             durationString += "1 year"
         } else if year > 1 {
-            durationString += "\(year) years"
+            durationString += "\(year.wordString) years"
         }
         
         if month == 1 {
@@ -68,7 +68,7 @@ extension Date {
             durationString += "1 month"
         } else if month > 1 {
             addCommaIfNeeded()
-            durationString += "\(month) months"
+            durationString += "\(month.wordString) months"
         }
         
         if day == 1 {
@@ -76,7 +76,7 @@ extension Date {
             durationString += "1 day"
         } else if day > 1 {
             addCommaIfNeeded()
-            durationString += "\(day) days"
+            durationString += "\(day.wordString) days"
         }
         
         if hour == 1 {
@@ -84,7 +84,7 @@ extension Date {
             durationString += "1 hour"
         } else if hour > 1 {
             addCommaIfNeeded()
-            durationString += "\(hour) hours"
+            durationString += "\(hour.wordString) hours"
         }
         
         if minute == 1 {
@@ -92,7 +92,7 @@ extension Date {
             durationString += "1 minute"
         } else if minute > 1 {
             addCommaIfNeeded()
-            durationString += "\(minute) minutes"
+            durationString += "\(minute.wordString) minutes"
         }
         
         if second == 1 {
@@ -100,7 +100,7 @@ extension Date {
             durationString += "1 second"
         } else if second > 1 {
             addCommaIfNeeded()
-            durationString += "\(second) seconds"
+            durationString += "\(second.wordString) seconds"
         }
         
         return durationString

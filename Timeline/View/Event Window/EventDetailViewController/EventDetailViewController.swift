@@ -24,16 +24,27 @@ class EventDetailViewController: NSViewController {
     @IBOutlet weak var endTimeLabel: NSTextField!
     
     @IBOutlet weak var startDatePicker: NSDatePicker!
-    
     @IBOutlet weak var endDatePicker: NSDatePicker!
     
+    @IBOutlet weak var durationLabel: NSTextField!
     
     //MARK: - Properties
     weak var event: Event!
     
     //MARK: - IBACtions
-    @IBAction func deleteEvent(_ sender: Any) {
+    
+    @IBAction func startDateSelected(_ sender: Any) {
+        endDatePicker.minDate = startDatePicker.dateValue
+        self.durationLabel.stringValue = event.dateRange.end.durationStringSince(pastDate: event.dateRange.start)
+        
     }
+    
+    @IBAction func endDateSelected(_ sender: Any) {
+        startDatePicker.maxDate = endDatePicker.dateValue
+        self.durationLabel.stringValue = event.dateRange.end.durationStringSince(pastDate: event.dateRange.start)
+        
+    }
+    
     
     //MARK: - Initialiation
     
@@ -48,8 +59,9 @@ class EventDetailViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        eventNameLabel.isEditable = false
-        
+        startDatePicker.maxDate = event.dateRange.end
+        endDatePicker.maxDate = Date()
+                
         configureForEvent()
     }
     
@@ -66,6 +78,8 @@ class EventDetailViewController: NSViewController {
         
         self.startDatePicker.dateValue = event.dateRange.start
         self.endDatePicker.dateValue = event.dateRange.end
+        
+        self.durationLabel.stringValue = event.dateRange.end.durationStringSince(pastDate: event.dateRange.start)
     }
     
     //MARK: - Methods
