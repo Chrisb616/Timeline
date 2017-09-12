@@ -8,7 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PicturesCollectionViewItem" customModule="Timeline" customModuleProvider="target">
             <connections>
-                <outlet property="pictureImageView" destination="ElD-4j-nSD" id="ZGL-aF-gUb"/>
+                <outlet property="pictureImageView" destination="ElD-4j-nSD" id="jBx-fH-9gy"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>

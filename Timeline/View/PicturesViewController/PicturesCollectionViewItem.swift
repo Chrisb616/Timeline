@@ -20,6 +20,16 @@ class PicturesCollectionViewItem: NSCollectionViewItem {
         pictureImageView.imageScaling = .scaleProportionallyUpOrDown
     }
     
+    func load(picture: Picture) {
+        self.picture = picture
+        
+        let sized = picture.image(sizeTo: pictureImageView.frame.size)
+        
+        let cgImage = picture.image.cgImage(forProposedRect: nil, context: nil, hints: nil)
+        let new = NSImage(cgImage: cgImage!, size: sized.size)
+        pictureImageView.image = new
+    }
+    
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
         

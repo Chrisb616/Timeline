@@ -11,6 +11,7 @@ import Cocoa
 class EventPicturesViewController: NSViewController {
     
     weak var event: Event!
+    var pictureIDs = [UniqueID]()
     
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var collectionViewFlowLayout: NSCollectionViewFlowLayout!
@@ -18,6 +19,7 @@ class EventPicturesViewController: NSViewController {
     static func instanceFromNib(forEvent event: Event) -> EventPicturesViewController {
         let vc = EventPicturesViewController(nibName: NSNib.Name("EventPicturesViewController"), bundle: nil)
         vc.event = event
+        vc.pictureIDs = event.pictures.map{ $0.key }
         return vc
     }
 
@@ -38,6 +40,34 @@ class EventPicturesViewController: NSViewController {
         collectionView.layer = CALayer()
         collectionView.layer?.backgroundColor = NSColor.white.cgColor
         
+    }
+    
+}
+
+extension EventPicturesViewController: NSCollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: NSCollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return event.pictures.count
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "PicturesCollectionViewItem"), for: indexPath)
+        
+        guard let collectionViewItem = item as? PicturesCollectionViewItem else {
+            return item
+        }
+        
+        let pictureID = pictureIDs[indexPath.item]
+        
+        guard let picture = DataStore.instance.retrievePicture(withUniqueID: pictureID) else { return item }
+        
+        collectionViewItem.load(picture: picture)
+        
+        return collectionViewItem
     }
     
 }

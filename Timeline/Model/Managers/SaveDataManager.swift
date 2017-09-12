@@ -19,6 +19,7 @@ class SaveDataManager {
     private var imageManager = ImageManager.instance
     private var dataStore = DataStore.instance
     private var directoryManager = DirectoryManager.instance
+    private var fileManager = FileManager.default
     
     //MARK: - Save Paths
     
@@ -48,6 +49,14 @@ class SaveDataManager {
             Debugger.log(string: "Could not read data from \(url)", logType: .failure, logLevel: .minimal)
             Debugger.log(error: error)
             return [:]
+        }
+    }
+    
+    private func deleteFile(atURL url: URL) {
+        do {
+            try fileManager.removeItem(at: url)
+        } catch {
+            Debugger.log(string: "Could not delete file at \(url)", logType: .failure, logLevel: .minimal)
         }
     }
     
@@ -196,6 +205,10 @@ class SaveDataManager {
     
     func saveNewImage(forPicture picture: Picture) {
         imageManager.exportSingleImage(toFileURL: directoryManager.picturesDirectory, image: picture.image, name: picture.uniqueID)
+    }
+    
+    func deleteImage(forPicture picture: Picture) {
+        SaveDataManager.instance.deleteFile(atURL: picture.savePath)
     }
     
     func savePictureInfo() {

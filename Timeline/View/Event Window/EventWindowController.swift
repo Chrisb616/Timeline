@@ -68,6 +68,7 @@ class EventWindowController: NSWindowController {
             if response == NSApplication.ModalResponse.alertSecondButtonReturn {
                 DataStore.instance.removeEvent(self.event)
                 NotificationManager.instance.postEventUpdateNotification()
+                MainWindowController.instance.eventWindowController?.close()
                 MainWindowController.instance.eventWindowController = nil
             }
         }

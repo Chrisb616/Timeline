@@ -21,7 +21,9 @@ class Picture: HasUniqueID {
     func refreshImage() {
         ImageManager.instance.importSingleImage(withFileURL: savePath) { (image) in
             self.image = image
-            NotificationManager.instance.postPictureUpdateNotification()
+            OperationQueue.main.addOperation {
+                NotificationManager.instance.postPictureUpdateNotification()
+            }
         }
     }
     
@@ -39,6 +41,7 @@ class Picture: HasUniqueID {
             newSize.width = image.size.width * heightFit
             newSize.height = size.height
         }
+        
         image.size = newSize
         return image
     }

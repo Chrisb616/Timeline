@@ -105,4 +105,16 @@ class DataStore {
             storePicture(picture, saveData: saveData)
         }
     }
+    
+    func removePicture(_ picture: Picture, saveData: Bool = true) {
+        removePicture(withUniqueID: picture.uniqueID, saveData: saveData)
+    }
+    
+    func removePicture(withUniqueID uniqueID: UniqueID, saveData: Bool = true) {
+        pictureDictionary.remove(itemWithUniqueID: uniqueID)
+        
+        if saveData {
+            SaveDataManager.instance.savePictureInfo()
+        }
+    }
 }

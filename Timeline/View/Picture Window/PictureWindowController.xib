@@ -33,11 +33,17 @@
                             <action selector="openWithPhotoshop:" target="-2" id="aVm-Yd-JFF"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="B6CC0EAA-FFC4-4557-8E92-7E7E856706D1" label="Delete" paletteLabel="Delete" tag="-1" image="Trash Can" id="Lu8-WL-IS3">
+                        <connections>
+                            <action selector="deletePicture:" target="-2" id="aLh-YY-bBr"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="tb7-Sd-2cl"/>
-                    <toolbarItem reference="IEO-rV-D2h"/>
                     <toolbarItem reference="rxm-fx-LgI"/>
+                    <toolbarItem reference="IEO-rV-D2h"/>
+                    <toolbarItem reference="Lu8-WL-IS3"/>
                 </defaultToolbarItems>
             </toolbar>
             <connections>
@@ -48,5 +54,6 @@
     <resources>
         <image name="Pencil" width="100" height="100"/>
         <image name="Photoshop" width="57" height="57"/>
+        <image name="Trash Can" width="100" height="100"/>
     </resources>
 </document>

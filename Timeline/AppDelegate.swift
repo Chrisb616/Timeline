@@ -23,5 +23,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
        SaveDataManager.instance.saveAllInfo()
     }
+    
+    func applicationWillBecomeActive(_ notification: Notification) {
+        MainWindowController.instance.pictureWindowController?.pictureDetailViewController.refreshImage()
+    }
 
 }

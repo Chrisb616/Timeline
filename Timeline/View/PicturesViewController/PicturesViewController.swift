@@ -65,8 +65,9 @@ extension PicturesViewController: NSCollectionViewDataSource {
             return item
         }
         
-        collectionViewItem.pictureImageView.image = pictures[indexPath.item].image
-        collectionViewItem.picture = pictures[indexPath.item]
+        let picture = pictures[indexPath.item]
+        
+        collectionViewItem.load(picture: picture)
         
         return collectionViewItem
     }

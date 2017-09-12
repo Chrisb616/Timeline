@@ -21,24 +21,35 @@ class PictureDetailViewController: NSViewController {
         return vc
     }
     
-    var picture: Picture!
+    weak var picture: Picture!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
         setUpImageView()
+        
+        NotificationManager.instance.addPictureUpdateObserver(observer: self, selector: #selector(setUpImageView))
     }
     
-    func setUpImageView() {
-        resizeImage()
-        titleTextField.stringValue = picture.title
-        dateLabel.stringValue = picture.date.formatted(as: "EEEE, MMMM d, y")
-        timeLabel.stringValue = picture.date.formatted(as: "hh:mm:ssa")
+    @objc func setUpImageView() {
+        if picture != nil {
+            resizeImage()
+            titleTextField.stringValue = picture.title
+            dateLabel.stringValue = picture.date.formatted(as: "EEEE, MMMM d, y")
+            timeLabel.stringValue = picture.date.formatted(as: "hh:mm:ssa")
+        }
     }
     
     func resizeImage() {
-        imageView.image = picture.image(sizeTo: imageView.frame.size)
+        imageView?.image = picture?.image(sizeTo: imageView?.frame.size ?? CGSize())
     }
     
+    deinit {
+        print("DEINIT")
+    }
+    
+    func refreshImage() {
+        picture.refreshImage()
+    }
 }
