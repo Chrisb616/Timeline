@@ -11,6 +11,7 @@ import Cocoa
 class EventDetailViewController: NSViewController {
     
     //MARK: - IBOutlets
+    @IBOutlet weak var coverPictureImageView: CoverPictureImageView!
     
     @IBOutlet weak var eventNameLabel: NSTextField!
     @IBOutlet weak var uniqueIDLabel: NSTextField!
@@ -66,6 +67,8 @@ class EventDetailViewController: NSViewController {
     }
     
     private func configureForEvent() {
+        self.coverPictureImageView.configure(coverPictureUniqueID: DataStore.instance.pictures.first!.uniqueID, allPicturesUniqueIDs: DataStore.instance.pictures.map{ $0.uniqueID }, presentingViewController: self)
+        
         self.eventNameLabel.stringValue = event.name
         self.uniqueIDLabel.stringValue = event.uniqueID
         self.narrativeTextView.string = event.narrative
@@ -110,6 +113,5 @@ class EventDetailViewController: NSViewController {
         startDatePicker.isHidden.toggle()
         endDatePicker.isHidden.toggle()
     }
-    
     
 }

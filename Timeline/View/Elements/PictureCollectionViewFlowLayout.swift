@@ -10,12 +10,18 @@ import Cocoa
 
 class PictureCollectionViewFlowLayout: NSCollectionViewFlowLayout {
     
+    var overrideItemSize: NSSize?
+    var overrideSectionInset: NSEdgeInsets?
+    var overrideMinimumLineSpacing: CGFloat?
+    var overrideMinimumInteritemSpacing: CGFloat?
+    var overrideHeaderReferenceSize: NSSize?
+    
     func configure() {
-        self.itemSize = NSSize(width: 200, height: 200)
-        self.sectionInset = NSEdgeInsetsMake(10, 10, 10, 10)
-        self.minimumLineSpacing = 10
-        self.minimumInteritemSpacing = 5
-        self.headerReferenceSize = NSSize(width: 20, height: 20)
+        self.itemSize = overrideItemSize ?? NSSize(width: 200, height: 200)
+        self.sectionInset = overrideSectionInset ?? NSEdgeInsetsMake(10, 10, 10, 10)
+        self.minimumLineSpacing = overrideMinimumLineSpacing ?? 10
+        self.minimumInteritemSpacing = overrideMinimumInteritemSpacing ?? 5
+        self.headerReferenceSize = overrideHeaderReferenceSize ?? NSSize(width: 20, height: 20)
     }
     
 }

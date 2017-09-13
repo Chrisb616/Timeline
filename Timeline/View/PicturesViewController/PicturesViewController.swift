@@ -21,6 +21,13 @@ class PicturesViewController: NSViewController {
         print("View did load")
         
         collectionView.configure()
+        collectionView.setOnClickAction { (picture, event) in
+            if event.clickCount > 1 {
+                let pictureWindowController = PictureWindowController.loadfor(picture: picture)
+                MainWindowController.instance.pictureWindowController = pictureWindowController
+                pictureWindowController.showWindow(nil)
+            }
+        }
         update()
         
         NotificationManager.instance.addPictureUpdateObserver(observer: self, selector: #selector(update))

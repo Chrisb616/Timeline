@@ -10,13 +10,21 @@ import Cocoa
 
 class PictureCollectionView: NSCollectionView {
     
-    private var pictureCollectionViewDataSource: PictureCollectionViewDataSource!
+    //MARK: - Properties
+    private var pictureCollectionViewDataSource: PictureCollectionViewDataSource?
+    private var pictureCollectionViewFlowLayout: PictureCollectionViewFlowLayout?
     
+    //MARK: - Input Methods
     func loadPictures(_ pictures: [Picture]) {
         self.pictureCollectionViewDataSource?.pictures = pictures
         self.reloadData()
     }
     
+    func setOnClickAction(_ action: @escaping (Picture, NSEvent) -> Void) {
+        self.pictureCollectionViewDataSource?.onClick = action
+    }
+    
+    //MARK: - Configure Methods
     func configure() {
         configureFlowLayout()
         configureLayer()
@@ -28,13 +36,20 @@ class PictureCollectionView: NSCollectionView {
         self.layer?.backgroundColor = NSColor.white.cgColor
     }
     
+    func overrideLayoutValues(_ configure: (PictureCollectionViewFlowLayout)->Void) {
+        if let layout = pictureCollectionViewFlowLayout {
+            configure(layout)
+            layout.configure()
+            reloadData()
+        }
+    }
+    
     private func configureFlowLayout() {
-        let flowLayout = PictureCollectionViewFlowLayout()
+        pictureCollectionViewFlowLayout = PictureCollectionViewFlowLayout()
         
-        flowLayout.configure()
+        pictureCollectionViewFlowLayout?.configure()
         
-        self.collectionViewLayout = flowLayout
-        
+        self.collectionViewLayout = pictureCollectionViewFlowLayout
     }
     
     private func configureDataSource() {

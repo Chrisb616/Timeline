@@ -33,5 +33,7 @@ class EventPicturesViewController: NSViewController {
         collectionView.loadPictures(pictures)
     }
     
+    
+    
 }
 

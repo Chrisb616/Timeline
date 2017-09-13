@@ -9,6 +9,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="EventDetailViewController" customModule="Timeline" customModuleProvider="target">
             <connections>
+                <outlet property="coverPictureImageView" destination="zMI-e8-ydd" id="NJJ-82-Dj5"/>
                 <outlet property="durationLabel" destination="A6u-x8-VMt" id="tLL-gh-1wF"/>
                 <outlet property="endDateLabel" destination="42I-WK-chR" id="wRT-Sh-vqe"/>
                 <outlet property="endDatePicker" destination="1sL-Ry-0ke" id="q9B-ZD-dig"/>
@@ -28,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zMI-e8-ydd">
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zMI-e8-ydd" customClass="CoverPictureImageView" customModule="Timeline" customModuleProvider="target">
                     <rect key="frame" x="20" y="340" width="120" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="9MO-xK-87C"/>
@@ -89,7 +90,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cIF-wU-fpX">
                     <rect key="frame" x="18" y="301" width="124" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="MMMM dd, yyyy" id="Agk-qI-65d">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -97,7 +98,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="42I-WK-chR">
                     <rect key="frame" x="18" y="231" width="91" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MMMM dd, yyyy" id="ohx-To-ja2">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -105,7 +106,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lap-6U-Gy6">
                     <rect key="frame" x="18" y="287" width="40" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="h:mma" id="JCI-lE-zWN">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -113,7 +114,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-AN-D5S">
                     <rect key="frame" x="18" y="217" width="40" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="h:mma" id="igB-MF-bfa">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -129,7 +130,7 @@
                 <datePicker hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0N1-Ko-vdH">
                     <rect key="frame" x="10" y="292" width="143" height="27"/>
                     <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="6RQ-EJ-Exg">
-                        <font key="font" metaFont="system" size="9"/>
+                        <font key="font" metaFont="miniSystem"/>
                         <date key="date" timeIntervalSinceReferenceDate="-595929600">
                             <!--1982-02-12 16:00:00 +0000-->
                         </date>
@@ -144,7 +145,7 @@
                 <datePicker hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1sL-Ry-0ke">
                     <rect key="frame" x="10" y="222" width="143" height="27"/>
                     <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="Cqj-ct-8KB">
-                        <font key="font" metaFont="system" size="9"/>
+                        <font key="font" metaFont="miniSystem"/>
                         <date key="date" timeIntervalSinceReferenceDate="-595929600">
                             <!--1982-02-12 16:00:00 +0000-->
                         </date>
@@ -170,7 +171,7 @@
                         <constraint firstAttribute="height" constant="100" id="ctd-LB-p1E"/>
                     </constraints>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Label" id="jnh-V1-hvL">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

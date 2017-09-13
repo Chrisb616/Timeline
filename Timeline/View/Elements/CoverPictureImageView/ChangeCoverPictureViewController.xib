@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13122.17"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ChangeCoverPictureViewController" customModule="Timeline" customModuleProvider="target">
+            <connections>
+                <outlet property="pictureCollectionView" destination="i8v-sQ-ABy" id="DN2-Tf-1M8"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chd-2v-7Mk">
+                    <rect key="frame" x="5" y="31" width="470" height="236"/>
+                    <clipView key="contentView" drawsBackground="NO" id="HcX-Xs-z4c">
+                        <rect key="frame" x="1" y="1" width="468" height="234"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView id="i8v-sQ-ABy" customClass="PictureCollectionView" customModule="Timeline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="468" height="158"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="EHQ-wG-8eB">
+                                    <size key="itemSize" width="50" height="50"/>
+                                </collectionViewFlowLayout>
+                                <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="6P6-VP-BNJ">
+                        <rect key="frame" x="1" y="224" width="468" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="L2U-WI-JvW">
+                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-L4-jh7">
+                    <rect key="frame" x="399" y="-2" width="82" height="32"/>
+                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hmX-UL-CrO">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="dismissController:" target="-2" id="dTM-qU-nzx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="chd-2v-7Mk" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="5" id="50Z-Te-t57"/>
+                <constraint firstItem="ibe-L4-jh7" firstAttribute="top" secondItem="chd-2v-7Mk" secondAttribute="bottom" constant="5" id="CK8-uB-Lhc"/>
+                <constraint firstAttribute="trailing" secondItem="chd-2v-7Mk" secondAttribute="trailing" constant="5" id="RgW-VG-xHI"/>
+                <constraint firstAttribute="trailing" secondItem="ibe-L4-jh7" secondAttribute="trailing" constant="5" id="RnZ-Mj-c7U"/>
+                <constraint firstAttribute="bottom" secondItem="ibe-L4-jh7" secondAttribute="bottom" constant="5" id="qlX-b3-Qwb"/>
+                <constraint firstItem="chd-2v-7Mk" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="sOR-7e-mXz"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

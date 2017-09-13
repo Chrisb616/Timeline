@@ -24,6 +24,9 @@
 		137FB66C1F69862E00A18A74 /* PictureCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB66A1F69862E00A18A74 /* PictureCollectionViewItem.swift */; };
 		137FB66D1F69862E00A18A74 /* PictureCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137FB66B1F69862E00A18A74 /* PictureCollectionViewItem.xib */; };
 		137FB6731F69AE2000A18A74 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB6721F69AE2000A18A74 /* Dictionary.swift */; };
+		137FB6781F69B40500A18A74 /* CoverPictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB6771F69B40500A18A74 /* CoverPictureImageView.swift */; };
+		137FB67B1F69B46E00A18A74 /* ChangeCoverPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB6791F69B46E00A18A74 /* ChangeCoverPictureViewController.swift */; };
+		137FB67C1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137FB67A1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib */; };
 		1383EFD31F6310470025FE4A /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFD11F6310470025FE4A /* PicturesViewController.swift */; };
 		1383EFD41F6310470025FE4A /* PicturesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1383EFD21F6310470025FE4A /* PicturesViewController.xib */; };
 		1383EFE01F63394E0025FE4A /* ImportPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFDE1F63394E0025FE4A /* ImportPhotosViewController.swift */; };
@@ -90,6 +93,9 @@
 		137FB66A1F69862E00A18A74 /* PictureCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewItem.swift; sourceTree = "<group>"; };
 		137FB66B1F69862E00A18A74 /* PictureCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCollectionViewItem.xib; sourceTree = "<group>"; };
 		137FB6721F69AE2000A18A74 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		137FB6771F69B40500A18A74 /* CoverPictureImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPictureImageView.swift; sourceTree = "<group>"; };
+		137FB6791F69B46E00A18A74 /* ChangeCoverPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCoverPictureViewController.swift; sourceTree = "<group>"; };
+		137FB67A1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeCoverPictureViewController.xib; sourceTree = "<group>"; };
 		1383EFD11F6310470025FE4A /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
 		1383EFD21F6310470025FE4A /* PicturesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicturesViewController.xib; sourceTree = "<group>"; };
 		1383EFDE1F63394E0025FE4A /* ImportPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPhotosViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 		137FB6621F697DB900A18A74 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				137FB6741F69B23900A18A74 /* CoverPictureImageView */,
 				137FB6671F697E8900A18A74 /* PictureCollectionView */,
 			);
 			path = Elements;
@@ -201,6 +208,16 @@
 				137FB66B1F69862E00A18A74 /* PictureCollectionViewItem.xib */,
 			);
 			name = PictureCollectionView;
+			sourceTree = "<group>";
+		};
+		137FB6741F69B23900A18A74 /* CoverPictureImageView */ = {
+			isa = PBXGroup;
+			children = (
+				137FB6771F69B40500A18A74 /* CoverPictureImageView.swift */,
+				137FB6791F69B46E00A18A74 /* ChangeCoverPictureViewController.swift */,
+				137FB67A1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib */,
+			);
+			path = CoverPictureImageView;
 			sourceTree = "<group>";
 		};
 		1383EFD01F6310310025FE4A /* PicturesViewController */ = {
@@ -493,6 +510,7 @@
 				13F33FDB1F68604500C79490 /* EventAddPicturesViewController.xib in Resources */,
 				1383EFD41F6310470025FE4A /* PicturesViewController.xib in Resources */,
 				13B6C8931F61CDA5007BB6F3 /* EventWindowController.xib in Resources */,
+				137FB67C1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib in Resources */,
 				13B6C8971F61D169007BB6F3 /* EventDetailViewController.xib in Resources */,
 				13B6C8891F61B329007BB6F3 /* CreateEventViewController.xib in Resources */,
 				1383EFE11F63394E0025FE4A /* ImportPhotosViewController.xib in Resources */,
@@ -533,6 +551,7 @@
 				1364C0BB1F619F5A00A84271 /* UserPreferences.swift in Sources */,
 				137FB6731F69AE2000A18A74 /* Dictionary.swift in Sources */,
 				13B6C8881F61B329007BB6F3 /* CreateEventViewController.swift in Sources */,
+				137FB6781F69B40500A18A74 /* CoverPictureImageView.swift in Sources */,
 				13A663351F6066CC00FBEA14 /* Event.swift in Sources */,
 				13A6633D1F6073A100FBEA14 /* Date.swift in Sources */,
 				13A663371F6066FE00FBEA14 /* HasUniqueID.swift in Sources */,
@@ -547,6 +566,7 @@
 				1308D7301F6194AE0096869E /* EventsCollectionViewItem.swift in Sources */,
 				1383EFE01F63394E0025FE4A /* ImportPhotosViewController.swift in Sources */,
 				136CD9F41F62EEBF0076A38B /* Picture.swift in Sources */,
+				137FB67B1F69B46E00A18A74 /* ChangeCoverPictureViewController.swift in Sources */,
 				13F33FD11F671F0B00C79490 /* ImageManager.swift in Sources */,
 				137FB6641F697DE100A18A74 /* PictureCollectionView.swift in Sources */,
 				13A663331F6066A100FBEA14 /* DataStore.swift in Sources */,

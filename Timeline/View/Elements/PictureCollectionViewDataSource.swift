@@ -11,6 +11,7 @@ import Cocoa
 class PictureCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
     
     var pictures = [Picture]()
+    var onClick: ((Picture, NSEvent)->Void)?
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.pictures.count
@@ -26,6 +27,7 @@ class PictureCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
         let picture = pictures[indexPath.item]
         
         collectionViewItem.load(picture: picture)
+        collectionViewItem.onClick = onClick
         
         return collectionViewItem
     }

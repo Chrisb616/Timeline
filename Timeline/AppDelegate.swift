@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SaveDataManager.instance.loadAllInfo()
         
         MainWindowController.instance.showWindow(nil)
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
