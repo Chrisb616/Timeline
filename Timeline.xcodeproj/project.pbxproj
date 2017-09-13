@@ -23,6 +23,7 @@
 		137FB6691F69823900A18A74 /* PictureCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB6681F69823900A18A74 /* PictureCollectionViewDataSource.swift */; };
 		137FB66C1F69862E00A18A74 /* PictureCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB66A1F69862E00A18A74 /* PictureCollectionViewItem.swift */; };
 		137FB66D1F69862E00A18A74 /* PictureCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137FB66B1F69862E00A18A74 /* PictureCollectionViewItem.xib */; };
+		137FB6731F69AE2000A18A74 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB6721F69AE2000A18A74 /* Dictionary.swift */; };
 		1383EFD31F6310470025FE4A /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFD11F6310470025FE4A /* PicturesViewController.swift */; };
 		1383EFD41F6310470025FE4A /* PicturesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1383EFD21F6310470025FE4A /* PicturesViewController.xib */; };
 		1383EFE01F63394E0025FE4A /* ImportPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFDE1F63394E0025FE4A /* ImportPhotosViewController.swift */; };
@@ -88,6 +89,7 @@
 		137FB6681F69823900A18A74 /* PictureCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		137FB66A1F69862E00A18A74 /* PictureCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewItem.swift; sourceTree = "<group>"; };
 		137FB66B1F69862E00A18A74 /* PictureCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCollectionViewItem.xib; sourceTree = "<group>"; };
+		137FB6721F69AE2000A18A74 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		1383EFD11F6310470025FE4A /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
 		1383EFD21F6310470025FE4A /* PicturesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicturesViewController.xib; sourceTree = "<group>"; };
 		1383EFDE1F63394E0025FE4A /* ImportPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPhotosViewController.swift; sourceTree = "<group>"; };
@@ -152,8 +154,8 @@
 		1308D7241F6189010096869E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				137FB6621F697DB900A18A74 /* Elements */,
 				1308D7391F619B750096869E /* Main.storyboard */,
+				137FB6621F697DB900A18A74 /* Elements */,
 				13B6C8851F61B301007BB6F3 /* Main Window */,
 				13D573151F66EEC000AB8119 /* Picture Window */,
 				13B6C88F1F61CD78007BB6F3 /* Event Window */,
@@ -282,6 +284,7 @@
 				13A6633C1F6073A100FBEA14 /* Date.swift */,
 				13F33FD41F6842C600C79490 /* Bool.swift */,
 				13F33FD61F684D9400C79490 /* Int.swift */,
+				137FB6721F69AE2000A18A74 /* Dictionary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				13F33FD31F6723AF00C79490 /* Array<Picture>.swift in Sources */,
 				1383EFD31F6310470025FE4A /* PicturesViewController.swift in Sources */,
 				1364C0BB1F619F5A00A84271 /* UserPreferences.swift in Sources */,
+				137FB6731F69AE2000A18A74 /* Dictionary.swift in Sources */,
 				13B6C8881F61B329007BB6F3 /* CreateEventViewController.swift in Sources */,
 				13A663351F6066CC00FBEA14 /* Event.swift in Sources */,
 				13A6633D1F6073A100FBEA14 /* Date.swift in Sources */,

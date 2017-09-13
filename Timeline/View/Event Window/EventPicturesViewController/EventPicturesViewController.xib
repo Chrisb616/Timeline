@@ -9,7 +9,6 @@
         <customObject id="-2" userLabel="File's Owner" customClass="EventPicturesViewController" customModule="Timeline" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="fuT-eX-8Ya" id="hEr-BA-7Tq"/>
-                <outlet property="collectionViewFlowLayout" destination="eUe-nM-HDU" id="5LW-Ky-boN"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -25,7 +24,7 @@
                         <rect key="frame" x="1" y="1" width="648" height="369"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView id="fuT-eX-8Ya">
+                            <collectionView id="fuT-eX-8Ya" customClass="PictureCollectionView" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="648" height="158"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="eUe-nM-HDU">

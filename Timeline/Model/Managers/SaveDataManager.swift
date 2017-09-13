@@ -89,7 +89,7 @@ class SaveDataManager {
             let name = event.name
             let uniqueID = event.uniqueID
             let narrative = event.narrative
-            let pictures = Array(event.pictures.keys)
+            let pictures = Array(event.pictureIDs.keys)
             
             let infoDictionary: [String:Any] = [
                 eventStartKey: start,

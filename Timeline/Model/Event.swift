@@ -17,17 +17,17 @@ class Event: HasUniqueID {
     
     var narrative: String
     
-    var pictures: [String:Bool]
+    var pictureIDs: [UniqueID:Bool]
     
     init(uniqueID: UniqueID, name: String, start: Date, end: Date, narrative: String, pictures: [UniqueID]) {
         self.uniqueID = uniqueID
         self.name = name
         self.dateRange = DateRange(start: start, end: end)
         self.narrative = narrative
-        self.pictures = [:]
+        self.pictureIDs = [:]
         
         for picture in pictures {
-            self.pictures.updateValue(true, forKey: picture)
+            self.pictureIDs.updateValue(true, forKey: picture)
         }
     }
 }
