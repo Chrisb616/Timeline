@@ -54,9 +54,9 @@ extension EventPicturesViewController: NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "PicturesCollectionViewItem"), for: indexPath)
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "PictureCollectionViewItem"), for: indexPath)
         
-        guard let collectionViewItem = item as? PicturesCollectionViewItem else {
+        guard let collectionViewItem = item as? PictureCollectionViewItem else {
             return item
         }
         

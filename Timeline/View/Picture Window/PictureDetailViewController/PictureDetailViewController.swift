@@ -51,10 +51,6 @@ class PictureDetailViewController: NSViewController {
         imageView?.image = picture?.image(sizeTo: imageView?.frame.size ?? CGSize())
     }
     
-    deinit {
-        print("DEINIT")
-    }
-    
     func refreshImage() {
         picture.refreshImage()
     }

@@ -6,9 +6,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PicturesCollectionViewItem" customModule="Timeline" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="PictureCollectionViewItem" customModule="Timeline" customModuleProvider="target">
             <connections>
-                <outlet property="pictureImageView" destination="ElD-4j-nSD" id="jBx-fH-9gy"/>
+                <outlet property="pictureImageView" destination="mwy-p8-4qq" id="wwo-wX-LAG"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -18,18 +18,18 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ElD-4j-nSD">
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mwy-p8-4qq">
                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="W3H-GP-gJE"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="szq-dp-Mca"/>
                 </imageView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ElD-4j-nSD" secondAttribute="bottom" id="EBO-UE-mrS"/>
-                <constraint firstItem="ElD-4j-nSD" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="IdC-x0-Iaf"/>
-                <constraint firstItem="ElD-4j-nSD" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="PYc-o4-PQJ"/>
-                <constraint firstAttribute="trailing" secondItem="ElD-4j-nSD" secondAttribute="trailing" id="tCW-pw-aQ3"/>
+                <constraint firstItem="mwy-p8-4qq" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="9qw-Vi-uIN"/>
+                <constraint firstItem="mwy-p8-4qq" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="ArD-h3-BEL"/>
+                <constraint firstAttribute="trailing" secondItem="mwy-p8-4qq" secondAttribute="trailing" id="DbY-hC-tQC"/>
+                <constraint firstAttribute="bottom" secondItem="mwy-p8-4qq" secondAttribute="bottom" id="fgg-ms-peG"/>
             </constraints>
         </customView>
-        <collectionViewItem id="CZI-q5-FHr" customClass="PicturesCollectionViewItem" customModule="Timeline" customModuleProvider="target"/>
+        <collectionViewItem id="Kme-i8-mlR" customClass="PictureCollectionViewItem" customModule="Timeline" customModuleProvider="target"/>
     </objects>
 </document>

@@ -8,8 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PicturesViewController" customModule="Timeline" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="xsX-Zn-YbK" id="R5i-H1-Dyb"/>
-                <outlet property="collectionViewFlowLayout" destination="g92-Ux-77y" id="EZ8-j8-MWy"/>
+                <outlet property="collectionView" destination="xsX-Zn-YbK" id="m8y-lf-rbA"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -25,10 +24,10 @@
                         <rect key="frame" x="1" y="1" width="478" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView id="xsX-Zn-YbK">
+                            <collectionView id="xsX-Zn-YbK" customClass="PictureCollectionView" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="g92-Ux-77y">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="g92-Ux-77y" customClass="PictureCollectionViewFlowLayout" customModule="Timeline" customModuleProvider="target">
                                     <size key="itemSize" width="50" height="50"/>
                                 </collectionViewFlowLayout>
                                 <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

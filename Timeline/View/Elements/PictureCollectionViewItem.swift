@@ -1,33 +1,33 @@
 //
-//  PicturesCollectionViewItem.swift
+//  PictureCollectionViewItem.swift
 //  Timeline
 //
-//  Created by Christopher Boynton on 9/8/17.
+//  Created by Christopher Boynton on 9/13/17.
 //  Copyright © 2017 Self. All rights reserved.
 //
 
 import Cocoa
 
-class PicturesCollectionViewItem: NSCollectionViewItem {
+class PictureCollectionViewItem: NSCollectionViewItem {
     
-    @IBOutlet weak var pictureImageView: NSImageView!
+    @IBOutlet weak var pictureImageView: NSImageView?
     
     weak var picture: Picture?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pictureImageView.imageScaling = .scaleProportionallyUpOrDown
+        pictureImageView?.imageScaling = .scaleProportionallyUpOrDown
     }
     
     func load(picture: Picture) {
         self.picture = picture
         
-        let sized = picture.image(sizeTo: pictureImageView.frame.size)
+        let sized = picture.image(sizeTo: pictureImageView!.frame.size)
         
         let cgImage = picture.image.cgImage(forProposedRect: nil, context: nil, hints: nil)
         let new = NSImage(cgImage: cgImage!, size: sized.size)
-        pictureImageView.image = new
+        pictureImageView?.image = new
     }
     
     override func mouseDown(with event: NSEvent) {
@@ -43,4 +43,5 @@ class PicturesCollectionViewItem: NSCollectionViewItem {
             pictureWindowController.showWindow(nil)
         }
     }
+    
 }
