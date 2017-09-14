@@ -62,12 +62,12 @@ class EventDetailViewController: NSViewController {
         
         startDatePicker.maxDate = event.dateRange.end
         endDatePicker.maxDate = Date()
-                
+        
         configureForEvent()
     }
     
     private func configureForEvent() {
-        self.coverPictureImageView.configure(coverPictureUniqueID: DataStore.instance.pictures.first!.uniqueID, allPicturesUniqueIDs: DataStore.instance.pictures.map{ $0.uniqueID }, presentingViewController: self)
+        self.coverPictureImageView.configure(subject: event, presentingViewController: self)
         
         self.eventNameLabel.stringValue = event.name
         self.uniqueIDLabel.stringValue = event.uniqueID

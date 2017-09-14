@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Event: HasUniqueID {
+class Event: HasUniqueID, HasCoverPicture {
     
     var name: String
     
@@ -17,17 +17,21 @@ class Event: HasUniqueID {
     
     var narrative: String
     
-    var pictureIDs: [UniqueID:Bool]
+    var pictureUniqueIDs: [UniqueID:Bool]
     
-    init(uniqueID: UniqueID, name: String, start: Date, end: Date, narrative: String, pictures: [UniqueID]) {
+    var coverPictureUniqueID: UniqueID?
+    
+    init(uniqueID: UniqueID, name: String, start: Date, end: Date, narrative: String, pictureUniqueIDs: [UniqueID], coverPictureUniqueID: UniqueID?) {
         self.uniqueID = uniqueID
         self.name = name
         self.dateRange = DateRange(start: start, end: end)
         self.narrative = narrative
-        self.pictureIDs = [:]
+        self.pictureUniqueIDs = [:]
         
-        for picture in pictures {
-            self.pictureIDs.updateValue(true, forKey: picture)
+        self.coverPictureUniqueID = coverPictureUniqueID
+        
+        for picture in pictureUniqueIDs {
+            self.pictureUniqueIDs.updateValue(true, forKey: picture)
         }
     }
 }

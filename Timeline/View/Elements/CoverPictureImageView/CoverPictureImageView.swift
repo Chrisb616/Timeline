@@ -15,12 +15,14 @@ class CoverPictureImageView: NSImageView {
     private var coverPictureUniqueID: UniqueID?
     private var allPicturesUniqueIDs: [UniqueID]?
     
-    func configure(coverPictureUniqueID: UniqueID, allPicturesUniqueIDs: [UniqueID], presentingViewController: NSViewController) {
+    private var subject: HasCoverPicture?
+    
+    func configure(subject: HasCoverPicture, presentingViewController: NSViewController) {
         self.presentingViewController = presentingViewController
-        self.coverPictureUniqueID = coverPictureUniqueID
-        self.allPicturesUniqueIDs = allPicturesUniqueIDs
+        self.coverPictureUniqueID = subject.coverPictureUniqueID
+        self.allPicturesUniqueIDs = subject.pictureUniqueIDs.keysArray
         
-        self.image = DataStore.instance.retrievePicture(withUniqueID: coverPictureUniqueID)?.image
+        self.image = subject.coverPicture?.image
     }
     
     override func mouseDown(with event: NSEvent) {
@@ -34,7 +36,7 @@ class CoverPictureImageView: NSImageView {
     private func presentChangeCoverPictureViewController() {
         let pictures = DataStore.instance.retrievePictures(withUniqueIDs: allPicturesUniqueIDs ?? [])
         
-        let changeVC = ChangeCoverPictureViewController.instanceFromNib(withPictures: pictures)
+        let changeVC = ChangeCoverPictureViewController.instanceFromNib(withPictures: pictures, subject: subject)
         
         presentingViewController?.presentViewControllerAsSheet(changeVC)
     }

@@ -29,7 +29,7 @@ class EventPicturesViewController: NSViewController {
     }
 
     func update() {
-        let pictures = DataStore.instance.retrievePictures(withUniqueIDs: event.pictureIDs.keysArray)
+        let pictures = DataStore.instance.retrievePictures(withUniqueIDs: event.pictureUniqueIDs.keysArray)
         collectionView.loadPictures(pictures)
     }
     

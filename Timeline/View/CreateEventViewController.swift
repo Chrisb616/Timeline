@@ -33,7 +33,7 @@ class CreateEventViewController: NSViewController {
         if nameTextField.stringValue == "" { return }
         if narrativeTextView.string == "Narrative" { return }
         
-        let event = Event(uniqueID: UniqueIDGenerator.instance.event, name: nameTextField.stringValue, start: startDatePicker.dateValue, end: endDatePicker.dateValue, narrative: narrativeTextView.string, pictures: [])
+        let event = Event(uniqueID: UniqueIDGenerator.instance.event, name: nameTextField.stringValue, start: startDatePicker.dateValue, end: endDatePicker.dateValue, narrative: narrativeTextView.string, pictureUniqueIDs: [], coverPictureUniqueID: nil)
         
         DataStore.instance.storeEvent(event)
         NotificationManager.instance.postEventUpdateNotification()
