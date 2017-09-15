@@ -20,10 +20,17 @@ class PictureCollectionViewItem: NSCollectionViewItem {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageHighlightLayer = CALayer()
-        
+        configurePictureImageView()
+        configureImageHighlightLayer()
+    }
+    
+    func configurePictureImageView() {
         pictureImageView?.imageScaling = .scaleProportionallyUpOrDown
         pictureImageView.wantsLayer = true
+    }
+    
+    func configureImageHighlightLayer() {
+        imageHighlightLayer = CALayer()
         
         imageHighlightLayer.borderWidth = 0.0
         imageHighlightLayer.borderColor = NSColor(calibratedRed: 0.0, green: 0.5, blue: 1.0, alpha: 1.0).cgColor

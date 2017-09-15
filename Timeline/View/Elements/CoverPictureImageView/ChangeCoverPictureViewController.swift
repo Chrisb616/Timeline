@@ -31,7 +31,7 @@ class ChangeCoverPictureViewController: NSViewController {
             layout.overrideItemSize = NSSize(width: 100, height: 100)
         }
         pictureCollectionView.setOnClickAction { (picture, event) in
-            print("\(self.subject)")
+            //print("\(self.subject)")
         }
         
         pictureCollectionView.loadPictures(pictures)

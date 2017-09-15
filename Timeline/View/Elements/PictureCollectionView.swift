@@ -51,9 +51,7 @@ class PictureCollectionView: NSCollectionView {
     
     private func configureFlowLayout() {
         pictureCollectionViewFlowLayout = PictureCollectionViewFlowLayout()
-        
         pictureCollectionViewFlowLayout?.configure()
-        
         self.collectionViewLayout = pictureCollectionViewFlowLayout
     }
     
