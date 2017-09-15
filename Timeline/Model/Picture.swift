@@ -16,7 +16,10 @@ class Picture: HasUniqueID {
     
     var date: Date?
     
-    var savePath: URL { return UserPreferences.instance.directoryHome.appendingPathComponent("Pictures").appendingPathComponent(uniqueID).appendingPathExtension("jpg") }
+    var savePath: URL {
+        return UserPreferences.instance.directoryHome.appendingPathComponent("Pictures").appendingPathComponent(uniqueID).appendingPathExtension("jpg")
+        
+    }
     
     func refreshImage() {
         ImageManager.instance.importSingleImage(withFileURL: savePath) { (image) in

@@ -18,7 +18,6 @@ class PicturesViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View did load")
         
         collectionView.configure()
         collectionView.setOnClickAction { (picture, event) in
