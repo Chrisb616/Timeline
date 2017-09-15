@@ -32,6 +32,8 @@ class PictureCollectionView: NSCollectionView {
         configureDataSource()
         configureDelegate()
         
+        registerForDragAndDrop()
+        
         self.isSelectable = true
         self.allowsMultipleSelection = true
     }
@@ -71,5 +73,12 @@ class PictureCollectionView: NSCollectionView {
             (item as! PictureCollectionViewItem).setHighlight(selected: selected)
         }
     }
+    
+    func registerForDragAndDrop() {
+        self.registerForDraggedTypes([.tiff])
+        self.setDraggingSourceOperationMask(.every, forLocal: true)
+        self.setDraggingSourceOperationMask(.every, forLocal: true)
+    }
+    
     
 }
