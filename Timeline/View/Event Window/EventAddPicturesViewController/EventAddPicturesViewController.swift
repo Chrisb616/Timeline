@@ -10,11 +10,9 @@ import Cocoa
 
 class EventAddPicturesViewController: NSViewController {
     
-    @IBOutlet weak var currentPicturesCollectionView: NSCollectionView!
-    @IBOutlet weak var currentPicturesCollectionViewFlowLayout: NSCollectionViewFlowLayout!
+    @IBOutlet weak var currentPicturesCollectionView: PictureCollectionViewDataSource!
     
     @IBOutlet weak var unusedPicturesCollectionView: NSCollectionView!
-    @IBOutlet weak var unusedPicturesCollectionViewFlowLayout: NSCollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
