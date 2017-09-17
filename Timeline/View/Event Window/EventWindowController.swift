@@ -9,6 +9,7 @@
 import Cocoa
 
 class EventWindowController: NSWindowController {
+    /*
     
     //MARK: - Initialization
     static func loadFor(event: Event) -> EventWindowController {
@@ -191,5 +192,6 @@ extension EventWindowController: NSWindowDelegate {
             return true
         }
     }
+ */
     
 }

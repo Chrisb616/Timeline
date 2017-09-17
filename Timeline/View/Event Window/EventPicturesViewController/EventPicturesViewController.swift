@@ -9,6 +9,7 @@
 import Cocoa
 
 class EventPicturesViewController: NSViewController {
+    /*
     
     weak var event: Event!
     
@@ -33,7 +34,7 @@ class EventPicturesViewController: NSViewController {
         collectionView.loadPictures(pictures)
     }
     
-    
+    */
     
 }
 

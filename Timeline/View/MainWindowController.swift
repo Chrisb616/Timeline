@@ -13,11 +13,8 @@ class MainWindowController: NSWindowController {
     //MARK: - Instance
     static var instance: MainWindowController = MainWindowController(windowNibName: NSNib.Name("MainWindowController"))
     
-    //MARK: - View Controllers
-    var tabViewController = NSTabViewController()
-    
-    weak var eventsViewController: EventsViewController!
-    weak var picturesViewController: PicturesViewController!
+    //MARK; - View Controller
+    var mainViewController: MainViewController?
     
     //MARK: - Window Controllers
     var eventWindowController: EventWindowController?
@@ -30,23 +27,27 @@ class MainWindowController: NSWindowController {
         
         window?.title = "Timeline"
         
-        configureTabViewController()
+        mainViewController = MainViewController.instanceFromNib
+        contentViewController = mainViewController
+        
+        //configureTabViewController()
     }
     
     //MARK: - Toolbar
     @IBAction func switchTabToEvents(_ sender: Any) {
-        switchTab(to: .events)
+        //switchTab(to: .events)
     }
     
     @IBAction func switchTabToPictures(_ sender: Any) {
-        switchTab(to: .pictures)
+        //switchTab(to: .pictures)
     }
     
     @IBAction func createEvent(_ sender: Any) {
-        self.contentViewController?.presentViewControllerAsSheet(CreateEventViewController.instanceFromNib)
+        //self.contentViewController?.presentViewControllerAsSheet(CreateEventViewController.instanceFromNib)
     }
     
     @IBAction func importPicturess(_ sender: Any) {
+        /*
         let dialog = NSOpenPanel()
         
         dialog.title = "Select photos to import"
@@ -68,12 +69,14 @@ class MainWindowController: NSWindowController {
             }
             
         }
+        */
     }
     @IBAction func refreshAll(_ sender: Any) {
-        eventsViewController.update()
-        picturesViewController.update()
+        //eventsViewController.update()
+        //picturesViewController.update()
     }
     
+    /*
     //MARK: - Tab View Controller
     enum TabViewControllerItem {
         case events
@@ -106,5 +109,5 @@ class MainWindowController: NSWindowController {
     func switchTab(to item: TabViewControllerItem) {
         tabViewController.selectedTabViewItemIndex = item.index
     }
-    
+    */
 }

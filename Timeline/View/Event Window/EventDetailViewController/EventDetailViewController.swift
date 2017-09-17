@@ -9,6 +9,7 @@
 import Cocoa
 
 class EventDetailViewController: NSViewController {
+    /*
     
     //MARK: - IBOutlets
     @IBOutlet weak var coverPictureImageView: CoverPictureImageView!
@@ -113,5 +114,6 @@ class EventDetailViewController: NSViewController {
         startDatePicker.isHidden.toggle()
         endDatePicker.isHidden.toggle()
     }
+ */
     
 }
