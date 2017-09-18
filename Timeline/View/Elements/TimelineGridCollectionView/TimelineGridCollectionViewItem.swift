@@ -14,12 +14,19 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
     @IBOutlet weak var nameTextView: NSTextField!
     
     var imageHighlightLayer: CALayer!
+    
+    weak var timelineItem: TimelineItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configurePictureImageView()
         configureImageHighlightLayer()
+    }
+    
+    func load(_ timelineItem: TimelineItem) {
+        self.timelineItem = timelineItem
+        self.nameTextView.stringValue = timelineItem.name
     }
     
     private func configurePictureImageView() {

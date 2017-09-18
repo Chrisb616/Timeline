@@ -21,6 +21,7 @@
 		131DD0331F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DD0311F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift */; };
 		131DD0341F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131DD0321F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib */; };
 		13367C911F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13367C901F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift */; };
+		13367C931F6F477100C70274 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13367C921F6F477100C70274 /* URL.swift */; };
 		1364C0B91F619ED800A84271 /* SaveDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364C0B81F619ED800A84271 /* SaveDataManager.swift */; };
 		1364C0BB1F619F5A00A84271 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364C0BA1F619F5A00A84271 /* UserPreferences.swift */; };
 		136CD9F41F62EEBF0076A38B /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD9F31F62EEBF0076A38B /* Picture.swift */; };
@@ -90,6 +91,7 @@
 		131DD0311F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewItem.swift; sourceTree = "<group>"; };
 		131DD0321F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineGridCollectionViewItem.xib; sourceTree = "<group>"; };
 		13367C901F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		13367C921F6F477100C70274 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		1364C0B81F619ED800A84271 /* SaveDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataManager.swift; sourceTree = "<group>"; };
 		1364C0BA1F619F5A00A84271 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		136CD9F31F62EEBF0076A38B /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				13F33FD41F6842C600C79490 /* Bool.swift */,
 				13F33FD61F684D9400C79490 /* Int.swift */,
 				137FB6721F69AE2000A18A74 /* Dictionary.swift */,
+				13367C921F6F477100C70274 /* URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				13A663331F6066A100FBEA14 /* DataStore.swift in Sources */,
 				1364C0B91F619ED800A84271 /* SaveDataManager.swift in Sources */,
 				13A663151F605FE400FBEA14 /* AppDelegate.swift in Sources */,
+				13367C931F6F477100C70274 /* URL.swift in Sources */,
 				13F33FDA1F68604500C79490 /* EventAddPicturesViewController.swift in Sources */,
 				13B6C88B1F61C1C4007BB6F3 /* UniqueIDGenerator.swift in Sources */,
 				1308D7271F61891A0096869E /* MainWindowController.swift in Sources */,

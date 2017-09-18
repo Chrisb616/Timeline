@@ -31,7 +31,7 @@ class TimelineGridCollectionViewDataSource: NSObject, NSCollectionViewDataSource
         
         let currentTimelineItem = _timelineItems[indexPath.item]
         
-        timelineGridCollectionViewItem.nameTextView.stringValue = currentTimelineItem.name
+        timelineGridCollectionViewItem.load(currentTimelineItem)
         
         return timelineGridCollectionViewItem
         

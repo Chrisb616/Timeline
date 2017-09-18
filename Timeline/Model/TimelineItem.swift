@@ -15,13 +15,14 @@ protocol TimelineItem: class, HasUniqueID {
     var date: Date { get set }
     var pictureID: UniqueID? { get set }
     
-    
     func setName(_ name: String?)
     
     //TODO: - Add in capabilities for the main picture (pictureID, picture properties) to be cropped without storing the image data. Each timeline item should contain this crop information for the image. Can be automatic cropping but eventually should allow for customized cropping.
 }
 
 extension TimelineItem {
+    
+    var url: URL { return DirectoryManager.instance.timelineDirectory.appendingPathComponent("uniqueID") }
     
     var picture: Picture? {
         if let pictureID = pictureID {
