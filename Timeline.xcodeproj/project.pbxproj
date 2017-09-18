@@ -20,7 +20,7 @@
 		131DD0301F6F2B6900B67132 /* TimelineGridCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DD02F1F6F2B6900B67132 /* TimelineGridCollectionViewDataSource.swift */; };
 		131DD0331F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DD0311F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift */; };
 		131DD0341F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131DD0321F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib */; };
-		136421A01F69E23F004C96EE /* HasCoverPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364219F1F69E23F004C96EE /* HasCoverPicture.swift */; };
+		13367C911F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13367C901F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift */; };
 		1364C0B91F619ED800A84271 /* SaveDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364C0B81F619ED800A84271 /* SaveDataManager.swift */; };
 		1364C0BB1F619F5A00A84271 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364C0BA1F619F5A00A84271 /* UserPreferences.swift */; };
 		136CD9F41F62EEBF0076A38B /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD9F31F62EEBF0076A38B /* Picture.swift */; };
@@ -30,9 +30,6 @@
 		137FB66C1F69862E00A18A74 /* PictureCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB66A1F69862E00A18A74 /* PictureCollectionViewItem.swift */; };
 		137FB66D1F69862E00A18A74 /* PictureCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137FB66B1F69862E00A18A74 /* PictureCollectionViewItem.xib */; };
 		137FB6731F69AE2000A18A74 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB6721F69AE2000A18A74 /* Dictionary.swift */; };
-		137FB6781F69B40500A18A74 /* CoverPictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB6771F69B40500A18A74 /* CoverPictureImageView.swift */; };
-		137FB67B1F69B46E00A18A74 /* ChangeCoverPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB6791F69B46E00A18A74 /* ChangeCoverPictureViewController.swift */; };
-		137FB67C1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137FB67A1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib */; };
 		1383EFE01F63394E0025FE4A /* ImportPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFDE1F63394E0025FE4A /* ImportPhotosViewController.swift */; };
 		1383EFE11F63394E0025FE4A /* ImportPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1383EFDF1F63394E0025FE4A /* ImportPhotosViewController.xib */; };
 		1383EFE51F65759D0025FE4A /* Debugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFE41F65759D0025FE4A /* Debugger.swift */; };
@@ -92,7 +89,7 @@
 		131DD02F1F6F2B6900B67132 /* TimelineGridCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		131DD0311F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewItem.swift; sourceTree = "<group>"; };
 		131DD0321F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineGridCollectionViewItem.xib; sourceTree = "<group>"; };
-		1364219F1F69E23F004C96EE /* HasCoverPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasCoverPicture.swift; sourceTree = "<group>"; };
+		13367C901F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		1364C0B81F619ED800A84271 /* SaveDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataManager.swift; sourceTree = "<group>"; };
 		1364C0BA1F619F5A00A84271 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		136CD9F31F62EEBF0076A38B /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
@@ -102,9 +99,6 @@
 		137FB66A1F69862E00A18A74 /* PictureCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewItem.swift; sourceTree = "<group>"; };
 		137FB66B1F69862E00A18A74 /* PictureCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCollectionViewItem.xib; sourceTree = "<group>"; };
 		137FB6721F69AE2000A18A74 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		137FB6771F69B40500A18A74 /* CoverPictureImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPictureImageView.swift; sourceTree = "<group>"; };
-		137FB6791F69B46E00A18A74 /* ChangeCoverPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCoverPictureViewController.swift; sourceTree = "<group>"; };
-		137FB67A1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeCoverPictureViewController.xib; sourceTree = "<group>"; };
 		1383EFDE1F63394E0025FE4A /* ImportPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPhotosViewController.swift; sourceTree = "<group>"; };
 		1383EFDF1F63394E0025FE4A /* ImportPhotosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportPhotosViewController.xib; sourceTree = "<group>"; };
 		1383EFE41F65759D0025FE4A /* Debugger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debugger.swift; sourceTree = "<group>"; };
@@ -190,6 +184,7 @@
 				131DD02B1F6F2B2A00B67132 /* TimelineGridCollectionView.swift */,
 				131DD02D1F6F2B4900B67132 /* TimelineGridCollectionViewFlowLayout.swift */,
 				131DD02F1F6F2B6900B67132 /* TimelineGridCollectionViewDataSource.swift */,
+				13367C901F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift */,
 				131DD0311F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift */,
 				131DD0321F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib */,
 			);
@@ -200,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				131DD02A1F6F2B1400B67132 /* TimelineGridCollectionView */,
-				137FB6741F69B23900A18A74 /* CoverPictureImageView */,
 				137FB6671F697E8900A18A74 /* PictureCollectionView */,
 			);
 			path = Elements;
@@ -217,17 +211,6 @@
 				137FB66B1F69862E00A18A74 /* PictureCollectionViewItem.xib */,
 			);
 			name = PictureCollectionView;
-			sourceTree = "<group>";
-		};
-		137FB6741F69B23900A18A74 /* CoverPictureImageView */ = {
-			isa = PBXGroup;
-			children = (
-				137FB6771F69B40500A18A74 /* CoverPictureImageView.swift */,
-				137FB6791F69B46E00A18A74 /* ChangeCoverPictureViewController.swift */,
-				137FB67A1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib */,
-				1364219F1F69E23F004C96EE /* HasCoverPicture.swift */,
-			);
-			path = CoverPictureImageView;
 			sourceTree = "<group>";
 		};
 		1383EFDD1F6338DA0025FE4A /* ImportPhotosController */ = {
@@ -503,7 +486,6 @@
 				131DD0341F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib in Resources */,
 				13F33FDB1F68604500C79490 /* EventAddPicturesViewController.xib in Resources */,
 				13B6C8931F61CDA5007BB6F3 /* EventWindowController.xib in Resources */,
-				137FB67C1F69B46E00A18A74 /* ChangeCoverPictureViewController.xib in Resources */,
 				13B6C8971F61D169007BB6F3 /* EventDetailViewController.xib in Resources */,
 				1383EFE11F63394E0025FE4A /* ImportPhotosViewController.xib in Resources */,
 				13BAAEC61F61DB5500465D91 /* EventPicturesViewController.xib in Resources */,
@@ -533,6 +515,7 @@
 				13A663391F60684E00FBEA14 /* Timeline.swift in Sources */,
 				13D5731D1F66F10500AB8119 /* PictureDetailViewController.swift in Sources */,
 				13D573251F67140C00AB8119 /* DirectoryManager.swift in Sources */,
+				13367C911F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift in Sources */,
 				137FB66C1F69862E00A18A74 /* PictureCollectionViewItem.swift in Sources */,
 				13B6C8961F61D169007BB6F3 /* EventDetailViewController.swift in Sources */,
 				13B6C88D1F61C65E007BB6F3 /* NotificationManager.swift in Sources */,
@@ -541,9 +524,7 @@
 				131DD02C1F6F2B2A00B67132 /* TimelineGridCollectionView.swift in Sources */,
 				1364C0BB1F619F5A00A84271 /* UserPreferences.swift in Sources */,
 				137FB6731F69AE2000A18A74 /* Dictionary.swift in Sources */,
-				137FB6781F69B40500A18A74 /* CoverPictureImageView.swift in Sources */,
 				13A663351F6066CC00FBEA14 /* Event.swift in Sources */,
-				136421A01F69E23F004C96EE /* HasCoverPicture.swift in Sources */,
 				13A6633D1F6073A100FBEA14 /* Date.swift in Sources */,
 				131DD01C1F6C8E3800B67132 /* TimelineItem.swift in Sources */,
 				13A663371F6066FE00FBEA14 /* HasUniqueID.swift in Sources */,
@@ -563,7 +544,6 @@
 				1383EFE01F63394E0025FE4A /* ImportPhotosViewController.swift in Sources */,
 				131DD0331F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift in Sources */,
 				136CD9F41F62EEBF0076A38B /* Picture.swift in Sources */,
-				137FB67B1F69B46E00A18A74 /* ChangeCoverPictureViewController.swift in Sources */,
 				13F33FD11F671F0B00C79490 /* ImageManager.swift in Sources */,
 				137FB6641F697DE100A18A74 /* PictureCollectionView.swift in Sources */,
 				13A663331F6066A100FBEA14 /* DataStore.swift in Sources */,

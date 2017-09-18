@@ -14,7 +14,7 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
     @IBOutlet weak var nameTextView: NSTextField!
     
     var imageHighlightLayer: CALayer!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +35,15 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
         self.imageHighlightLayer.frame.size = pictureImageView.frame.size
         self.imageHighlightLayer.cornerRadius = self.pictureImageView.frame.width * 0.10
         
-        self.imageHighlightLayer.borderWidth = 5
+        self.imageHighlightLayer.borderWidth = 0
         self.imageHighlightLayer.borderColor = NSColor(calibratedRed: 250/255, green: 190/255, blue: 30/255, alpha: 1).cgColor
+    }
+    
+    func setHighlight() {
+        self.imageHighlightLayer.borderWidth = 5
+    }
+    
+    func removeHighlight() {
+        self.imageHighlightLayer.borderWidth = 0
     }
 }

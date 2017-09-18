@@ -12,10 +12,12 @@ class TimelineGridCollectionView: NSCollectionView {
     
     private var _collectionViewLayout: TimelineGridCollectionViewFlowLayout?
     private var _dataSource: TimelineGridCollectionViewDataSource?
+    private var _delegate: TimelineGridCollectionViewDelegate?
     
     func configure() {
         configureCollectionView()
         configureLayout()
+        configureDelegate()
         configureDataSource()
     }
     
@@ -33,6 +35,11 @@ class TimelineGridCollectionView: NSCollectionView {
     func configureDataSource() {
         self._dataSource = TimelineGridCollectionViewDataSource()
         self.dataSource = _dataSource
+    }
+    
+    func configureDelegate() {
+        self._delegate = TimelineGridCollectionViewDelegate()
+        self.delegate = self._delegate
     }
     
     func load(timelineItems: [TimelineItem]) {

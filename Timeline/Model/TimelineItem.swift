@@ -18,6 +18,7 @@ protocol TimelineItem: class, HasUniqueID {
     
     func setName(_ name: String?)
     
+    //TODO: - Add in capabilities for the main picture (pictureID, picture properties) to be cropped without storing the image data. Each timeline item should contain this crop information for the image. Can be automatic cropping but eventually should allow for customized cropping.
 }
 
 extension TimelineItem {
