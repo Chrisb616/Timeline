@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationWillBecomeActive(_ notification: Notification) {
-        MainWindowController.instance.pictureWindowController?.pictureDetailViewController.refreshImage()
+        
     }
 
 }

@@ -16,10 +16,6 @@ class MainWindowController: NSWindowController {
     //MARK; - View Controller
     var mainViewController: MainViewController?
     
-    //MARK: - Window Controllers
-    var eventWindowController: EventWindowController?
-    var pictureWindowController: PictureWindowController?
-    
     //MARK: - On Load
     override func windowDidLoad() {
         super.windowDidLoad()
