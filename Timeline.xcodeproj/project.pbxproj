@@ -7,12 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1308D7271F61891A0096869E /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308D7251F61891A0096869E /* MainWindowController.swift */; };
-		1308D7281F61891A0096869E /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1308D7261F61891A0096869E /* MainWindowController.xib */; };
 		1308D7341F6196850096869E /* Array<Event>.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308D7331F6196850096869E /* Array<Event>.swift */; };
 		1308D73A1F619B910096869E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1308D7391F619B750096869E /* Main.storyboard */; };
-		131DD0191F6C8B5B00B67132 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DD0171F6C8B5B00B67132 /* MainViewController.swift */; };
-		131DD01A1F6C8B5B00B67132 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131DD0181F6C8B5B00B67132 /* MainViewController.xib */; };
 		131DD01C1F6C8E3800B67132 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DD01B1F6C8E3800B67132 /* TimelineItem.swift */; };
 		131DD01E1F6C8E8900B67132 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DD01D1F6C8E8900B67132 /* Moment.swift */; };
 		131DD02C1F6F2B2A00B67132 /* TimelineGridCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DD02B1F6F2B2A00B67132 /* TimelineGridCollectionView.swift */; };
@@ -20,14 +16,15 @@
 		131DD0301F6F2B6900B67132 /* TimelineGridCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DD02F1F6F2B6900B67132 /* TimelineGridCollectionViewDataSource.swift */; };
 		131DD0331F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DD0311F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift */; };
 		131DD0341F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131DD0321F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib */; };
+		13232B071F72AAA3007E6BBF /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13232B061F72AAA3007E6BBF /* MainWindowController.swift */; };
 		13367C911F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13367C901F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift */; };
 		13367C931F6F477100C70274 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13367C921F6F477100C70274 /* URL.swift */; };
 		1364C0B91F619ED800A84271 /* SaveDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364C0B81F619ED800A84271 /* SaveDataManager.swift */; };
 		1364C0BB1F619F5A00A84271 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364C0BA1F619F5A00A84271 /* UserPreferences.swift */; };
 		136CD9F41F62EEBF0076A38B /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136CD9F31F62EEBF0076A38B /* Picture.swift */; };
+		137913E31F72B094002A212F /* MainTimelineGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137913E21F72B094002A212F /* MainTimelineGridViewController.swift */; };
+		137913E51F72B188002A212F /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137913E41F72B188002A212F /* MainSplitViewController.swift */; };
 		137FB6731F69AE2000A18A74 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FB6721F69AE2000A18A74 /* Dictionary.swift */; };
-		1383EFE01F63394E0025FE4A /* ImportPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFDE1F63394E0025FE4A /* ImportPhotosViewController.swift */; };
-		1383EFE11F63394E0025FE4A /* ImportPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1383EFDF1F63394E0025FE4A /* ImportPhotosViewController.xib */; };
 		1383EFE51F65759D0025FE4A /* Debugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFE41F65759D0025FE4A /* Debugger.swift */; };
 		1383EFE91F65E7310025FE4A /* IndexedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383EFE81F65E7310025FE4A /* IndexedDictionary.swift */; };
 		13A663151F605FE400FBEA14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A663141F605FE400FBEA14 /* AppDelegate.swift */; };
@@ -59,12 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1308D7251F61891A0096869E /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		1308D7261F61891A0096869E /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		1308D7331F6196850096869E /* Array<Event>.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array<Event>.swift"; sourceTree = "<group>"; };
 		1308D7391F619B750096869E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		131DD0171F6C8B5B00B67132 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		131DD0181F6C8B5B00B67132 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		131DD01B1F6C8E3800B67132 /* TimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineItem.swift; sourceTree = "<group>"; };
 		131DD01D1F6C8E8900B67132 /* Moment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
 		131DD02B1F6F2B2A00B67132 /* TimelineGridCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionView.swift; sourceTree = "<group>"; };
@@ -72,14 +65,15 @@
 		131DD02F1F6F2B6900B67132 /* TimelineGridCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		131DD0311F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewItem.swift; sourceTree = "<group>"; };
 		131DD0321F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineGridCollectionViewItem.xib; sourceTree = "<group>"; };
+		13232B061F72AAA3007E6BBF /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		13367C901F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		13367C921F6F477100C70274 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		1364C0B81F619ED800A84271 /* SaveDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataManager.swift; sourceTree = "<group>"; };
 		1364C0BA1F619F5A00A84271 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		136CD9F31F62EEBF0076A38B /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		137913E21F72B094002A212F /* MainTimelineGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimelineGridViewController.swift; sourceTree = "<group>"; };
+		137913E41F72B188002A212F /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		137FB6721F69AE2000A18A74 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		1383EFDE1F63394E0025FE4A /* ImportPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPhotosViewController.swift; sourceTree = "<group>"; };
-		1383EFDF1F63394E0025FE4A /* ImportPhotosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportPhotosViewController.xib; sourceTree = "<group>"; };
 		1383EFE41F65759D0025FE4A /* Debugger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debugger.swift; sourceTree = "<group>"; };
 		1383EFE81F65E7310025FE4A /* IndexedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedDictionary.swift; sourceTree = "<group>"; };
 		13A663111F605FE400FBEA14 /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,9 +120,8 @@
 		1308D7241F6189010096869E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1308D7391F619B750096869E /* Main.storyboard */,
+				137913E11F72B058002A212F /* MainWindow */,
 				137FB6621F697DB900A18A74 /* Elements */,
-				13B6C8851F61B301007BB6F3 /* Main Window */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,21 +148,23 @@
 			path = TimelineGridCollectionView;
 			sourceTree = "<group>";
 		};
+		137913E11F72B058002A212F /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				1308D7391F619B750096869E /* Main.storyboard */,
+				13232B061F72AAA3007E6BBF /* MainWindowController.swift */,
+				137913E41F72B188002A212F /* MainSplitViewController.swift */,
+				137913E21F72B094002A212F /* MainTimelineGridViewController.swift */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
 		137FB6621F697DB900A18A74 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
 				131DD02A1F6F2B1400B67132 /* TimelineGridCollectionView */,
 			);
 			path = Elements;
-			sourceTree = "<group>";
-		};
-		1383EFDD1F6338DA0025FE4A /* ImportPhotosController */ = {
-			isa = PBXGroup;
-			children = (
-				1383EFDE1F63394E0025FE4A /* ImportPhotosViewController.swift */,
-				1383EFDF1F63394E0025FE4A /* ImportPhotosViewController.xib */,
-			);
-			name = ImportPhotosController;
 			sourceTree = "<group>";
 		};
 		13A663081F605FE400FBEA14 = {
@@ -250,18 +245,6 @@
 				13A663271F605FE400FBEA14 /* TimelineTests.swift */,
 			);
 			path = "Model Tests";
-			sourceTree = "<group>";
-		};
-		13B6C8851F61B301007BB6F3 /* Main Window */ = {
-			isa = PBXGroup;
-			children = (
-				131DD0171F6C8B5B00B67132 /* MainViewController.swift */,
-				131DD0181F6C8B5B00B67132 /* MainViewController.xib */,
-				1383EFDD1F6338DA0025FE4A /* ImportPhotosController */,
-				1308D7251F61891A0096869E /* MainWindowController.swift */,
-				1308D7261F61891A0096869E /* MainWindowController.xib */,
-			);
-			name = "Main Window";
 			sourceTree = "<group>";
 		};
 		13D5731F1F67116B00AB8119 /* Storage */ = {
@@ -376,10 +359,7 @@
 			files = (
 				13A663191F605FE400FBEA14 /* Assets.xcassets in Resources */,
 				131DD0341F6F2C0A00B67132 /* TimelineGridCollectionViewItem.xib in Resources */,
-				1383EFE11F63394E0025FE4A /* ImportPhotosViewController.xib in Resources */,
 				1308D73A1F619B910096869E /* Main.storyboard in Resources */,
-				131DD01A1F6C8B5B00B67132 /* MainViewController.xib in Resources */,
-				1308D7281F61891A0096869E /* MainWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137913E31F72B094002A212F /* MainTimelineGridViewController.swift in Sources */,
 				13A663391F60684E00FBEA14 /* Timeline.swift in Sources */,
 				13D573251F67140C00AB8119 /* DirectoryManager.swift in Sources */,
 				13367C911F6F421600C70274 /* TimelineGridCollectionViewDelegate.swift in Sources */,
@@ -404,21 +385,21 @@
 				13F33FD31F6723AF00C79490 /* Array<Picture>.swift in Sources */,
 				131DD02C1F6F2B2A00B67132 /* TimelineGridCollectionView.swift in Sources */,
 				1364C0BB1F619F5A00A84271 /* UserPreferences.swift in Sources */,
+				137913E51F72B188002A212F /* MainSplitViewController.swift in Sources */,
 				137FB6731F69AE2000A18A74 /* Dictionary.swift in Sources */,
 				13A663351F6066CC00FBEA14 /* Event.swift in Sources */,
 				13A6633D1F6073A100FBEA14 /* Date.swift in Sources */,
 				131DD01C1F6C8E3800B67132 /* TimelineItem.swift in Sources */,
 				13A663371F6066FE00FBEA14 /* HasUniqueID.swift in Sources */,
 				1308D7341F6196850096869E /* Array<Event>.swift in Sources */,
-				131DD0191F6C8B5B00B67132 /* MainViewController.swift in Sources */,
 				1383EFE91F65E7310025FE4A /* IndexedDictionary.swift in Sources */,
+				13232B071F72AAA3007E6BBF /* MainWindowController.swift in Sources */,
 				13F33FD71F684D9400C79490 /* Int.swift in Sources */,
 				131DD01E1F6C8E8900B67132 /* Moment.swift in Sources */,
 				13A6633F1F6075F000FBEA14 /* DateRange.swift in Sources */,
 				1383EFE51F65759D0025FE4A /* Debugger.swift in Sources */,
 				131DD02E1F6F2B4900B67132 /* TimelineGridCollectionViewFlowLayout.swift in Sources */,
 				131DD0301F6F2B6900B67132 /* TimelineGridCollectionViewDataSource.swift in Sources */,
-				1383EFE01F63394E0025FE4A /* ImportPhotosViewController.swift in Sources */,
 				131DD0331F6F2C0A00B67132 /* TimelineGridCollectionViewItem.swift in Sources */,
 				136CD9F41F62EEBF0076A38B /* Picture.swift in Sources */,
 				13F33FD11F671F0B00C79490 /* ImageManager.swift in Sources */,
@@ -427,7 +408,6 @@
 				13A663151F605FE400FBEA14 /* AppDelegate.swift in Sources */,
 				13367C931F6F477100C70274 /* URL.swift in Sources */,
 				13B6C88B1F61C1C4007BB6F3 /* UniqueIDGenerator.swift in Sources */,
-				1308D7271F61891A0096869E /* MainWindowController.swift in Sources */,
 				13F33FD51F6842C600C79490 /* Bool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

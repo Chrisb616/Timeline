@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DirectoryManager.instance.setUpDirectory()
         SaveDataManager.instance.loadAllInfo()
         
-        MainWindowController.instance.showWindow(nil)
+        //MainWindowController.instance.showWindow(nil)
         
     }
 
