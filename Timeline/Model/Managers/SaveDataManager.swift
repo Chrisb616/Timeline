@@ -89,19 +89,21 @@ class SaveDataManager {
             let end = event.dateRange.end.toSaveString
             let name = event.name
             let uniqueID = event.uniqueID
-            let narrative = event.narrative
-            let pictures = Array(event.pictureUniqueIDs.keys)
+            let pictures = Array(event.pictureIDs.keys)
             
             var infoDictionary: [String:Any] = [
                 eventStartKey: start,
                 eventEndKey: end,
                 eventNameKey: name,
-                eventNarrativeKey: narrative,
                 eventPicturesKey: pictures
             ]
             
-            if let coverPictureUniqueID = event.coverPictureUniqueID {
+            if let coverPictureUniqueID = event.pictureID {
                 infoDictionary.updateValue(coverPictureUniqueID, forKey: eventCoverPictureKey)
+            }
+            
+            if let narrative = event.narrative {
+                infoDictionary.updateValue(narrative, forKey: eventNarrativeKey)
             }
             
             eventDictionary.updateValue(infoDictionary, forKey: uniqueID)
@@ -163,7 +165,7 @@ class SaveDataManager {
             
             let coverPictureuniqueID = eventInfo[eventCoverPictureKey] as? UniqueID
             
-            let event = Event(uniqueID: uniqueID, name: name, start: start, end: end, narrative: narrative, pictureUniqueIDs: pictures, coverPictureUniqueID: coverPictureuniqueID)
+            let event = Event(uniqueID: uniqueID, startDate: start, endDate: end)
             
             Debugger.log(string: "Loaded event with unique ID \(uniqueID)", logType: .success, logLevel: .verbose)
             successCount += 1

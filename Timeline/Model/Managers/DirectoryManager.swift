@@ -18,6 +18,8 @@ class DirectoryManager {
     
     var directoryHome: URL { return UserPreferences.instance.directoryHome }
     
+    var timelineDirectory: URL { return directoryHome.appendingPathComponent("Timeline") }
+    
     var infoDirectory: URL { return directoryHome.appendingPathComponent("Info") }
     var eventInfoDirectory: URL { return infoDirectory.appendingPathComponent("EventInfo").appendingPathExtension(infoFileExtension) }
     var pictureInfoDirectory: URL { return infoDirectory.appendingPathComponent("PictureInfo").appendingPathExtension(infoFileExtension) }

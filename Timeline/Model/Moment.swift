@@ -1,28 +1,26 @@
 //
-//  Event.swift
+//  Moment.swift
 //  Timeline
 //
-//  Created by Christopher Boynton on 9/6/17.
+//  Created by Christopher Boynton on 9/15/17.
 //  Copyright © 2017 Self. All rights reserved.
 //
 
 import Foundation
 
-class Event: TimelineItem {
+class Moment: TimelineItem {
     
     //MARK: - Properties
     //MARK: -
     
     //MARK: - UniqueID
+    
     var uniqueID: UniqueID
     
     //MARK: - Date
     var date: Date
     
-    var startDate: Date { return date }
-    var endDate: Date
-    
-    var dateRange: DateRange { return DateRange(start: date, end: endDate)}
+    var pictureID: UniqueID?
     
     //MARK: - Strings
     private var _name: String?
@@ -30,18 +28,10 @@ class Event: TimelineItem {
     
     var narrative: String?
     
-    //MARK: - Pictures
-    var pictureID: UniqueID?
-    
-    var pictureIDs = [UniqueID:Bool]()
-    
     //MARK: - Initialization
-    init(uniqueID: UniqueID, startDate: Date, endDate: Date) {
+    init(uniqueID: UniqueID, date: Date) {
+        self.date = date
         self.uniqueID = uniqueID
-        
-        self.date = startDate
-        self.endDate = endDate
-        
     }
     
     //MARK: - Methods
@@ -57,4 +47,4 @@ class Event: TimelineItem {
     }
     
 }
- 
+

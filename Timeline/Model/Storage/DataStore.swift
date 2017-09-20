@@ -15,7 +15,6 @@ class DataStore {
     
     //MARK: - Event Properties
     private var eventDictionary = IndexedDictionary<Event>()
-    private var timeline = Timeline()
     
     var events: [Event] { return eventDictionary.all }
     
