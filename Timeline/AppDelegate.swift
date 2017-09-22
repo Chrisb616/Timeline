@@ -16,9 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Debugger.log(string: "App launched", logType: .process, logLevel: .full)
         DirectoryManager.instance.setUpDirectory()
         SaveDataManager.instance.loadAllInfo()
-        
-        //MainWindowController.instance.showWindow(nil)
-        
+
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

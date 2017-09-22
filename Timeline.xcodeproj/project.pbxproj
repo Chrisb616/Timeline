@@ -151,6 +151,7 @@
 		137913E11F72B058002A212F /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
+				139CA8D31F758CCE00461FAE /* CreateTimelineItem */,
 				1308D7391F619B750096869E /* Main.storyboard */,
 				13232B061F72AAA3007E6BBF /* MainWindowController.swift */,
 				137913E41F72B188002A212F /* MainSplitViewController.swift */,
@@ -165,6 +166,13 @@
 				131DD02A1F6F2B1400B67132 /* TimelineGridCollectionView */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		139CA8D31F758CCE00461FAE /* CreateTimelineItem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CreateTimelineItem;
 			sourceTree = "<group>";
 		};
 		13A663081F605FE400FBEA14 = {

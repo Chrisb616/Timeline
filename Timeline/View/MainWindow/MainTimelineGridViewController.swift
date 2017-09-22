@@ -11,9 +11,16 @@ import Cocoa
 class MainTimelineGridViewController: NSViewController {
 
     @IBOutlet weak var collectionView: TimelineGridCollectionView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureCollectionView()
+
+    }
+    
+    func configureCollectionView() {
         
         collectionView.configure()
         collectionView.load(timelineItems: [Event.init(uniqueID: "Event", startDate: Date(), endDate: Date().addingTimeInterval(2))])
