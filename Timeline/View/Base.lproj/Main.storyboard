@@ -692,17 +692,11 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="EBBE9FFE-BE0E-42ED-A347-DB68F4B4B32D" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="4WV-SK-IAX">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="pCN-ne-FYy"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="SkK-0P-9s9"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="lsS-Im-HEX"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="zUd-iv-42x"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="vu6-tv-m4H"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="pCN-ne-FYy"/>
-                                <toolbarItem reference="SkK-0P-9s9"/>
                                 <toolbarItem reference="vu6-tv-m4H"/>
-                                <toolbarItem reference="lsS-Im-HEX"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -726,8 +720,8 @@
                         <splitViewItem id="6eA-I6-uUO"/>
                         <splitViewItem id="qyP-Wk-QwG"/>
                     </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="TDV-22-sci">
-                        <rect key="frame" x="-239" y="0.0" width="804" height="743"/>
+                    <splitView key="splitView" misplaced="YES" dividerStyle="thin" vertical="YES" id="TDV-22-sci">
+                        <rect key="frame" x="0.0" y="0.0" width="960" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <outlet property="delegate" destination="dqt-mg-nSc" id="WKD-LU-yb6"/>
@@ -749,39 +743,76 @@
             <objects>
                 <viewController id="Qhd-nQ-oD8" sceneMemberID="viewController">
                     <view key="view" id="YAJ-e3-Ck9">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
                 <customObject id="Sr4-Gy-n41" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="540"/>
+            <point key="canvasLocation" x="-283" y="1803"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Timeline Grid View Controller-->
         <scene sceneID="Vpq-NV-HLW">
             <objects>
-                <viewController id="yyD-Xs-BTy" sceneMemberID="viewController">
+                <viewController id="yyD-Xs-BTy" customClass="MainTimelineGridViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="e32-Lx-G14">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl2-Hh-ZVc">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                                <clipView key="contentView" drawsBackground="NO" id="EOY-QG-2ql">
+                                    <rect key="frame" x="1" y="1" width="478" height="478"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="Jm2-pN-bUR" customClass="TimelineGridCollectionView" customModule="Timeline" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="qod-e6-mkX">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bEe-2p-DfG">
+                                    <rect key="frame" x="1" y="283" width="448" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="EqT-wR-9Fp">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Jl2-Hh-ZVc" secondAttribute="bottom" id="CRe-6h-R1d"/>
+                            <constraint firstItem="Jl2-Hh-ZVc" firstAttribute="top" secondItem="e32-Lx-G14" secondAttribute="top" id="Z0Y-Ss-Ww0"/>
+                            <constraint firstItem="Jl2-Hh-ZVc" firstAttribute="leading" secondItem="e32-Lx-G14" secondAttribute="leading" id="cgf-5D-xCm"/>
+                            <constraint firstAttribute="trailing" secondItem="Jl2-Hh-ZVc" secondAttribute="trailing" id="rYz-TT-pc6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Jm2-pN-bUR" id="Ylk-RO-dUf"/>
+                    </connections>
                 </viewController>
                 <customObject id="Imi-zB-17z" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="912"/>
+            <point key="canvasLocation" x="80" y="1803"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Y04-vy-ekK">
             <objects>
                 <viewController id="CBu-0h-50Q" sceneMemberID="viewController">
                     <view key="view" id="vcC-lV-IIf">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
                 <customObject id="ZsN-0J-4dl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-155" y="1693"/>
+            <point key="canvasLocation" x="441" y="1803"/>
         </scene>
     </scenes>
 </document>

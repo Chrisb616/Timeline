@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		139CA8E51F759A0400461FAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA8E41F759A0400461FAE /* AppDelegate.swift */; };
-		139CA8E71F759A0400461FAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA8E61F759A0400461FAE /* ViewController.swift */; };
 		139CA8E91F759A0400461FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 139CA8E81F759A0400461FAE /* Assets.xcassets */; };
 		139CA8EC1F759A0400461FAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 139CA8EA1F759A0400461FAE /* Main.storyboard */; };
 		139CA8F81F759A0400461FAE /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA8F71F759A0400461FAE /* TimelineTests.swift */; };
@@ -27,6 +26,12 @@
 		139CA9231F759C9600461FAE /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA9221F759C9600461FAE /* TimelineItem.swift */; };
 		139CA9251F759EED00461FAE /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA9241F759EED00461FAE /* EventItem.swift */; };
 		139F5BEC1F75B5EB00771751 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BEB1F75B5EB00771751 /* Temporal.swift */; };
+		139F5BF01F76996400771751 /* TimelineGridCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BEF1F76996400771751 /* TimelineGridCollectionView.swift */; };
+		139F5BF21F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BF11F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift */; };
+		139F5BF51F769C6100771751 /* TimelineGridCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BF31F769C6100771751 /* TimelineGridCollectionViewItem.swift */; };
+		139F5BF61F769C6100771751 /* TimelineGridCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139F5BF41F769C6100771751 /* TimelineGridCollectionViewItem.xib */; };
+		139F5BF91F769D7000771751 /* TimelineGridCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BF81F769D7000771751 /* TimelineGridCollectionViewFlowLayout.swift */; };
+		139F5BFC1F76A5CD00771751 /* MainTimelineGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +47,6 @@
 /* Begin PBXFileReference section */
 		139CA8E11F759A0400461FAE /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139CA8E41F759A0400461FAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		139CA8E61F759A0400461FAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		139CA8E81F759A0400461FAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		139CA8EB1F759A0400461FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		139CA8ED1F759A0400461FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +69,12 @@
 		139CA9221F759C9600461FAE /* TimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineItem.swift; sourceTree = "<group>"; };
 		139CA9241F759EED00461FAE /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 		139F5BEB1F75B5EB00771751 /* Temporal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temporal.swift; sourceTree = "<group>"; };
+		139F5BEF1F76996400771751 /* TimelineGridCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionView.swift; sourceTree = "<group>"; };
+		139F5BF11F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		139F5BF31F769C6100771751 /* TimelineGridCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewItem.swift; sourceTree = "<group>"; };
+		139F5BF41F769C6100771751 /* TimelineGridCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineGridCollectionViewItem.xib; sourceTree = "<group>"; };
+		139F5BF81F769D7000771751 /* TimelineGridCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimelineGridViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,14 +116,13 @@
 		139CA8E31F759A0400461FAE /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				139F5BED1F76992300771751 /* View */,
 				139CA90F1F759B8900461FAE /* Extensions */,
 				139CA9081F759B0000461FAE /* IndexedDictionary */,
 				139CA9021F759A3800461FAE /* Model */,
 				139CA8E41F759A0400461FAE /* AppDelegate.swift */,
 				139CA90D1F759B7500461FAE /* Debugger.swift */,
-				139CA8E61F759A0400461FAE /* ViewController.swift */,
 				139CA8E81F759A0400461FAE /* Assets.xcassets */,
-				139CA8EA1F759A0400461FAE /* Main.storyboard */,
 				139CA8ED1F759A0400461FAE /* Info.plist */,
 				139CA8EE1F759A0400461FAE /* Timeline.entitlements */,
 			);
@@ -162,6 +171,36 @@
 				139CA9121F759B9400461FAE /* URL.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		139F5BED1F76992300771751 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				139F5BEE1F76994700771751 /* Elements */,
+				139CA8EA1F759A0400461FAE /* Main.storyboard */,
+				139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		139F5BEE1F76994700771751 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				139F5BF71F769C6600771751 /* TimelineGridCollectionView */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		139F5BF71F769C6600771751 /* TimelineGridCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				139F5BEF1F76996400771751 /* TimelineGridCollectionView.swift */,
+				139F5BF11F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift */,
+				139F5BF81F769D7000771751 /* TimelineGridCollectionViewFlowLayout.swift */,
+				139F5BF31F769C6100771751 /* TimelineGridCollectionViewItem.swift */,
+				139F5BF41F769C6100771751 /* TimelineGridCollectionViewItem.xib */,
+			);
+			path = TimelineGridCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +288,7 @@
 			files = (
 				139CA8E91F759A0400461FAE /* Assets.xcassets in Resources */,
 				139CA8EC1F759A0400461FAE /* Main.storyboard in Resources */,
+				139F5BF61F769C6100771751 /* TimelineGridCollectionViewItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,13 +309,17 @@
 				139CA90E1F759B7500461FAE /* Debugger.swift in Sources */,
 				139CA9181F759BA500461FAE /* Dictionary.swift in Sources */,
 				139CA9161F759BA000461FAE /* Bool.swift in Sources */,
+				139F5BF91F769D7000771751 /* TimelineGridCollectionViewFlowLayout.swift in Sources */,
 				139CA9231F759C9600461FAE /* TimelineItem.swift in Sources */,
 				139CA9191F759BA700461FAE /* URL.swift in Sources */,
+				139F5BF01F76996400771751 /* TimelineGridCollectionView.swift in Sources */,
+				139F5BF21F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift in Sources */,
+				139F5BF51F769C6100771751 /* TimelineGridCollectionViewItem.swift in Sources */,
+				139F5BFC1F76A5CD00771751 /* MainTimelineGridViewController.swift in Sources */,
 				139CA90C1F759B1F00461FAE /* IndexedDictionary.swift in Sources */,
 				139CA91B1F759BBE00461FAE /* Occurance.swift in Sources */,
 				139CA9151F759B9D00461FAE /* Date.swift in Sources */,
 				139CA90B1F759B1D00461FAE /* HasUniqueID.swift in Sources */,
-				139CA8E71F759A0400461FAE /* ViewController.swift in Sources */,
 				139CA9171F759BA200461FAE /* Int.swift in Sources */,
 				139CA9201F759C5900461FAE /* Array.swift in Sources */,
 				139CA8E51F759A0400461FAE /* AppDelegate.swift in Sources */,

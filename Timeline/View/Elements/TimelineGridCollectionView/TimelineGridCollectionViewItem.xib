@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TimelineGridCollectionViewItem" customModule="Timeline" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="208"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghI-eQ-5o2">
+                    <rect key="frame" x="0.0" y="58" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="4jq-PL-kJ7"/>
+                        <constraint firstAttribute="width" secondItem="ghI-eQ-5o2" secondAttribute="height" multiplier="1:1" id="YN2-EC-pkb"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Event" id="Snj-nU-Tor"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YSD-sQ-pq2">
+                    <rect key="frame" x="-2" y="0.0" width="154" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="0Ah-Gn-K6l"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="ba1-H7-I6e">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="YSD-sQ-pq2" firstAttribute="top" secondItem="ghI-eQ-5o2" secondAttribute="bottom" constant="8" id="4n5-qP-Urw"/>
+                <constraint firstAttribute="bottom" secondItem="YSD-sQ-pq2" secondAttribute="bottom" id="Dx4-rl-j91"/>
+                <constraint firstAttribute="trailing" secondItem="ghI-eQ-5o2" secondAttribute="trailing" id="Yhk-fU-YSo"/>
+                <constraint firstItem="ghI-eQ-5o2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="asB-yG-lM2"/>
+                <constraint firstItem="ghI-eQ-5o2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="qBt-fw-kvW"/>
+                <constraint firstItem="YSD-sQ-pq2" firstAttribute="trailing" secondItem="ghI-eQ-5o2" secondAttribute="trailing" id="tXM-wr-OaK"/>
+                <constraint firstItem="YSD-sQ-pq2" firstAttribute="leading" secondItem="ghI-eQ-5o2" secondAttribute="leading" id="tpZ-Ao-JL9"/>
+            </constraints>
+        </customView>
+        <collectionViewItem id="PQw-IM-L3T" customClass="TimelineGridCollectionViewItem" customModule="Timeline" customModuleProvider="target"/>
+    </objects>
+    <resources>
+        <image name="Event" width="36" height="36"/>
+    </resources>
+</document>
