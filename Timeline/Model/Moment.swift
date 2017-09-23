@@ -25,9 +25,18 @@ class Moment: EventItem, TimelineItem {
     
     var narrative: String?
     
+    static func new(date: Date) -> Moment {
+        let uniqueID = UniqueIDGenerator.instance.timelineItem
+        
+        return Moment(uniqueID: uniqueID, date: date)
+    }
+    
     init(uniqueID: UniqueID, date: Date) {
         self.date = date
         self.uniqueID = uniqueID
     }
     
+    func setName(_ name: String?) {
+        self._name = name
+    }
 }

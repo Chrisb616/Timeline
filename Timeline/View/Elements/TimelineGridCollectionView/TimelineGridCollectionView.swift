@@ -11,20 +11,16 @@ import Cocoa
 class TimelineGridCollectionView: NSCollectionView {
     
     var customLayout: TimelineGridCollectionViewFlowLayout!
-    var customDataSource: TimelineGridCollectionViewDataSource!
+    private var customDataSource: TimelineGridCollectionViewDataSource!
     
     func configure() {
         
         self.isSelectable = true
         self.allowsMultipleSelection = true
         
-        //self.layer?.backgroundColor = NSColor.black.cgColor
-        
-        
         configureFlowLayout()
         configureDataSource()
     }
-    
     
     private func configureFlowLayout() {
         customLayout = TimelineGridCollectionViewFlowLayout()
@@ -35,6 +31,11 @@ class TimelineGridCollectionView: NSCollectionView {
     private func configureDataSource() {
         customDataSource = TimelineGridCollectionViewDataSource()
         dataSource = customDataSource
+    }
+    
+    func reload(timelineItems: [TimelineItem]) {
+        self.customDataSource.timelineItems = timelineItems
+        reloadData()
     }
     
 }

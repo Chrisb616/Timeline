@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -679,7 +680,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-9" y="-237"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -759,10 +760,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="j4T-Yk-xL3">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="30"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aDh-T7-qjO">
+                                        <rect key="frame" x="455" y="4" width="20" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aDh-T7-qjO" secondAttribute="height" multiplier="1:1" id="09W-J1-Yfh"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KeJ-nI-ZBM">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="addItemButtonClickAction:" target="yyD-Xs-BTy" id="5vm-HV-G8Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aDh-T7-qjO" secondAttribute="bottom" constant="5" id="7kW-6d-Z9D"/>
+                                    <constraint firstAttribute="height" constant="30" id="AkT-63-MkT"/>
+                                    <constraint firstAttribute="trailing" secondItem="aDh-T7-qjO" secondAttribute="trailing" constant="5" id="NL6-GR-9wz"/>
+                                    <constraint firstItem="aDh-T7-qjO" firstAttribute="top" secondItem="j4T-Yk-xL3" secondAttribute="top" constant="5" id="SWi-eS-EQ5"/>
+                                </constraints>
+                            </customView>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl2-Hh-ZVc">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                                <rect key="frame" x="0.0" y="30" width="480" height="450"/>
                                 <clipView key="contentView" drawsBackground="NO" id="EOY-QG-2ql">
-                                    <rect key="frame" x="1" y="1" width="478" height="478"/>
+                                    <rect key="frame" x="1" y="1" width="478" height="448"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="Jm2-pN-bUR" customClass="TimelineGridCollectionView" customModule="Timeline" customModuleProvider="target">
@@ -787,13 +812,17 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Jl2-Hh-ZVc" secondAttribute="bottom" id="CRe-6h-R1d"/>
+                            <constraint firstItem="j4T-Yk-xL3" firstAttribute="leading" secondItem="e32-Lx-G14" secondAttribute="leading" id="4aX-Yf-fmU"/>
+                            <constraint firstAttribute="trailing" secondItem="j4T-Yk-xL3" secondAttribute="trailing" id="Ibh-9E-65v"/>
                             <constraint firstItem="Jl2-Hh-ZVc" firstAttribute="top" secondItem="e32-Lx-G14" secondAttribute="top" id="Z0Y-Ss-Ww0"/>
                             <constraint firstItem="Jl2-Hh-ZVc" firstAttribute="leading" secondItem="e32-Lx-G14" secondAttribute="leading" id="cgf-5D-xCm"/>
+                            <constraint firstAttribute="bottom" secondItem="j4T-Yk-xL3" secondAttribute="bottom" id="r6B-ZP-BdW"/>
                             <constraint firstAttribute="trailing" secondItem="Jl2-Hh-ZVc" secondAttribute="trailing" id="rYz-TT-pc6"/>
+                            <constraint firstItem="j4T-Yk-xL3" firstAttribute="top" secondItem="Jl2-Hh-ZVc" secondAttribute="bottom" id="vqM-Tp-ojx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addItemButton" destination="aDh-T7-qjO" id="QBo-Cl-Sdm"/>
                         <outlet property="collectionView" destination="Jm2-pN-bUR" id="Ylk-RO-dUf"/>
                     </connections>
                 </viewController>
@@ -815,4 +844,7 @@
             <point key="canvasLocation" x="441" y="1803"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+    </resources>
 </document>

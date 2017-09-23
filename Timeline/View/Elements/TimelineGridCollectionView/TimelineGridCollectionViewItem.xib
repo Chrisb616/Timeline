@@ -9,6 +9,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TimelineGridCollectionViewItem" customModule="Timeline" customModuleProvider="target">
             <connections>
+                <outlet property="timelineItemImageView" destination="ghI-eQ-5o2" id="6Rc-oz-fJ5"/>
+                <outlet property="timelineItemNameTextField" destination="YSD-sQ-pq2" id="BbP-6h-PMS"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>

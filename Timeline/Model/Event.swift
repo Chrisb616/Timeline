@@ -15,6 +15,8 @@ class Event: TimelineItem {
     private var _name: String?
     var name: String { return _name ?? timelineDate.formatted(as: "MMMM dd, yyyy")}
     
+    var narrative: String?
+    
     var startOverride: Date
     var endOverride: Date
     
@@ -26,6 +28,8 @@ class Event: TimelineItem {
     var start: Date
     var end: Date
     
+    //MARK: - Initialization
+    
     init(uniqueID: UniqueID, start: Date, end: Date) {
         self.start = start
         self.startOverride = start
@@ -35,6 +39,13 @@ class Event: TimelineItem {
         self._eventItems = []
     }
     
+    static func new(start: Date, end: Date) -> Event {
+        let uniqueID = UniqueIDGenerator.instance.timelineItem
+        
+        return Event(uniqueID: uniqueID, start: start, end: end)
+    }
+    
+    //MARK: - Add Items
     func addEventItem(_ eventItem: EventItem) {
         eventItem.event = self
         self._eventItems.append(eventItem)
@@ -47,6 +58,10 @@ class Event: TimelineItem {
             self._eventItems.append($0)
         }
         recalculateDates()
+    }
+    
+    func setName(_ name: String?) {
+        self._name = name
     }
     
     private func recalculateDates() {

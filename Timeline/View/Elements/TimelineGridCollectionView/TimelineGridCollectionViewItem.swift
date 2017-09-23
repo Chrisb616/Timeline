@@ -9,10 +9,16 @@
 import Cocoa
 
 class TimelineGridCollectionViewItem: NSCollectionViewItem {
+    
+    weak var timelineItem: TimelineItem!
 
+    @IBOutlet weak var timelineItemImageView: NSImageView!
+    @IBOutlet weak var timelineItemNameTextField: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+    
     }
     
 }
