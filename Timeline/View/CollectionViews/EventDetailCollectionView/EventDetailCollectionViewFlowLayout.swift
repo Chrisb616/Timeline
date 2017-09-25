@@ -20,7 +20,7 @@ class EventDetailCollectionViewFlowLayout: NSCollectionViewFlowLayout {
     private var standardSectionInset: NSEdgeInsets = NSEdgeInsetsMake(10, 10, 10, 10)
     private var standardMinimumLineSpacing: CGFloat = 10
     private var standardMinimumInteritemSpacing: CGFloat = 5
-    private var standardHeaderReferenceSize: NSSize = NSSize(width: 480, height: 200)
+    private var standardHeaderReferenceSize: NSSize = NSSize(width: 480, height: 225)
     
     func configure() {
         self.itemSize = overrideItemSize ?? standardItemSize

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13074A6B1F793859005D8005 /* EventDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13074A6A1F793859005D8005 /* EventDetailHeaderView.xib */; };
 		13074A6E1F793E6C005D8005 /* EventDetailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13074A6D1F793E6C005D8005 /* EventDetailCollectionView.swift */; };
+		132E0AE81F797795003D3258 /* EventDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132E0AE71F797795003D3258 /* EventDetailHeaderView.swift */; };
 		135EE0801F76BDB6009C7A59 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */; };
 		135EE0821F76C069009C7A59 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE0811F76C069009C7A59 /* NotificationManager.swift */; };
 		135EE0841F76C1D1009C7A59 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE0831F76C1D1009C7A59 /* DataStore.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		13074A6A1F793859005D8005 /* EventDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailHeaderView.xib; sourceTree = "<group>"; };
 		13074A6D1F793E6C005D8005 /* EventDetailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionView.swift; sourceTree = "<group>"; };
+		132E0AE71F797795003D3258 /* EventDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHeaderView.swift; sourceTree = "<group>"; };
 		135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
 		135EE0811F76C069009C7A59 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		135EE0831F76C1D1009C7A59 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				1363DCE41F795865007B7A38 /* EventDetailCollectionViewDataSource.swift */,
 				1363DCEC1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift */,
 				1363DCE61F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift */,
+				132E0AE71F797795003D3258 /* EventDetailHeaderView.swift */,
 				13074A6A1F793859005D8005 /* EventDetailHeaderView.xib */,
 			);
 			path = EventDetailCollectionView;
@@ -391,6 +394,7 @@
 				1363DCE71F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift in Sources */,
 				135EE0801F76BDB6009C7A59 /* UniqueIDGenerator.swift in Sources */,
 				139F5BF21F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift in Sources */,
+				132E0AE81F797795003D3258 /* EventDetailHeaderView.swift in Sources */,
 				139F5BF51F769C6100771751 /* TimelineGridCollectionViewItem.swift in Sources */,
 				139F5BFC1F76A5CD00771751 /* MainTimelineGridViewController.swift in Sources */,
 				139CA90C1F759B1F00461FAE /* IndexedDictionary.swift in Sources */,

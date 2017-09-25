@@ -106,6 +106,35 @@ extension Date {
         return durationString
     }
     
+    static func timeRangeString(start: Date, end: Date) -> String {
+        
+        if start.year == end.year {
+            
+            if start.month == end.month {
+                
+                if start.day == end.day {
+                    
+                    if start.hour == end.hour {
+                        
+                        if start.minute == end.minute {
+                            
+                            return start.formatted(as: "hh: mma, MMMM dd, yyyy")
+                            
+                        }
+                        
+                    }
+                    
+                    return "\(start.formatted(as: "hh:mma")) - \(end.formatted(as: "hh:mma, MMMM dd, yyyy"))"
+                    
+                }
+                
+            }
+            
+        }
+        
+        return "\(start.formatted(as: "hh:mma, MMMM dd, yyyy")) - \(end.formatted(as: "hh:mma, MMMM dd, yyyy"))"
+    }
+    
     
     //Date formatted as string in simple function
     func formatted(as string: String) -> String {

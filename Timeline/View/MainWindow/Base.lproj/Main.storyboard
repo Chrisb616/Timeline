@@ -912,17 +912,17 @@
             <objects>
                 <viewController id="aic-fD-o89" customClass="EventDetailViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="1OW-Qr-J3u">
-                        <rect key="frame" x="0.0" y="0.0" width="774" height="481"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="481"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK7-OD-CaR">
-                                <rect key="frame" x="0.0" y="0.0" width="774" height="481"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="481"/>
                                 <clipView key="contentView" drawsBackground="NO" id="rtb-mX-aDN">
-                                    <rect key="frame" x="1" y="1" width="772" height="479"/>
+                                    <rect key="frame" x="1" y="1" width="478" height="479"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="1ZY-0m-wqf" customClass="EventDetailCollectionView" customModule="Timeline" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="772" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Cea-oP-8rl">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -932,8 +932,11 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="gpT-oa-Zqu">
-                                    <rect key="frame" x="1" y="464" width="772" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="480" id="E9k-UP-pvq"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="gpT-oa-Zqu">
+                                    <rect key="frame" x="1" y="464" width="478" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TEd-Eo-fLa">

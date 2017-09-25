@@ -11,7 +11,7 @@ import Cocoa
 class EventDetailCollectionViewDelegate: NSObject, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> NSSize {
-        return NSSize(width: 480, height: 200)
+        return NSSize(width: 480, height: 225)
     }
     
 }

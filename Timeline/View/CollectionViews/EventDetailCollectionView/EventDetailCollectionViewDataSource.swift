@@ -23,7 +23,8 @@ class EventDetailCollectionViewDataSource: NSObject, NSCollectionViewDataSource 
     func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {
         switch kind {
         case .sectionHeader:
-            let header = collectionView.makeSupplementaryView(ofKind: kind, withIdentifier: .init("EventDetailHeaderView"), for: indexPath)
+            guard let header = collectionView.makeSupplementaryView(ofKind: kind, withIdentifier: .init("EventDetailHeaderView"), for: indexPath) as? EventDetailHeaderView else { Debugger.log(string: "Cannot load header for event detail", logType: .failure, logLevel: .minimal); return NSView()}
+            header.load(event: event)
             return header
         default:
             return NSView()
