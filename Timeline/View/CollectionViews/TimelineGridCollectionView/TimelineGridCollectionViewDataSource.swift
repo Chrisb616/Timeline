@@ -26,9 +26,9 @@ class TimelineGridCollectionViewDataSource: NSObject, NSCollectionViewDataSource
         
         let timelineItem = timelineItems[indexPath.item]
         
-        collectionViewItem.timelineItemNameTextField.stringValue = timelineItem.name
+        collectionViewItem.load(timelineItem: timelineItem)
         
         return collectionViewItem
     }
-    
+ 
 }

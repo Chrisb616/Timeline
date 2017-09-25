@@ -13,14 +13,35 @@ class NotificationManager {
     private init() {}
     static let instance = NotificationManager()
     
-    private let mainTimelineUpdateObserverName = NSNotification.Name("MainTimelineUpdate")
+    private let mainTimelineUpdateName = NSNotification.Name("MainTimelineUpdate")
+    private let showEventDetailName = NSNotification.Name("ShowEventDetail")
+    
+    private func mainRootTabSwitchName(forTab tab: MainRootTabViewController.Tab) -> NSNotification.Name {
+        return NSNotification.Name("MainRootTabViewSwitch to \(tab)")
+    }
     
     func addMainTimelineUpdateObserver(observer: Any, selector: Selector) {
-        NotificationCenter.default.addObserver(observer, selector: selector, name: mainTimelineUpdateObserverName, object: nil)
+        NotificationCenter.default.addObserver(observer, selector: selector, name: mainTimelineUpdateName, object: nil)
     }
     
     func postMainTimelineUpdateNotification() {
-        NotificationCenter.default.post(name: mainTimelineUpdateObserverName, object: nil)
+        NotificationCenter.default.post(name: mainTimelineUpdateName, object: nil)
+    }
+    
+    func addMainRootTabViewSwitchObserver(forTab tab: MainRootTabViewController.Tab, observer: Any, selector: Selector) {
+        NotificationCenter.default.addObserver(observer, selector: selector, name: mainRootTabSwitchName(forTab: tab), object: nil)
+    }
+    
+    func postMainRootTabViewSwitchNotification(forTab tab: MainRootTabViewController.Tab) {
+        NotificationCenter.default.post(name: mainRootTabSwitchName(forTab: tab), object: nil)
+    }
+    
+    func addShowEventDetailObserver(observer: Any, selector: Selector) {
+        NotificationCenter.default.addObserver(observer, selector: selector, name: showEventDetailName, object: nil)
+    }
+    
+    func postShowEventDetailNotification(forEventWithUniqueID uniqueID: UniqueID) {
+        NotificationCenter.default.post(name: showEventDetailName, object: nil, userInfo: ["eventUniqueID":uniqueID])
     }
     
     /*

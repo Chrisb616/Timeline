@@ -705,39 +705,116 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="dqt-mg-nSc" kind="relationship" relationship="window.shadowedContentViewController" id="QVO-k8-scS"/>
+                        <segue destination="RPT-EK-bwX" kind="relationship" relationship="window.shadowedContentViewController" id="5Lh-L0-4O3"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="190"/>
+            <point key="canvasLocation" x="70" y="114"/>
         </scene>
         <!--Split View Controller-->
-        <scene sceneID="nch-xU-sRV">
+        <scene sceneID="pCS-SF-Ejx">
             <objects>
-                <splitViewController id="dqt-mg-nSc" sceneMemberID="viewController">
+                <customObject id="XOi-OO-jlA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <splitViewController id="RPT-EK-bwX" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem id="lLK-na-w74"/>
-                        <splitViewItem id="6eA-I6-uUO"/>
-                        <splitViewItem id="qyP-Wk-QwG"/>
+                        <splitViewItem id="GZl-hP-dEp"/>
+                        <splitViewItem id="919-Dg-9J2"/>
+                        <splitViewItem id="Ghw-Kn-U58"/>
                     </splitViewItems>
-                    <splitView key="splitView" misplaced="YES" dividerStyle="thin" vertical="YES" id="TDV-22-sci">
-                        <rect key="frame" x="0.0" y="0.0" width="960" height="480"/>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="SAM-Y7-xwE">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
-                            <outlet property="delegate" destination="dqt-mg-nSc" id="WKD-LU-yb6"/>
+                            <outlet property="delegate" destination="RPT-EK-bwX" id="5qD-tv-JgN"/>
                         </connections>
                     </splitView>
                     <connections>
-                        <outlet property="splitView" destination="TDV-22-sci" id="iyO-BA-MAF"/>
-                        <segue destination="Qhd-nQ-oD8" kind="relationship" relationship="splitItems" id="cwQ-Ea-3gI"/>
-                        <segue destination="yyD-Xs-BTy" kind="relationship" relationship="splitItems" id="yLR-8L-yQE"/>
-                        <segue destination="CBu-0h-50Q" kind="relationship" relationship="splitItems" id="rye-Yi-DvL"/>
+                        <outlet property="splitView" destination="SAM-Y7-xwE" id="jXk-yq-zGS"/>
+                        <segue destination="6wE-9Y-Jpv" kind="relationship" relationship="splitItems" id="LVH-AQ-P8y"/>
+                        <segue destination="0BM-ai-tID" kind="relationship" relationship="splitItems" id="MXV-D6-QX9"/>
+                        <segue destination="07a-q9-qyy" kind="relationship" relationship="splitItems" id="HTY-Xb-itt"/>
                     </connections>
                 </splitViewController>
-                <customObject id="UNw-IM-fKp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="945"/>
+            <point key="canvasLocation" x="70" y="612"/>
+        </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="bgL-nF-U9s">
+            <objects>
+                <tabViewController tabStyle="unspecified" id="6wE-9Y-Jpv" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem id="pao-Jx-tcz"/>
+                    </tabViewItems>
+                    <tabView key="tabView" misplaced="YES" type="noTabsNoBorder" id="nCO-40-cvD">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                        <connections>
+                            <outlet property="delegate" destination="6wE-9Y-Jpv" id="2ab-ab-pd5"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="nCO-40-cvD" id="GG2-9k-j84"/>
+                        <segue destination="Qhd-nQ-oD8" kind="relationship" relationship="tabItems" id="q8V-hw-Un5"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="q4O-G8-Lgl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-293" y="1231"/>
+        </scene>
+        <!--Main Root Tab View Controller-->
+        <scene sceneID="itZ-x6-HWI">
+            <objects>
+                <tabViewController tabStyle="unspecified" id="0BM-ai-tID" customClass="MainRootTabViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem id="6Jy-d3-2EV"/>
+                        <tabViewItem id="h5p-oE-298"/>
+                    </tabViewItems>
+                    <tabView key="tabView" misplaced="YES" type="noTabsNoBorder" id="KRF-bH-UFK">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                        <connections>
+                            <outlet property="delegate" destination="0BM-ai-tID" id="lXV-aP-ixQ"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="KRF-bH-UFK" id="dfm-JE-K0d"/>
+                        <segue destination="yyD-Xs-BTy" kind="relationship" relationship="tabItems" id="LEQ-Wz-6Hh"/>
+                        <segue destination="aic-fD-o89" kind="relationship" relationship="tabItems" id="WDT-6t-8DW"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="97b-g0-K1X" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="1231"/>
+        </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="qEX-dI-gtB">
+            <objects>
+                <tabViewController tabStyle="unspecified" id="07a-q9-qyy" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem id="TpE-NO-nC3"/>
+                    </tabViewItems>
+                    <tabView key="tabView" misplaced="YES" type="noTabsNoBorder" id="iP5-w4-FWo">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                        <connections>
+                            <outlet property="delegate" destination="07a-q9-qyy" id="DAc-kL-OR7"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="iP5-w4-FWo" id="OBS-8A-xaq"/>
+                        <segue destination="CBu-0h-50Q" kind="relationship" relationship="tabItems" id="G87-8o-6Si"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="zOk-tW-X9l" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="1231"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ln4-LV-m09">
@@ -750,7 +827,7 @@
                 </viewController>
                 <customObject id="Sr4-Gy-n41" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-283" y="1803"/>
+            <point key="canvasLocation" x="-922" y="1903"/>
         </scene>
         <!--Main Timeline Grid View Controller-->
         <scene sceneID="Vpq-NV-HLW">
@@ -828,7 +905,57 @@
                 </viewController>
                 <customObject id="Imi-zB-17z" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="1803"/>
+            <point key="canvasLocation" x="-358" y="1975"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="te9-PX-wn8">
+            <objects>
+                <viewController id="aic-fD-o89" customClass="EventDetailViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="1OW-Qr-J3u">
+                        <rect key="frame" x="0.0" y="0.0" width="774" height="481"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK7-OD-CaR">
+                                <rect key="frame" x="0.0" y="0.0" width="774" height="481"/>
+                                <clipView key="contentView" drawsBackground="NO" id="rtb-mX-aDN">
+                                    <rect key="frame" x="1" y="1" width="772" height="479"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="1ZY-0m-wqf" customClass="EventDetailCollectionView" customModule="Timeline" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="772" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Cea-oP-8rl">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="gpT-oa-Zqu">
+                                    <rect key="frame" x="1" y="464" width="772" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TEd-Eo-fLa">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aK7-OD-CaR" firstAttribute="leading" secondItem="1OW-Qr-J3u" secondAttribute="leading" id="2i4-0F-PXB"/>
+                            <constraint firstAttribute="bottom" secondItem="aK7-OD-CaR" secondAttribute="bottom" id="6JQ-hx-ooG"/>
+                            <constraint firstAttribute="trailing" secondItem="aK7-OD-CaR" secondAttribute="trailing" id="HGy-zr-htV"/>
+                            <constraint firstItem="aK7-OD-CaR" firstAttribute="top" secondItem="1OW-Qr-J3u" secondAttribute="top" id="YfH-0k-8CC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="1ZY-0m-wqf" id="6Uc-Ry-67b"/>
+                    </connections>
+                </viewController>
+                <customObject id="Pyb-4t-PaW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293" y="1974.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Y04-vy-ekK">
@@ -841,7 +968,7 @@
                 </viewController>
                 <customObject id="ZsN-0J-4dl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441" y="1803"/>
+            <point key="canvasLocation" x="925" y="1241"/>
         </scene>
     </scenes>
     <resources>

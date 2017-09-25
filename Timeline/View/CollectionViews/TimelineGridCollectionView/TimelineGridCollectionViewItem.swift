@@ -21,4 +21,16 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
     
     }
     
+    func load(timelineItem: TimelineItem) {
+        self.timelineItem = timelineItem
+        self.timelineItemNameTextField.stringValue = timelineItem.name
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        if let event = timelineItem as? Event {
+            NotificationManager.instance.postShowEventDetailNotification(forEventWithUniqueID: event.uniqueID)
+        }
+        
+    }
+    
 }

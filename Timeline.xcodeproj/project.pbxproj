@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13074A6B1F793859005D8005 /* EventDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13074A6A1F793859005D8005 /* EventDetailHeaderView.xib */; };
+		13074A6E1F793E6C005D8005 /* EventDetailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13074A6D1F793E6C005D8005 /* EventDetailCollectionView.swift */; };
 		135EE0801F76BDB6009C7A59 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */; };
 		135EE0821F76C069009C7A59 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE0811F76C069009C7A59 /* NotificationManager.swift */; };
 		135EE0841F76C1D1009C7A59 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE0831F76C1D1009C7A59 /* DataStore.swift */; };
+		1363DCE51F795865007B7A38 /* EventDetailCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCE41F795865007B7A38 /* EventDetailCollectionViewDataSource.swift */; };
+		1363DCE71F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCE61F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift */; };
+		1363DCE91F795BC7007B7A38 /* MainRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCE81F795BC7007B7A38 /* MainRootTabViewController.swift */; };
+		1363DCEB1F796D35007B7A38 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCEA1F796D35007B7A38 /* EventDetailViewController.swift */; };
+		1363DCED1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCEC1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift */; };
 		139CA8E51F759A0400461FAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA8E41F759A0400461FAE /* AppDelegate.swift */; };
 		139CA8E91F759A0400461FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 139CA8E81F759A0400461FAE /* Assets.xcassets */; };
 		139CA8EC1F759A0400461FAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 139CA8EA1F759A0400461FAE /* Main.storyboard */; };
@@ -50,9 +57,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13074A6A1F793859005D8005 /* EventDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailHeaderView.xib; sourceTree = "<group>"; };
+		13074A6D1F793E6C005D8005 /* EventDetailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionView.swift; sourceTree = "<group>"; };
 		135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
 		135EE0811F76C069009C7A59 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		135EE0831F76C1D1009C7A59 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		1363DCE41F795865007B7A38 /* EventDetailCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		1363DCE61F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		1363DCE81F795BC7007B7A38 /* MainRootTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootTabViewController.swift; sourceTree = "<group>"; };
+		1363DCEA1F796D35007B7A38 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		1363DCEC1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		139CA8E11F759A0400461FAE /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139CA8E41F759A0400461FAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139CA8E81F759A0400461FAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +119,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13074A6C1F793DF9005D8005 /* EventDetailCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				13074A6D1F793E6C005D8005 /* EventDetailCollectionView.swift */,
+				1363DCE41F795865007B7A38 /* EventDetailCollectionViewDataSource.swift */,
+				1363DCEC1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift */,
+				1363DCE61F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift */,
+				13074A6A1F793859005D8005 /* EventDetailHeaderView.xib */,
+			);
+			path = EventDetailCollectionView;
+			sourceTree = "<group>";
+		};
+		135EE0851F7705F5009C7A59 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				139CA8EA1F759A0400461FAE /* Main.storyboard */,
+				1363DCE81F795BC7007B7A38 /* MainRootTabViewController.swift */,
+				139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */,
+				1363DCEA1F796D35007B7A38 /* EventDetailViewController.swift */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
 		139CA8D81F759A0300461FAE = {
 			isa = PBXGroup;
 			children = (
@@ -190,19 +227,19 @@
 			isa = PBXGroup;
 			children = (
 				139F5BFF1F76B07B00771751 /* View Controllers */,
-				139F5BEE1F76994700771751 /* Elements */,
-				139CA8EA1F759A0400461FAE /* Main.storyboard */,
-				139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */,
+				139F5BEE1F76994700771751 /* CollectionViews */,
+				135EE0851F7705F5009C7A59 /* MainWindow */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		139F5BEE1F76994700771751 /* Elements */ = {
+		139F5BEE1F76994700771751 /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
+				13074A6C1F793DF9005D8005 /* EventDetailCollectionView */,
 				139F5BF71F769C6600771751 /* TimelineGridCollectionView */,
 			);
-			path = Elements;
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 		139F5BF71F769C6600771751 /* TimelineGridCollectionView */ = {
@@ -317,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13074A6B1F793859005D8005 /* EventDetailHeaderView.xib in Resources */,
 				139CA8E91F759A0400461FAE /* Assets.xcassets in Resources */,
 				139CA8EC1F759A0400461FAE /* Main.storyboard in Resources */,
 				139F5C031F76B0A500771751 /* CreateTimelineItemViewController.xib in Resources */,
@@ -342,16 +380,22 @@
 				139CA9181F759BA500461FAE /* Dictionary.swift in Sources */,
 				139CA9161F759BA000461FAE /* Bool.swift in Sources */,
 				139F5BF91F769D7000771751 /* TimelineGridCollectionViewFlowLayout.swift in Sources */,
+				1363DCE51F795865007B7A38 /* EventDetailCollectionViewDataSource.swift in Sources */,
 				139CA9231F759C9600461FAE /* TimelineItem.swift in Sources */,
+				1363DCEB1F796D35007B7A38 /* EventDetailViewController.swift in Sources */,
 				139CA9191F759BA700461FAE /* URL.swift in Sources */,
 				135EE0821F76C069009C7A59 /* NotificationManager.swift in Sources */,
 				139F5BF01F76996400771751 /* TimelineGridCollectionView.swift in Sources */,
+				1363DCED1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift in Sources */,
+				13074A6E1F793E6C005D8005 /* EventDetailCollectionView.swift in Sources */,
+				1363DCE71F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift in Sources */,
 				135EE0801F76BDB6009C7A59 /* UniqueIDGenerator.swift in Sources */,
 				139F5BF21F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift in Sources */,
 				139F5BF51F769C6100771751 /* TimelineGridCollectionViewItem.swift in Sources */,
 				139F5BFC1F76A5CD00771751 /* MainTimelineGridViewController.swift in Sources */,
 				139CA90C1F759B1F00461FAE /* IndexedDictionary.swift in Sources */,
 				135EE0841F76C1D1009C7A59 /* DataStore.swift in Sources */,
+				1363DCE91F795BC7007B7A38 /* MainRootTabViewController.swift in Sources */,
 				139CA91B1F759BBE00461FAE /* Occurance.swift in Sources */,
 				139CA9151F759B9D00461FAE /* Date.swift in Sources */,
 				139CA90B1F759B1D00461FAE /* HasUniqueID.swift in Sources */,
