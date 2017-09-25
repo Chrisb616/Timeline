@@ -52,6 +52,6 @@
         <collectionViewItem id="PQw-IM-L3T" customClass="TimelineGridCollectionViewItem" customModule="Timeline" customModuleProvider="target"/>
     </objects>
     <resources>
-        <image name="Event" width="36" height="36"/>
+        <image name="Event" width="512" height="515"/>
     </resources>
 </document>
