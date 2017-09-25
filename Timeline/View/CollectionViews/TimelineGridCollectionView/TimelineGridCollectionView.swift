@@ -11,15 +11,30 @@ import Cocoa
 class TimelineGridCollectionView: NSCollectionView {
     
     var customLayout: TimelineGridCollectionViewFlowLayout!
-    private var customDataSource: TimelineGridCollectionViewDataSource!
+    var customDataSource: TimelineGridCollectionViewDataSource!
+    var customDelegate: TimelineGridCollectionViewDelegate!
     
     func configure() {
         
         self.isSelectable = true
         self.allowsMultipleSelection = true
         
+        configureDragAndDrop()
+        configureDelegate()
         configureFlowLayout()
         configureDataSource()
+    }
+    
+    private func configureDragAndDrop() {
+        self.registerForDraggedTypes([.string])
+        self.setDraggingSourceOperationMask(.every, forLocal: true)
+        self.setDraggingSourceOperationMask(.every, forLocal: false)
+    }
+    
+    private func configureDelegate() {
+        self.customDelegate = TimelineGridCollectionViewDelegate()
+        
+        delegate = customDelegate
     }
     
     private func configureFlowLayout() {

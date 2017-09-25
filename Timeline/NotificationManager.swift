@@ -15,6 +15,7 @@ class NotificationManager {
     
     private let mainTimelineUpdateName = NSNotification.Name("MainTimelineUpdate")
     private let showEventDetailName = NSNotification.Name("ShowEventDetail")
+    private let mergeEventName = NSNotification.Name("MergeEvent")
     
     private func mainRootTabSwitchName(forTab tab: MainRootTabViewController.Tab) -> NSNotification.Name {
         return NSNotification.Name("MainRootTabViewSwitch to \(tab)")
@@ -42,6 +43,14 @@ class NotificationManager {
     
     func postShowEventDetailNotification(forEventWithUniqueID uniqueID: UniqueID) {
         NotificationCenter.default.post(name: showEventDetailName, object: nil, userInfo: ["eventUniqueID":uniqueID])
+    }
+    
+    func addMergeEventNotification(observer: Any, selector: Selector) {
+        NotificationCenter.default.addObserver(observer, selector: selector, name: mergeEventName, object: nil)
+    }
+    
+    func postMergeEventNotification(mergeEventWithUniqueID fromUniqueID: UniqueID, intoEventWithUniqueID toUniqueID: UniqueID) {
+        NotificationCenter.default.post(name: mergeEventName, object: nil, userInfo: ["from":fromUniqueID,"to":toUniqueID])
     }
     
     /*

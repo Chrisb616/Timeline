@@ -15,4 +15,8 @@ class DataStore {
     
     var timelineItems = [UniqueID: TimelineItem]()
     
+    func merge(event: Event, into targetEvent: Event) {
+        targetEvent.addEventItems(event.eventItems)
+        timelineItems[event.uniqueID] = nil
+    }
 }

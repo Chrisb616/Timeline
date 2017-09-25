@@ -28,6 +28,26 @@ class MainTimelineGridViewController: NSViewController {
     
     func configureNotifications() {
         NotificationManager.instance.addMainTimelineUpdateObserver(observer: self, selector: #selector(updateCollectionView))
+        NotificationManager.instance.addMergeEventNotification(observer: self, selector: #selector(promptMergeEvents(_:)))
+    }
+    
+    @objc func promptMergeEvents(_ notification: Notification) {
+        
+        guard let userInfo = notification.userInfo else { Debugger.log(string: "No user info in notification for merge events", logType: .failure, logLevel: .minimal); return }
+        guard let fromId = userInfo["from"] as? UniqueID, let toId = userInfo["to"] as? UniqueID else { Debugger.log(string: "Could not find uniqueIDs for merge events", logType: .failure, logLevel: .minimal); return }
+        guard let from = DataStore.instance.timelineItems[fromId] as? Event, let to = DataStore.instance.timelineItems[toId] as? Event else { Debugger.log(string: "Could not find events for merge events", logType: .failure, logLevel: .minimal); return }
+        
+        let alert = NSAlert()
+        alert.messageText = "Merge events?"
+        alert.informativeText = "Are you sure that you would like to merge \(from.name) into \(to.name)? All moments and occurances from \(from.name) will be merged into \(to.name), and \(from.name) will be deleted."
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "Merge")
+        alert.addButton(withTitle: "Cancel")
+        let res = alert.runModal()
+        if res == .alertFirstButtonReturn {
+            DataStore.instance.merge(event: from, into: to)
+            updateCollectionView()
+        }
     }
     
     @objc func updateCollectionView() {

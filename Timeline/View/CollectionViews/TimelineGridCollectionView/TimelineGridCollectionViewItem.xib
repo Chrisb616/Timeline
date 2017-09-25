@@ -31,7 +31,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YSD-sQ-pq2">
                     <rect key="frame" x="-2" y="0.0" width="154" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="0Ah-Gn-K6l"/>
+                        <constraint firstAttribute="height" constant="50" id="jDD-i5-tSB"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="ba1-H7-I6e">
                         <font key="font" metaFont="system"/>
@@ -42,7 +42,6 @@
             </subviews>
             <constraints>
                 <constraint firstItem="YSD-sQ-pq2" firstAttribute="top" secondItem="ghI-eQ-5o2" secondAttribute="bottom" constant="8" id="4n5-qP-Urw"/>
-                <constraint firstAttribute="bottom" secondItem="YSD-sQ-pq2" secondAttribute="bottom" id="Dx4-rl-j91"/>
                 <constraint firstAttribute="trailing" secondItem="ghI-eQ-5o2" secondAttribute="trailing" id="Yhk-fU-YSo"/>
                 <constraint firstItem="ghI-eQ-5o2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="asB-yG-lM2"/>
                 <constraint firstItem="ghI-eQ-5o2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="qBt-fw-kvW"/>
