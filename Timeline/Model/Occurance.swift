@@ -6,9 +6,11 @@
 //  Copyright © 2017 Self. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 class Occurance: EventItem {
+    var image: NSImage?
+    
     
     var uniqueID: UniqueID
     

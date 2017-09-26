@@ -26,7 +26,8 @@ class TimelineGridCollectionView: NSCollectionView {
     }
     
     private func configureDragAndDrop() {
-        self.registerForDraggedTypes([.string])
+        let urlType = NSPasteboard.PasteboardType(rawValue: kUTTypeFileURL as String)
+        self.registerForDraggedTypes([.string, urlType])
         self.setDraggingSourceOperationMask(.every, forLocal: true)
         self.setDraggingSourceOperationMask(.every, forLocal: false)
     }

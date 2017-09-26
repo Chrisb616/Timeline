@@ -22,6 +22,7 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
     }
     
     func load(timelineItem: TimelineItem) {
+        self.timelineItemImageView.image = timelineItem.image
         self.timelineItem = timelineItem
         self.timelineItemNameTextField.stringValue = timelineItem.name
     }

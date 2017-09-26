@@ -6,11 +6,12 @@
 //  Copyright © 2017 Self. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 protocol Temporal {
     
     var name: String { get }
     var timelineDate: Date { get }
+    var image: NSImage? { get set }
     
 }

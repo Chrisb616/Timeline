@@ -6,9 +6,11 @@
 //  Copyright © 2017 Self. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 class Event: TimelineItem {
+    var image: NSImage?
+    
     
     var uniqueID: UniqueID
     

@@ -10,7 +10,7 @@ import Cocoa
 
 class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
     
-    var itemsBeingDragged = [Int]()
+    var isInternalDrag = false
 
     func collectionView(_ collectionView: NSCollectionView, canDragItemsAt indexes: IndexSet, with event: NSEvent) -> Bool {
         return true
@@ -28,16 +28,19 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: NSCollectionView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forItemsAt indexes: IndexSet) {
-        indexes.forEach {
-            self.itemsBeingDragged.append($0)
-        }
+        isInternalDrag = true
     }
     
     func collectionView(_ collectionView: NSCollectionView, validateDrop draggingInfo: NSDraggingInfo, proposedIndexPath proposedDropIndexPath: AutoreleasingUnsafeMutablePointer<NSIndexPath>, dropOperation proposedDropOperation: UnsafeMutablePointer<NSCollectionView.DropOperation>) -> NSDragOperation {
-        if proposedDropOperation.pointee == .before {
-            proposedDropOperation.pointee = .on
+        if isInternalDrag {
+            if proposedDropOperation.pointee == .before {
+                proposedDropOperation.pointee = .on
+            }
+            return NSDragOperation.every
+        } else {
+            return NSDragOperation.copy
         }
-        return NSDragOperation.every
+        
     }
     
     func collectionView(_ collectionView: NSCollectionView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, dragOperation operation: NSDragOperation) {
@@ -45,12 +48,19 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
     }
     
     func collectionView(collectionView: NSCollectionView, draggingSession session: NSDraggingSession, endedAtPoint screenPoint: NSPoint, dragOperation operation: NSDragOperation) {
-        itemsBeingDragged = []
+        isInternalDrag = false
     }
     
     func collectionView(_ collectionView: NSCollectionView, acceptDrop draggingInfo: NSDraggingInfo, indexPath: IndexPath, dropOperation: NSCollectionView.DropOperation) -> Bool {
         
-        draggingInfo.enumerateDraggingItems(options: .clearNonenumeratedImages, for: collectionView, classes: [NSString.self], searchOptions: [:]) { (item, index, stop) in
+        draggingInfo.enumerateDraggingItems(options: .clearNonenumeratedImages, for: collectionView, classes: [NSString.self, NSURL.self], searchOptions: [:]) { (item, index, stop) in
+            
+            if let url = item.item as? URL {
+                ImageManager.instance.importImage(from: url, completion: { (image) in
+                    let moment = Moment.new(fromImage: image)
+                    DataStore.instance.timelineItems.updateValue(moment, forKey: moment.uniqueID)
+                })
+            }
             
             if let from = item.item as? String, let to = (collectionView.item(at: indexPath.item) as? TimelineGridCollectionViewItem)?.timelineItem.uniqueID {
                 
@@ -58,6 +68,7 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
             }
         }
         
+        NotificationManager.instance.postMainTimelineUpdateNotification()
         return true
     }
 }

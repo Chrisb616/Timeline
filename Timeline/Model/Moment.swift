@@ -6,7 +6,7 @@
 //  Copyright © 2017 Self. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 class Moment: EventItem, TimelineItem {
     
@@ -18,7 +18,7 @@ class Moment: EventItem, TimelineItem {
     var timelineDate: Date { return date }
     var date: Date
     
-    var imageURL: URL?
+    var image: NSImage?
     
     weak var event: Event?
     weak var occurance: Occurance?
@@ -29,6 +29,12 @@ class Moment: EventItem, TimelineItem {
         let uniqueID = UniqueIDGenerator.instance.timelineItem
         
         return Moment(uniqueID: uniqueID, date: date)
+    }
+    
+    static func new(fromImage image: NSImage) -> Moment {
+        let moment = Moment.new(date: Date())
+        moment.image = image
+        return moment
     }
     
     init(uniqueID: UniqueID, date: Date) {
