@@ -9,8 +9,6 @@
 import Cocoa
 
 class Event: TimelineItem {
-    var image: NSImage?
-    
     
     var uniqueID: UniqueID
     
@@ -24,6 +22,9 @@ class Event: TimelineItem {
     
     private var _eventItems: [EventItem]
     var eventItems: [EventItem] { return _eventItems }
+    
+    var image: NSImage { return NSImage(named: NSImage.Name("Event")) ?? NSImage() }
+    private var _image: NSImage?
     
     var timelineDate: Date { return start }
     

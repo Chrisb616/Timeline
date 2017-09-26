@@ -12,6 +12,6 @@ protocol Temporal {
     
     var name: String { get }
     var timelineDate: Date { get }
-    var image: NSImage? { get set }
+    var image: NSImage { get }
     
 }

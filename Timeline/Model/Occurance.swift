@@ -9,7 +9,6 @@
 import Cocoa
 
 class Occurance: EventItem {
-    var image: NSImage?
     
     
     var uniqueID: UniqueID
@@ -31,6 +30,9 @@ class Occurance: EventItem {
     
     var start: Date
     var end: Date
+    
+    private var _image: NSImage?
+    var image: NSImage { return _image ?? NSImage(named: NSImage.Name("Event")) ?? NSImage()}
     
     init(inEvent event: Event, uniqueID: UniqueID, start: Date, end: Date) {
         self.uniqueID = uniqueID

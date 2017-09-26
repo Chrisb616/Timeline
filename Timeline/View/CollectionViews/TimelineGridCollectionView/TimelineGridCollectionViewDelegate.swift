@@ -22,8 +22,6 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
             return nil
         }
         
-        //return timelineItem
-        //return NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.desktopDirectory, .allDomainsMask, true)[0])
         return NSString(string: timelineItem.uniqueID)
     }
     

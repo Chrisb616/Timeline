@@ -17,6 +17,7 @@ class EventDetailHeaderView: NSView {
     @IBOutlet weak var dateRangeTextField: NSTextField!
     
     func load(event: Event) {
+        self.imageView.image = event.image
         self.nameTextField.stringValue = event.name
         self.narrativeTextView.string = event.narrative ?? ""
         self.dateRangeTextField.stringValue = Date.timeRangeString(start: event.start, end: event.end)

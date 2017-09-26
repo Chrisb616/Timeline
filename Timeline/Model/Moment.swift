@@ -18,7 +18,8 @@ class Moment: EventItem, TimelineItem {
     var timelineDate: Date { return date }
     var date: Date
     
-    var image: NSImage?
+    var image: NSImage { return _image ?? NSImage(named: NSImage.Name("Event")) ?? NSImage() }
+    private var _image: NSImage?
     
     weak var event: Event?
     weak var occurance: Occurance?
@@ -33,7 +34,7 @@ class Moment: EventItem, TimelineItem {
     
     static func new(fromImage image: NSImage) -> Moment {
         let moment = Moment.new(date: Date())
-        moment.image = image
+        moment._image = image
         return moment
     }
     
@@ -44,5 +45,9 @@ class Moment: EventItem, TimelineItem {
     
     func setName(_ name: String?) {
         self._name = name
+    }
+    
+    func setImage(_ image: NSImage) {
+        self._image = image
     }
 }
