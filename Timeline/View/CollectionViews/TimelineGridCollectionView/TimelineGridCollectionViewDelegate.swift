@@ -55,7 +55,7 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
             
             if let url = item.item as? URL {
                 ImageManager.instance.importImage(from: url, completion: { (image) in
-                    let moment = Moment.new(fromImage: image)
+                    let moment = Moment.new(fromImage: image ?? NSImage())
                     DataStore.instance.timelineItems.updateValue(moment, forKey: moment.uniqueID)
                 })
             }

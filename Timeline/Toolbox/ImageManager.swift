@@ -13,8 +13,8 @@ class ImageManager {
     static let instance = ImageManager()
     private init() {}
     
-    func importImage(from url: URL, completion: @escaping (NSImage) -> Void) {
-        guard let image = NSImage(contentsOf: url) else { return }
+    func importImage(from url: URL, completion: @escaping (NSImage?) -> Void) {
+        let image = NSImage(contentsOf: url)
         completion(image)
     }
     
