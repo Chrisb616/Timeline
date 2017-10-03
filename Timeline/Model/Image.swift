@@ -10,11 +10,31 @@ import Cocoa
 
 class Image {
     
-    var nsImage: NSImage?
-    var fileURL: URL
+    //MARk: - Properties
     
-    init(fileURL: URL) {
-        self.fileURL = fileURL
+    private var nsImage: NSImage?
+    var imageURL: URL?
+
+    var valueOrDefault: NSImage {
+        return nsImage ?? NSImage(named: NSImage.Name("EventIcon")) ?? NSImage()
+    }
+    
+    var valueOrNull: NSImage? {
+        return nsImage
+    }
+    
+    //MARK: - Initializers
+    
+    static var blank: Image {
+        return Image()
+    }
+    
+    private init() {
+        
+    }
+    
+    init(imageURL: URL) {
+        self.imageURL = imageURL
         
         loadImage { (image) in
             self.nsImage = image
@@ -22,9 +42,20 @@ class Image {
         
     }
     
+    //MARK: - Methods
+
+    func updateImage(withURL url: URL) {
+        self.imageURL = url
+        loadImage { (image) in
+            self.nsImage = image
+        }
+    }
+    
     private func loadImage(completion: @escaping (NSImage?)->Void) {
         
-        ImageManager.instance.importImage(from: fileURL) { (image) in
+        guard let imageURL = imageURL else { Debugger.log(string: "Cannot retrieve image because fileURL is null", logType: .warning, logLevel: .full); return}
+        
+        ImageManager.instance.importImage(from: imageURL) { (image) in
             completion(image)
         }
         

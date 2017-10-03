@@ -13,13 +13,13 @@
 		132E0AEA1F797FD0003D3258 /* TimelineGridCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132E0AE91F797FD0003D3258 /* TimelineGridCollectionViewDelegate.swift */; };
 		135EE0801F76BDB6009C7A59 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */; };
 		135EE0821F76C069009C7A59 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE0811F76C069009C7A59 /* NotificationManager.swift */; };
-		135EE0841F76C1D1009C7A59 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE0831F76C1D1009C7A59 /* DataStore.swift */; };
 		1363DCE51F795865007B7A38 /* EventDetailCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCE41F795865007B7A38 /* EventDetailCollectionViewDataSource.swift */; };
 		1363DCE71F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCE61F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift */; };
 		1363DCE91F795BC7007B7A38 /* MainRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCE81F795BC7007B7A38 /* MainRootTabViewController.swift */; };
 		1363DCEB1F796D35007B7A38 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCEA1F796D35007B7A38 /* EventDetailViewController.swift */; };
 		1363DCED1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCEC1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift */; };
 		1384592B1F7DA4480027AF9D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384592A1F7DA4480027AF9D /* Image.swift */; };
+		1384592D1F8065620027AF9D /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384592C1F8065620027AF9D /* Timeline.swift */; };
 		139CA8E51F759A0400461FAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA8E41F759A0400461FAE /* AppDelegate.swift */; };
 		139CA8E91F759A0400461FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 139CA8E81F759A0400461FAE /* Assets.xcassets */; };
 		139CA8EC1F759A0400461FAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 139CA8EA1F759A0400461FAE /* Main.storyboard */; };
@@ -33,12 +33,8 @@
 		139CA9171F759BA200461FAE /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA9101F759B9400461FAE /* Int.swift */; };
 		139CA9181F759BA500461FAE /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA9111F759B9400461FAE /* Dictionary.swift */; };
 		139CA9191F759BA700461FAE /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA9121F759B9400461FAE /* URL.swift */; };
-		139CA91B1F759BBE00461FAE /* Occurance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA91A1F759BBE00461FAE /* Occurance.swift */; };
 		139CA91D1F759BE200461FAE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA91C1F759BE200461FAE /* Event.swift */; };
 		139CA9201F759C5900461FAE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA91E1F759C5900461FAE /* Array.swift */; };
-		139CA9231F759C9600461FAE /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA9221F759C9600461FAE /* TimelineItem.swift */; };
-		139CA9251F759EED00461FAE /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA9241F759EED00461FAE /* EventItem.swift */; };
-		139F5BEC1F75B5EB00771751 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BEB1F75B5EB00771751 /* Temporal.swift */; };
 		139F5BF01F76996400771751 /* TimelineGridCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BEF1F76996400771751 /* TimelineGridCollectionView.swift */; };
 		139F5BF21F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BF11F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift */; };
 		139F5BF51F769C6100771751 /* TimelineGridCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BF31F769C6100771751 /* TimelineGridCollectionViewItem.swift */; };
@@ -67,13 +63,13 @@
 		132E0AE91F797FD0003D3258 /* TimelineGridCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
 		135EE0811F76C069009C7A59 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		135EE0831F76C1D1009C7A59 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1363DCE41F795865007B7A38 /* EventDetailCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		1363DCE61F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1363DCE81F795BC7007B7A38 /* MainRootTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootTabViewController.swift; sourceTree = "<group>"; };
 		1363DCEA1F796D35007B7A38 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		1363DCEC1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		1384592A1F7DA4480027AF9D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		1384592C1F8065620027AF9D /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		139CA8E11F759A0400461FAE /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139CA8E41F759A0400461FAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139CA8E81F759A0400461FAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,12 +88,8 @@
 		139CA9121F759B9400461FAE /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		139CA9131F759B9400461FAE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		139CA9141F759B9400461FAE /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
-		139CA91A1F759BBE00461FAE /* Occurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Occurance.swift; sourceTree = "<group>"; };
 		139CA91C1F759BE200461FAE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		139CA91E1F759C5900461FAE /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		139CA9221F759C9600461FAE /* TimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineItem.swift; sourceTree = "<group>"; };
-		139CA9241F759EED00461FAE /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
-		139F5BEB1F75B5EB00771751 /* Temporal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temporal.swift; sourceTree = "<group>"; };
 		139F5BEF1F76996400771751 /* TimelineGridCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionView.swift; sourceTree = "<group>"; };
 		139F5BF11F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		139F5BF31F769C6100771751 /* TimelineGridCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewItem.swift; sourceTree = "<group>"; };
@@ -198,12 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				139CA9051F759AA700461FAE /* Moment.swift */,
-				139CA91A1F759BBE00461FAE /* Occurance.swift */,
 				139CA91C1F759BE200461FAE /* Event.swift */,
-				139CA9221F759C9600461FAE /* TimelineItem.swift */,
-				139CA9241F759EED00461FAE /* EventItem.swift */,
-				139F5BEB1F75B5EB00771751 /* Temporal.swift */,
-				135EE0831F76C1D1009C7A59 /* DataStore.swift */,
+				1384592C1F8065620027AF9D /* Timeline.swift */,
 				1384592A1F7DA4480027AF9D /* Image.swift */,
 			);
 			path = Model;
@@ -402,7 +390,6 @@
 				139CA9161F759BA000461FAE /* Bool.swift in Sources */,
 				139F5BF91F769D7000771751 /* TimelineGridCollectionViewFlowLayout.swift in Sources */,
 				1363DCE51F795865007B7A38 /* EventDetailCollectionViewDataSource.swift in Sources */,
-				139CA9231F759C9600461FAE /* TimelineItem.swift in Sources */,
 				1363DCEB1F796D35007B7A38 /* EventDetailViewController.swift in Sources */,
 				139CA9191F759BA700461FAE /* URL.swift in Sources */,
 				135EE0821F76C069009C7A59 /* NotificationManager.swift in Sources */,
@@ -418,9 +405,8 @@
 				139F5BF51F769C6100771751 /* TimelineGridCollectionViewItem.swift in Sources */,
 				139F5BFC1F76A5CD00771751 /* MainTimelineGridViewController.swift in Sources */,
 				139CA90C1F759B1F00461FAE /* IndexedDictionary.swift in Sources */,
-				135EE0841F76C1D1009C7A59 /* DataStore.swift in Sources */,
+				1384592D1F8065620027AF9D /* Timeline.swift in Sources */,
 				1363DCE91F795BC7007B7A38 /* MainRootTabViewController.swift in Sources */,
-				139CA91B1F759BBE00461FAE /* Occurance.swift in Sources */,
 				139CA9151F759B9D00461FAE /* Date.swift in Sources */,
 				139CA90B1F759B1D00461FAE /* HasUniqueID.swift in Sources */,
 				139F5C021F76B0A500771751 /* CreateTimelineItemViewController.swift in Sources */,
@@ -429,8 +415,6 @@
 				139CA8E51F759A0400461FAE /* AppDelegate.swift in Sources */,
 				139CA9061F759AA700461FAE /* Moment.swift in Sources */,
 				139CA91D1F759BE200461FAE /* Event.swift in Sources */,
-				139F5BEC1F75B5EB00771751 /* Temporal.swift in Sources */,
-				139CA9251F759EED00461FAE /* EventItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

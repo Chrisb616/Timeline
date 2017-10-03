@@ -13,7 +13,7 @@ class EventDetailCollectionViewDataSource: NSObject, NSCollectionViewDataSource 
     weak var event: Event!
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return event.eventItems.count
+        return event.moments.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {

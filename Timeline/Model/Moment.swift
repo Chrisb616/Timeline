@@ -8,21 +8,57 @@
 
 import Cocoa
 
-class Moment: EventItem, TimelineItem {
+class Moment: HasUniqueID {
+    
+    //MARK: - UniqueID
     
     var uniqueID: UniqueID
     
+    //MARK: - Name
+    
+    private var _name: String?
+    var name: String { return _name ?? date.formatted(as: "MMMM dd, yyyy")}
+    
+    var narrative: String?
+    
+    var date: Date
+    
+    var image: Image
+    
+    weak var parentEvent: Event!
+    
+    init(uniqueID: UniqueID, name: String?, narrative: String?, date: Date, image: Image, parentEvent: Event) {
+        self.uniqueID = uniqueID
+        self._name = name
+        self.narrative = narrative
+        self.date = date
+        self.image = image
+        self.parentEvent = parentEvent
+    }
+    
+    /*
+    
+    //MARK: - Properties
+    //MARK: -
+    
+    //MARK: - UniqueID
+    
+    var uniqueID: UniqueID
+    
+    //MARK: - Name
     private var _name: String?
     var name: String { return _name ?? timelineDate.formatted(as: "MMMM dd, yyyy")}
     
+    //MARK: - Date
     var timelineDate: Date { return date }
     var date: Date
     
-    var image: NSImage { return _image ?? NSImage(named: NSImage.Name("Event")) ?? NSImage() }
-    private var _image: NSImage?
+    //MARK: - Image
+    var image: Image
     
-    weak var event: Event?
-    weak var occurance: Occurance?
+    //MARK: -
+    weak var parentEvent: Event?
+    weak var parentOccurance: Occurance?
     
     var narrative: String?
     
@@ -32,22 +68,26 @@ class Moment: EventItem, TimelineItem {
         return Moment(uniqueID: uniqueID, date: date)
     }
     
-    static func new(fromImage image: NSImage) -> Moment {
+    static func new(fromImageWithURL url: URL) -> Moment {
         let moment = Moment.new(date: Date())
-        moment._image = image
+        moment.image = Image(imageURL: url)
         return moment
     }
     
     init(uniqueID: UniqueID, date: Date) {
         self.date = date
         self.uniqueID = uniqueID
+        self.image = Image()
     }
     
     func setName(_ name: String?) {
         self._name = name
     }
     
-    func setImage(_ image: NSImage) {
-        self._image = image
+    func setImage(withURL url: URL) {
+        self.image.imageURL = url
     }
+    
+    func setParent
+ */
 }

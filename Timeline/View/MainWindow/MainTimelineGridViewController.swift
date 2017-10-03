@@ -35,7 +35,11 @@ class MainTimelineGridViewController: NSViewController {
         
         guard let userInfo = notification.userInfo else { Debugger.log(string: "No user info in notification for merge events", logType: .failure, logLevel: .minimal); return }
         guard let fromId = userInfo["from"] as? UniqueID, let toId = userInfo["to"] as? UniqueID else { Debugger.log(string: "Could not find uniqueIDs for merge events", logType: .failure, logLevel: .minimal); return }
-        guard let from = DataStore.instance.timelineItems[fromId] as? Event, let to = DataStore.instance.timelineItems[toId] as? Event else { Debugger.log(string: "Could not find events for merge events", logType: .failure, logLevel: .minimal); return }
+        
+        guard
+            let from = Timeline.main.events.with(uniqueID: fromId),
+            let to = Timeline.main.events.with(uniqueID: toId)
+            else { Debugger.log(string: "Could not find events for merge events", logType: .failure, logLevel: .minimal); return }
         
         let alert = NSAlert()
         alert.messageText = "Merge events?"
@@ -43,15 +47,16 @@ class MainTimelineGridViewController: NSViewController {
         alert.alertStyle = .warning
         alert.addButton(withTitle: "Merge")
         alert.addButton(withTitle: "Cancel")
+        alert.icon = from.mainImage.valueOrDefault
         let res = alert.runModal()
         if res == .alertFirstButtonReturn {
-            DataStore.instance.merge(event: from, into: to)
+            Timeline.main.mergeEvents(fromEventWithUniqueID: fromId, toEventWithUniqueID: toId)
             updateCollectionView()
         }
     }
     
     @objc func updateCollectionView() {
-        collectionView.reload(timelineItems: DataStore.instance.timelineItems.valuesArray)
+        collectionView.reload(events: Timeline.main.events.all)
     }
     
 }

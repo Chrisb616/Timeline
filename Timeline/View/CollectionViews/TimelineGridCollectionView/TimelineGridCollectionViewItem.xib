@@ -9,8 +9,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TimelineGridCollectionViewItem" customModule="Timeline" customModuleProvider="target">
             <connections>
-                <outlet property="timelineItemImageView" destination="ghI-eQ-5o2" id="6Rc-oz-fJ5"/>
-                <outlet property="timelineItemNameTextField" destination="YSD-sQ-pq2" id="BbP-6h-PMS"/>
+                <outlet property="eventImageView" destination="ghI-eQ-5o2" id="TGb-B0-R5w"/>
+                <outlet property="eventNameTextField" destination="YSD-sQ-pq2" id="5xq-Fb-2V5"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -26,7 +26,7 @@
                         <constraint firstAttribute="width" constant="150" id="4jq-PL-kJ7"/>
                         <constraint firstAttribute="width" secondItem="ghI-eQ-5o2" secondAttribute="height" multiplier="1:1" id="YN2-EC-pkb"/>
                     </constraints>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Event" id="Snj-nU-Tor"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Snj-nU-Tor"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YSD-sQ-pq2">
                     <rect key="frame" x="-2" y="0.0" width="154" height="50"/>
@@ -51,7 +51,4 @@
         </customView>
         <collectionViewItem id="PQw-IM-L3T" customClass="TimelineGridCollectionViewItem" customModule="Timeline" customModuleProvider="target"/>
     </objects>
-    <resources>
-        <image name="Event" width="512" height="515"/>
-    </resources>
 </document>

@@ -49,8 +49,8 @@ class TimelineGridCollectionView: NSCollectionView {
         dataSource = customDataSource
     }
     
-    func reload(timelineItems: [TimelineItem]) {
-        self.customDataSource.timelineItems = timelineItems
+    func reload(events: [Event]) {
+        self.customDataSource.events = events
         reloadData()
     }
     

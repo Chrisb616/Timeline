@@ -17,12 +17,12 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: NSCollectionView, pasteboardWriterForItemAt index: Int) -> NSPasteboardWriting? {
-        guard let timelineItem = (collectionView.item(at: index) as? TimelineGridCollectionViewItem)?.timelineItem else {
+        guard let event = (collectionView.item(at: index) as? TimelineGridCollectionViewItem)?.event else {
             Debugger.log(string: "Could not find timelineItem in collection view item during drag and drop", logType: .failure, logLevel: .minimal)
             return nil
         }
         
-        return NSString(string: timelineItem.uniqueID)
+        return NSString(string: event.uniqueID)
     }
     
     func collectionView(_ collectionView: NSCollectionView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forItemsAt indexes: IndexSet) {
@@ -55,12 +55,12 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
             
             if let url = item.item as? URL {
                 ImageManager.instance.importImage(from: url, completion: { (image) in
-                    let moment = Moment.new(fromImage: image ?? NSImage())
-                    DataStore.instance.timelineItems.updateValue(moment, forKey: moment.uniqueID)
+                    let event = Event.new(withMomentDate: Date())
+                    Timeline.main.events.add(event)
                 })
             }
             
-            if let from = item.item as? String, let to = (collectionView.item(at: indexPath.item) as? TimelineGridCollectionViewItem)?.timelineItem.uniqueID {
+            if let from = item.item as? String, let to = (collectionView.item(at: indexPath.item) as? TimelineGridCollectionViewItem)?.event.uniqueID {
                 
                 NotificationManager.instance.postMergeEventNotification(mergeEventWithUniqueID: from, intoEventWithUniqueID: to)
             }

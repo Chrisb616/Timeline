@@ -10,10 +10,10 @@ import Cocoa
 
 class TimelineGridCollectionViewItem: NSCollectionViewItem {
     
-    weak var timelineItem: TimelineItem!
+    weak var event: Event!
 
-    @IBOutlet weak var timelineItemImageView: NSImageView!
-    @IBOutlet weak var timelineItemNameTextField: NSTextField!
+    @IBOutlet weak var eventImageView: NSImageView!
+    @IBOutlet weak var eventNameTextField: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +21,10 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
     
     }
     
-    func load(timelineItem: TimelineItem) {
-        self.timelineItemImageView.image = timelineItem.image
-        self.timelineItem = timelineItem
-        self.timelineItemNameTextField.stringValue = timelineItem.name
+    func load(event: Event) {
+        self.eventImageView.image = event.mainImage.valueOrDefault
+        self.event = event
+        self.eventNameTextField.stringValue = event.name
     }
     
     /*

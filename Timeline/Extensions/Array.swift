@@ -8,26 +8,26 @@
 
 import Foundation
 
-extension Array where Element == TimelineItem {
+extension Array where Element == Event {
     
-    var chronological: [Element] {
-        return self.sorted{ $0.timelineDate < $1.timelineDate }
+    var chronological: [Event] {
+        return self.sorted{ $0.startDate < $1.startDate }
     }
     
-    var chronologicalReversed: [Element] {
-        return self.sorted{ $0.timelineDate > $1.timelineDate }
+    var chronologicalReversed: [Event] {
+        return self.sorted{ $0.startDate > $1.startDate }
     }
     
 }
 
-extension Array where Element == EventItem {
+extension Array where Element == Moment {
     
-    var chronological: [Element] {
-        return self.sorted{ $0.timelineDate < $1.timelineDate }
+    var chronological: [Moment] {
+        return self.sorted{ $0.date < $1.date }
     }
     
-    var chronologicalReversed: [Element] {
-        return self.sorted{ $0.timelineDate > $1.timelineDate }
+    var chronologicalReversed: [Moment] {
+        return self.sorted{ $0.date > $1.date }
     }
     
 }

@@ -93,7 +93,7 @@ class CreateTimelineItemViewController: NSViewController {
     }
     
     func createEvent() {
-        let event = Event.new(start: startDatePicker.dateValue, end: endDatePicker.dateValue)
+        let event = Event.new(fromStartDate: startDatePicker.dateValue, endDate: endDatePicker.dateValue)
         
         if nameTextField.stringValue != "" {
             event.setName(nameTextField.stringValue)
@@ -103,22 +103,22 @@ class CreateTimelineItemViewController: NSViewController {
             event.narrative = narrativeTextField.stringValue
         }
         
-        DataStore.instance.timelineItems.updateValue(event, forKey: event.uniqueID)
+        Timeline.main.events.add(event)
         NotificationManager.instance.postMainTimelineUpdateNotification()
     }
     
     func createMoment() {
-        let moment = Moment.new(date: startDatePicker.dateValue)
+        let event = Event.new(withMomentDate: startDatePicker.dateValue)
         
         if nameTextField.stringValue != "" {
-            moment.setName(nameTextField.stringValue)
+            event.setName(nameTextField.stringValue)
         }
         
         if narrativeTextField.stringValue != "" {
-            moment.narrative = narrativeTextField.stringValue
+            event.narrative = narrativeTextField.stringValue
         }
         
-        DataStore.instance.timelineItems.updateValue(moment, forKey: moment.uniqueID)
+        Timeline.main.events.add(event)
         NotificationManager.instance.postMainTimelineUpdateNotification()
     }
     

@@ -24,11 +24,7 @@ class EventDetailViewController: NSViewController {
             Debugger.log(string: "No unique ID in notification info", logType: .failure, logLevel: .minimal)
             return
         }
-        guard let timelineItem = DataStore.instance.timelineItems[uniqueID] else {
-            Debugger.log(string: "No timeline item with uniqueID \(uniqueID)", logType: .failure, logLevel: .minimal)
-            return
-        }
-        guard let event = timelineItem as? Event else {
+        guard let event = Timeline.main.events.with(uniqueID: uniqueID) else {
             Debugger.log(string: "Timeline item with unqiueID \(uniqueID) is not an event", logType: .failure, logLevel: .minimal)
             return
         }

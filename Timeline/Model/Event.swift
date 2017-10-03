@@ -8,64 +8,116 @@
 
 import Cocoa
 
-class Event: TimelineItem {
+class Event: HasUniqueID {
+    
+    //MARK: - UniqueID
     
     var uniqueID: UniqueID
     
+    //MARK: - Name
+    
     private var _name: String?
-    var name: String { return _name ?? timelineDate.formatted(as: "MMMM dd, yyyy")}
+    var name: String { return _name ?? startDate.formatted(as: "MMMM dd, yyyy")}
     
     var narrative: String?
     
-    var startOverride: Date
-    var endOverride: Date
+    private var startDateOverride: Date?
+    private var endDateOverride: Date?
     
-    private var _eventItems: [EventItem]
-    var eventItems: [EventItem] { return _eventItems }
+    var startDate: Date
+    var endDate: Date
     
-    var image: NSImage { return NSImage(named: NSImage.Name("Event")) ?? NSImage() }
-    private var _image: NSImage?
+    private var _moments = IndexedDictionary<Moment>()
+    var moments: IndexedDictionary<Moment> { return _moments }
     
-    var timelineDate: Date { return start }
+    var mainImage: Image
     
-    var start: Date
-    var end: Date
-    
-    //MARK: - Initialization
-    
-    init(uniqueID: UniqueID, start: Date, end: Date) {
-        self.start = start
-        self.startOverride = start
-        self.end = end
-        self.endOverride = end
-        self.uniqueID = uniqueID
-        self._eventItems = []
-    }
-    
-    static func new(start: Date, end: Date) -> Event {
-        let uniqueID = UniqueIDGenerator.instance.timelineItem
+    static func new(withMomentDate date: Date) -> Event {
+        let uniqueID = UniqueIDGenerator.instance.event
         
-        return Event(uniqueID: uniqueID, start: start, end: end)
+        let event = Event(uniqueID: uniqueID, name: nil, narrative: nil, startDateOverride: nil, endDateOverride: nil, mainImage: Image.blank)
+        event.createMomentWithinEvent(atDate: date)
+        
+        return event
     }
     
-    //MARK: - Add Items
-    func addEventItem(_ eventItem: EventItem) {
-        eventItem.event = self
-        self._eventItems.append(eventItem)
-        recalculateDates()
+    static func new(fromStartDate startDate: Date, endDate: Date) -> Event {
+        let uniqueID = UniqueIDGenerator.instance.event
+        
+        let event = Event(uniqueID: uniqueID, name: nil, narrative: nil, startDateOverride: startDate, endDateOverride: endDate, mainImage: Image.blank)
+        
+        return event
     }
     
-    func addEventItems(_ eventItems: [EventItem]) {
-        eventItems.forEach{
-            $0.event = self
-            self._eventItems.append($0)
+    init(uniqueID: UniqueID, name: String?, narrative: String?, startDateOverride: Date?, endDateOverride: Date?, mainImage: Image) {
+        self.uniqueID = uniqueID
+        self._name = name
+        self.narrative = narrative
+        self.startDateOverride = startDateOverride
+        self.startDate = Date()
+        self.endDateOverride = endDateOverride
+        self.endDate = Date()
+        self.mainImage = mainImage
+        
+        //recaculateDates()
+    }
+    
+    private func createMomentWithinEvent(atDate date: Date) {
+        let momentUniqueID = UniqueIDGenerator.instance.moment
+        let moment = Moment(uniqueID: momentUniqueID, name: nil, narrative: nil, date: date, image: Image.blank, parentEvent: self)
+        
+        self.addMoment(moment)
+    }
+    
+    func addMoment(_ moment: Moment) {
+        self._moments.add(moment)
+        recaculateDates()
+    }
+    
+    func addMoments(_ moments: [Moment]) {
+        self._moments.add(moments)
+        recaculateDates()
+    }
+ 
+    private func recaculateDates() {
+        if let firstItemDate = moments.all.chronological.first?.date {
+            if let override = startDateOverride {
+                startDate = firstItemDate < override ? firstItemDate : override
+            } else {
+                startDate = firstItemDate
+            }
         }
-        recalculateDates()
+        
+        if let lastItemDate = moments.all.chronological.first?.date {
+            if let override = endDateOverride {
+                endDate = lastItemDate < override ? lastItemDate : override
+            } else {
+                endDate = lastItemDate
+            }
+        }
     }
+    
     
     func setName(_ name: String?) {
         self._name = name
     }
+    
+    /*
+    //MARK: - Add Items
+    func addMoment(_ moment: Moment) {
+        moment.parentEvent = self
+        self._moments.append(moment)
+        recalculateDates()
+    }
+    
+    func addMoments(_ moments: [Moment]) {
+        moments.forEach{
+            $0.parentEvent = self
+            self._moments.append($0)
+        }
+        recalculateDates()
+    }
+    
     
     private func recalculateDates() {
         if let firstItem = eventItems.chronological.first {
@@ -77,5 +129,10 @@ class Event: TimelineItem {
         }
     }
     
+    func mergeItem(_ event: Event) {
+        self._moments.append(contentsOf: event.moments)
+        self._
+    }
+ */
     
 }

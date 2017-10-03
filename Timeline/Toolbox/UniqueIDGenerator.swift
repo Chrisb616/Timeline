@@ -14,11 +14,20 @@ class UniqueIDGenerator {
     static let instance = UniqueIDGenerator()
     
     //MARK: - New IDs
-    var timelineItem: UniqueID {
-        let resultID = loadTimelineItemID() ?? "EV000000"
+    var event: UniqueID {
+        let resultID = loadEventID() ?? "EV000000"
         
         let newID = advanced(resultID)
-        saveTimelineItemID(newID)
+        saveEventID(newID)
+        
+        return newID
+    }
+    
+    var moment: UniqueID {
+        let resultID = loadMomentID() ?? "MO000000"
+        
+        let newID = advanced(resultID)
+        saveMomentID(newID)
         
         return newID
     }
@@ -109,14 +118,19 @@ class UniqueIDGenerator {
     private let defaults = UserDefaults.standard
     
     //MARK: Keys
-    private let timelineItemKey = "timelineItemID"
+    private let eventKey = "eventID"
+    private let momentKey = "momentID"
     private let imageKey = "imageID"
     
     //MARK: - ID Management
     
     //MARK: Save IDs
-    private func saveTimelineItemID(_ ID: String) {
-        defaults.set(ID, forKey: timelineItemKey)
+    private func saveEventID(_ ID: String) {
+        defaults.set(ID, forKey: eventKey)
+    }
+    
+    private func saveMomentID(_ ID: String) {
+        defaults.set(ID, forKey: momentKey)
     }
     
     private func saveImageID(_ ID: String) {
@@ -124,9 +138,14 @@ class UniqueIDGenerator {
     }
     
     //MARK: Load IDs
-    private func loadTimelineItemID() -> String? {
-        guard let timelineItemID = defaults.string(forKey: timelineItemKey) else { return nil }
-        return timelineItemID
+    private func loadEventID() -> String? {
+        guard let eventID = defaults.string(forKey: eventKey) else { return nil }
+        return eventID
+    }
+    
+    private func loadMomentID() -> String? {
+        guard let momentID = defaults.string(forKey: momentKey) else { return nil }
+        return momentID
     }
     
     private func loadImageID() -> String? {
@@ -136,13 +155,18 @@ class UniqueIDGenerator {
     
     //MARK: - Remove Data
     
-    func removeAllIDData() {
-        removeTimelineItemIDSaveData()
+    func removeAllIData() {
+        removeEventIDSaveData()
+        removeMomentIDSaveData()
         removeImageIDSaveData()
     }
     
-    func removeTimelineItemIDSaveData() {
-        defaults.removeObject(forKey: timelineItemKey)
+    func removeEventIDSaveData() {
+        defaults.removeObject(forKey: eventKey)
+    }
+    
+    func removeMomentIDSaveData() {
+        defaults.removeObject(forKey: momentKey)
     }
     
     func removeImageIDSaveData() {
