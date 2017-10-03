@@ -11,6 +11,8 @@ import Cocoa
 class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
     
     var isInternalDrag = false
+    
+    weak var customCollectionView: TimelineGridCollectionView?
 
     func collectionView(_ collectionView: NSCollectionView, canDragItemsAt indexes: IndexSet, with event: NSEvent) -> Bool {
         return true
@@ -56,7 +58,7 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
             if let url = item.item as? URL {
                 ImageManager.instance.importImage(from: url, completion: { (image) in
                     let event = Event.new(withMomentDate: Date())
-                    Timeline.main.events.add(event)
+                    self.customCollectionView?.timeline.events.add(event)
                 })
             }
             

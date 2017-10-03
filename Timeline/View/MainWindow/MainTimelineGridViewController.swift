@@ -22,7 +22,7 @@ class MainTimelineGridViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.configure()
+        collectionView.configure(forTimeline: Timeline.main)
         configureNotifications()
     }
     
@@ -56,7 +56,7 @@ class MainTimelineGridViewController: NSViewController {
     }
     
     @objc func updateCollectionView() {
-        collectionView.reload(events: Timeline.main.events.all)
+        collectionView.reload()
     }
     
 }

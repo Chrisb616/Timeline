@@ -10,10 +10,10 @@ import Cocoa
 
 class TimelineGridCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
     
-    var events = [Event]()
+    weak var timeline: Timeline!
 
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return events.count
+        return timeline.events.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
@@ -24,7 +24,7 @@ class TimelineGridCollectionViewDataSource: NSObject, NSCollectionViewDataSource
             return item
         }
         
-        let event = events[indexPath.item]
+        let event = timeline.events.at(index: indexPath.item)
         
         collectionViewItem.load(event: event)
         

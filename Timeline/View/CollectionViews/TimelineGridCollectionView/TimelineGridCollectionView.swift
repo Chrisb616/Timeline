@@ -14,7 +14,11 @@ class TimelineGridCollectionView: NSCollectionView {
     var customDataSource: TimelineGridCollectionViewDataSource!
     var customDelegate: TimelineGridCollectionViewDelegate!
     
-    func configure() {
+    var timeline: Timeline!
+    
+    func configure(forTimeline timeline: Timeline) {
+        
+        self.timeline = timeline
         
         self.isSelectable = true
         self.allowsMultipleSelection = true
@@ -35,6 +39,7 @@ class TimelineGridCollectionView: NSCollectionView {
     private func configureDelegate() {
         self.customDelegate = TimelineGridCollectionViewDelegate()
         
+        customDelegate.customCollectionView = self
         delegate = customDelegate
     }
     
@@ -47,11 +52,6 @@ class TimelineGridCollectionView: NSCollectionView {
     private func configureDataSource() {
         customDataSource = TimelineGridCollectionViewDataSource()
         dataSource = customDataSource
-    }
-    
-    func reload(events: [Event]) {
-        self.customDataSource.events = events
-        reloadData()
     }
     
 }
