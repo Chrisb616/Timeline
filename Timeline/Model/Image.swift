@@ -33,6 +33,11 @@ class Image {
         
     }
     
+    init(image: NSImage, fromURL url: URL) {
+        self.nsImage = image
+        self.imageURL = url
+    }
+    
     init(imageURL: URL) {
         self.imageURL = imageURL
         

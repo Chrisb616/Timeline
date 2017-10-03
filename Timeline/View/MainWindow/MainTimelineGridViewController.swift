@@ -56,7 +56,7 @@ class MainTimelineGridViewController: NSViewController {
     }
     
     @objc func updateCollectionView() {
-        collectionView.reload()
+        collectionView.reloadData()
     }
     
 }

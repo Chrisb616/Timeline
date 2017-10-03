@@ -164,6 +164,7 @@
 		139CA8E31F759A0400461FAE /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				139CA9021F759A3800461FAE /* Model */,
 				84833A811F7A837D001EBA03 /* Toolbox */,
 				139F5BED1F76992300771751 /* View */,
 				139CA8ED1F759A0400461FAE /* Info.plist */,
@@ -274,7 +275,6 @@
 				135EE0811F76C069009C7A59 /* NotificationManager.swift */,
 				135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */,
 				84833A821F7A8397001EBA03 /* ImageManager.swift */,
-				139CA9021F759A3800461FAE /* Model */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";

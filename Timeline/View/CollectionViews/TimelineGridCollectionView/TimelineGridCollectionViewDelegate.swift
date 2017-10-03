@@ -44,7 +44,7 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: NSCollectionView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, dragOperation operation: NSDragOperation) {
-        print("ended")
+        Debugger.log(string: "Ended Dragging Session", logType: .process, logLevel: .verbose)
     }
     
     func collectionView(collectionView: NSCollectionView, draggingSession session: NSDraggingSession, endedAtPoint screenPoint: NSPoint, dragOperation operation: NSDragOperation) {
@@ -56,8 +56,12 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
         draggingInfo.enumerateDraggingItems(options: .clearNonenumeratedImages, for: collectionView, classes: [NSString.self, NSURL.self], searchOptions: [:]) { (item, index, stop) in
             
             if let url = item.item as? URL {
-                ImageManager.instance.importImage(from: url, completion: { (image) in
+                ImageManager.instance.importImage(from: url, completion: { (nsImage) in
                     let event = Event.new(withMomentDate: Date())
+                    if let nsImage = nsImage {
+                        let image = Image(image: nsImage, fromURL: url)
+                        event.mainImage = image
+                    }
                     self.customCollectionView?.timeline.events.add(event)
                 })
             }

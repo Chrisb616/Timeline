@@ -51,6 +51,7 @@ class TimelineGridCollectionView: NSCollectionView {
     }
     private func configureDataSource() {
         customDataSource = TimelineGridCollectionViewDataSource()
+        customDataSource.timeline = timeline
         dataSource = customDataSource
     }
     
