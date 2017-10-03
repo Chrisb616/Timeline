@@ -164,14 +164,10 @@
 		139CA8E31F759A0400461FAE /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				139F5BED1F76992300771751 /* View */,
-				139CA90F1F759B8900461FAE /* Extensions */,
-				139CA9081F759B0000461FAE /* IndexedDictionary */,
-				139CA9021F759A3800461FAE /* Model */,
-				139CA8E41F759A0400461FAE /* AppDelegate.swift */,
 				84833A811F7A837D001EBA03 /* Toolbox */,
-				139CA8E81F759A0400461FAE /* Assets.xcassets */,
+				139F5BED1F76992300771751 /* View */,
 				139CA8ED1F759A0400461FAE /* Info.plist */,
+				139CA8E81F759A0400461FAE /* Assets.xcassets */,
 				139CA8EE1F759A0400461FAE /* Timeline.entitlements */,
 			);
 			path = Timeline;
@@ -189,9 +185,9 @@
 		139CA9021F759A3800461FAE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				139CA9051F759AA700461FAE /* Moment.swift */,
-				139CA91C1F759BE200461FAE /* Event.swift */,
 				1384592C1F8065620027AF9D /* Timeline.swift */,
+				139CA91C1F759BE200461FAE /* Event.swift */,
+				139CA9051F759AA700461FAE /* Moment.swift */,
 				1384592A1F7DA4480027AF9D /* Image.swift */,
 			);
 			path = Model;
@@ -222,6 +218,7 @@
 		139F5BED1F76992300771751 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				139CA8E41F759A0400461FAE /* AppDelegate.swift */,
 				139F5BFF1F76B07B00771751 /* View Controllers */,
 				139F5BEE1F76994700771751 /* CollectionViews */,
 				135EE0851F7705F5009C7A59 /* MainWindow */,
@@ -271,10 +268,13 @@
 		84833A811F7A837D001EBA03 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				139CA90F1F759B8900461FAE /* Extensions */,
+				139CA9081F759B0000461FAE /* IndexedDictionary */,
 				139CA90D1F759B7500461FAE /* Debugger.swift */,
 				135EE0811F76C069009C7A59 /* NotificationManager.swift */,
 				135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */,
 				84833A821F7A8397001EBA03 /* ImageManager.swift */,
+				139CA9021F759A3800461FAE /* Model */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
