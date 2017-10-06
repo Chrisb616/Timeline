@@ -17,7 +17,10 @@ class EventDetailCollectionViewDataSource: NSObject, NSCollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        return NSCollectionViewItem()
+        
+        let collectionViewItem = NSCollectionViewItem(nibName: NSNib.Name("TimelineGridCollectionViewItem"), bundle: nil)
+        
+        return collectionViewItem
     }
     
     func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {

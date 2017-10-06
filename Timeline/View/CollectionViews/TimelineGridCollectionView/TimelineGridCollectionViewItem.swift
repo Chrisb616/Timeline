@@ -25,15 +25,11 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
         self.eventImageView.image = event.mainImage.valueOrDefault
         self.event = event
         self.eventNameTextField.stringValue = event.name
+    
     }
     
-    /*
     override func mouseDown(with event: NSEvent) {
-        if let event = timelineItem as? Event {
-            NotificationManager.instance.postShowEventDetailNotification(forEventWithUniqueID: event.uniqueID)
-        }
-        
+        NotificationManager.instance.postShowEventDetailNotification(forEventWithUniqueID: self.event.uniqueID)
     }
- */
     
 }
