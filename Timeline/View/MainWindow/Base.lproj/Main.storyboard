@@ -856,6 +856,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="aDh-T7-qjO" secondAttribute="bottom" constant="5" id="7kW-6d-Z9D"/>
+                                    <constraint firstItem="aDh-T7-qjO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="j4T-Yk-xL3" secondAttribute="leading" constant="20" symbolic="YES" id="8wB-0f-L51"/>
                                     <constraint firstAttribute="height" constant="30" id="AkT-63-MkT"/>
                                     <constraint firstAttribute="trailing" secondItem="aDh-T7-qjO" secondAttribute="trailing" constant="5" id="NL6-GR-9wz"/>
                                     <constraint firstItem="aDh-T7-qjO" firstAttribute="top" secondItem="j4T-Yk-xL3" secondAttribute="top" constant="5" id="SWi-eS-EQ5"/>
@@ -879,7 +880,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bEe-2p-DfG">
-                                    <rect key="frame" x="1" y="283" width="448" height="16"/>
+                                    <rect key="frame" x="1" y="283" width="478" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="EqT-wR-9Fp">
@@ -915,14 +916,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="481"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK7-OD-CaR">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="481"/>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK7-OD-CaR">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="451"/>
                                 <clipView key="contentView" drawsBackground="NO" id="rtb-mX-aDN">
-                                    <rect key="frame" x="1" y="1" width="478" height="479"/>
+                                    <rect key="frame" x="1" y="1" width="478" height="449"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="1ZY-0m-wqf" customClass="EventDetailCollectionView" customModule="Timeline" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="449"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Cea-oP-8rl">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -935,8 +936,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="480" id="E9k-UP-pvq"/>
                                 </constraints>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="gpT-oa-Zqu">
-                                    <rect key="frame" x="1" y="464" width="478" height="16"/>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="gpT-oa-Zqu">
+                                    <rect key="frame" x="-100" y="-100" width="478" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TEd-Eo-fLa">
@@ -944,12 +945,37 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9Gk-DE-Bgr">
+                                <rect key="frame" x="0.0" y="451" width="480" height="30"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ge4-9x-NCF">
+                                        <rect key="frame" x="4" y="-3" width="77" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" image="NSLeftFacingTriangleTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wsp-QK-Chx">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="backButtonClickAction" target="1ZY-0m-wqf" id="uda-kN-x87"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ge4-9x-NCF" firstAttribute="top" secondItem="9Gk-DE-Bgr" secondAttribute="top" constant="5" id="Nz4-nF-sH9"/>
+                                    <constraint firstAttribute="height" constant="30" id="WzL-kl-Usw"/>
+                                    <constraint firstAttribute="bottom" secondItem="ge4-9x-NCF" secondAttribute="bottom" constant="4" id="hlE-Me-olc"/>
+                                    <constraint firstAttribute="leading" secondItem="ge4-9x-NCF" secondAttribute="trailing" constant="-75" id="ryG-l2-v3z"/>
+                                    <constraint firstItem="ge4-9x-NCF" firstAttribute="leading" secondItem="9Gk-DE-Bgr" secondAttribute="leading" constant="10" id="zKe-3Q-TRW"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="aK7-OD-CaR" firstAttribute="leading" secondItem="1OW-Qr-J3u" secondAttribute="leading" id="2i4-0F-PXB"/>
                             <constraint firstAttribute="bottom" secondItem="aK7-OD-CaR" secondAttribute="bottom" id="6JQ-hx-ooG"/>
+                            <constraint firstItem="9Gk-DE-Bgr" firstAttribute="top" secondItem="1OW-Qr-J3u" secondAttribute="top" id="6wS-KE-jFN"/>
+                            <constraint firstItem="aK7-OD-CaR" firstAttribute="top" secondItem="9Gk-DE-Bgr" secondAttribute="bottom" id="COm-vT-Llf"/>
                             <constraint firstAttribute="trailing" secondItem="aK7-OD-CaR" secondAttribute="trailing" id="HGy-zr-htV"/>
-                            <constraint firstItem="aK7-OD-CaR" firstAttribute="top" secondItem="1OW-Qr-J3u" secondAttribute="top" id="YfH-0k-8CC"/>
+                            <constraint firstItem="9Gk-DE-Bgr" firstAttribute="leading" secondItem="1OW-Qr-J3u" secondAttribute="leading" id="uVk-Et-dif"/>
+                            <constraint firstAttribute="trailing" secondItem="9Gk-DE-Bgr" secondAttribute="trailing" id="zJs-Hn-Khg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -976,5 +1002,6 @@
     </scenes>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
     </resources>
 </document>
