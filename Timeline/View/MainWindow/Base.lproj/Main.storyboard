@@ -958,11 +958,24 @@
                                             <action selector="backButtonClickAction" target="1ZY-0m-wqf" id="uda-kN-x87"/>
                                         </connections>
                                     </button>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="oBn-rX-Ct2">
+                                        <rect key="frame" x="448" y="4" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="oBn-rX-Ct2" secondAttribute="height" multiplier="1:1" id="IHa-Sx-lmx"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="EditIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="IMr-g2-SDB">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="oBn-rX-Ct2" secondAttribute="trailing" constant="11" id="EGH-qJ-Y1K"/>
                                     <constraint firstItem="ge4-9x-NCF" firstAttribute="top" secondItem="9Gk-DE-Bgr" secondAttribute="top" constant="5" id="Nz4-nF-sH9"/>
                                     <constraint firstAttribute="height" constant="30" id="WzL-kl-Usw"/>
+                                    <constraint firstAttribute="bottom" secondItem="oBn-rX-Ct2" secondAttribute="bottom" constant="4" id="fyC-Yf-FiP"/>
                                     <constraint firstAttribute="bottom" secondItem="ge4-9x-NCF" secondAttribute="bottom" constant="4" id="hlE-Me-olc"/>
+                                    <constraint firstItem="oBn-rX-Ct2" firstAttribute="top" secondItem="9Gk-DE-Bgr" secondAttribute="top" constant="5" id="kaB-ph-5hV"/>
                                     <constraint firstAttribute="leading" secondItem="ge4-9x-NCF" secondAttribute="trailing" constant="-75" id="ryG-l2-v3z"/>
                                     <constraint firstItem="ge4-9x-NCF" firstAttribute="leading" secondItem="9Gk-DE-Bgr" secondAttribute="leading" constant="10" id="zKe-3Q-TRW"/>
                                 </constraints>
@@ -1001,6 +1014,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="EditIcon" width="246" height="246"/>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
     </resources>

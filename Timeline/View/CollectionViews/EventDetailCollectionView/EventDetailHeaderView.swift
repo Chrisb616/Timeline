@@ -23,4 +23,5 @@ class EventDetailHeaderView: NSView {
         self.dateRangeTextField.stringValue = Date.timeRangeString(start: event.startDate, end: event.endDate)
     }
     
+    
 }
