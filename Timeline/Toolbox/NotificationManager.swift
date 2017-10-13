@@ -70,11 +70,4 @@ class NotificationManager {
         NotificationCenter.default.post(name: toggleEditEventDetailsName, object: nil)
     }
     
-    func addEventWasEditedNotication(observer: Any, selector: Selector) {
-        NotificationCenter.default.addObserver(observer, selector: selector, name: eventWasEditedName, object: nil)
-    }
-    
-    func postEventWasEditedNotification() {
-        NotificationCenter.default.post(name: eventWasEditedName, object: nil)
-    }
 }

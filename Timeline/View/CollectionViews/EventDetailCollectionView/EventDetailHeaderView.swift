@@ -39,10 +39,4 @@ class EventDetailHeaderView: NSView {
         nameTextField.window?.becomeFirstResponder()
     }
     
-    
-    
-    func changesMade() {
-        NotificationManager.instance.postEventWasEditedNotification()
-    }
-    
 }
