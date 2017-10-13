@@ -10,10 +10,12 @@ import Cocoa
 
 class Image {
     
-    //MARk: - Properties
+    //MARK: - Properties
     
     private var nsImage: NSImage?
     var imageURL: URL?
+    
+    //MARK: - Value Accessors
 
     var valueOrDefault: NSImage {
         return nsImage ?? NSImage(named: NSImage.Name("EventIcon")) ?? NSImage()
@@ -28,6 +30,8 @@ class Image {
     static var blank: Image {
         return Image()
     }
+    
+    //MARK: - Initializers
     
     private init() {
         

@@ -834,14 +834,14 @@
             <objects>
                 <viewController id="yyD-Xs-BTy" customClass="MainTimelineGridViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="e32-Lx-G14">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="j4T-Yk-xL3">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="30"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aDh-T7-qjO">
-                                        <rect key="frame" x="455" y="4" width="20" height="22"/>
+                                        <rect key="frame" x="515" y="4" width="20" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aDh-T7-qjO" secondAttribute="height" multiplier="1:1" id="09W-J1-Yfh"/>
                                         </constraints>
@@ -862,14 +862,14 @@
                                     <constraint firstItem="aDh-T7-qjO" firstAttribute="top" secondItem="j4T-Yk-xL3" secondAttribute="top" constant="5" id="SWi-eS-EQ5"/>
                                 </constraints>
                             </customView>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl2-Hh-ZVc">
-                                <rect key="frame" x="0.0" y="30" width="480" height="450"/>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl2-Hh-ZVc">
+                                <rect key="frame" x="0.0" y="30" width="540" height="450"/>
                                 <clipView key="contentView" drawsBackground="NO" id="EOY-QG-2ql">
-                                    <rect key="frame" x="1" y="1" width="478" height="448"/>
+                                    <rect key="frame" x="1" y="1" width="538" height="448"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="Jm2-pN-bUR" customClass="TimelineGridCollectionView" customModule="Timeline" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="538" height="448"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="qod-e6-mkX">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -879,8 +879,11 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="480" id="8IH-2i-4k0"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bEe-2p-DfG">
-                                    <rect key="frame" x="1" y="283" width="478" height="16"/>
+                                    <rect key="frame" x="-100" y="-100" width="478" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="EqT-wR-9Fp">
@@ -906,24 +909,24 @@
                 </viewController>
                 <customObject id="Imi-zB-17z" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-358" y="1975"/>
+            <point key="canvasLocation" x="-328" y="1975"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="te9-PX-wn8">
             <objects>
                 <viewController id="aic-fD-o89" customClass="EventDetailViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="1OW-Qr-J3u">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="481"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="481"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK7-OD-CaR">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="451"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="451"/>
                                 <clipView key="contentView" drawsBackground="NO" id="rtb-mX-aDN">
-                                    <rect key="frame" x="1" y="1" width="478" height="449"/>
+                                    <rect key="frame" x="1" y="1" width="538" height="449"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="1ZY-0m-wqf" customClass="EventDetailCollectionView" customModule="Timeline" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="449"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="538" height="449"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Cea-oP-8rl">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -946,7 +949,7 @@
                                 </scroller>
                             </scrollView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="9Gk-DE-Bgr">
-                                <rect key="frame" x="0.0" y="451" width="480" height="30"/>
+                                <rect key="frame" x="0.0" y="451" width="540" height="30"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ge4-9x-NCF">
                                         <rect key="frame" x="4" y="-3" width="77" height="32"/>
@@ -959,7 +962,7 @@
                                         </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="oBn-rX-Ct2">
-                                        <rect key="frame" x="448" y="4" width="21" height="21"/>
+                                        <rect key="frame" x="508" y="4" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oBn-rX-Ct2" secondAttribute="height" multiplier="1:1" id="IHa-Sx-lmx"/>
                                         </constraints>
@@ -1001,7 +1004,7 @@
                 </viewController>
                 <customObject id="Pyb-4t-PaW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="293" y="1974.5"/>
+            <point key="canvasLocation" x="323" y="1974.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Y04-vy-ekK">

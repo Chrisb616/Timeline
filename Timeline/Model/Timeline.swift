@@ -10,9 +10,15 @@ import Foundation
 
 class Timeline {
     
+    //MARK: - Instance
+    
     static var main = Timeline()
     
+    //MARK: - Properties
+    
     var events = IndexedDictionary<Event>()
+    
+    //MARK: - Methods
     
     func mergeEvents(fromEventWithUniqueID uniqueIDOne: UniqueID, toEventWithUniqueID uniqueIDTwo: UniqueID) {
         guard

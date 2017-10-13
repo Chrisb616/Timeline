@@ -21,7 +21,7 @@
                         <constraint firstAttribute="height" constant="160" id="le2-kc-W3Z"/>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="xta-58-I6e"/>
                     </constraints>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="Event" id="dcF-HC-5MX"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="EventIcon" id="dcF-HC-5MX"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dcL-ru-fag">
                     <rect key="frame" x="188" y="181" width="264" height="24"/>
@@ -101,6 +101,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="Event" width="36" height="36"/>
+        <image name="EventIcon" width="512" height="515"/>
     </resources>
 </document>
