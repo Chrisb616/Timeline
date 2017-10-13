@@ -15,10 +15,6 @@ class EventDetailCollectionView: NSCollectionView {
     var customLayout: EventDetailCollectionViewFlowLayout!
     var customDelegate: EventDetailCollectionViewDelegate!
     
-    @IBAction func backButtonClickAction(_ sender: AnyObject) {
-        returnToMainTimelinGrid()
-    }
-    
     func configure(forEvent event: Event) {
         self.event = event
         
@@ -45,10 +41,6 @@ class EventDetailCollectionView: NSCollectionView {
         customLayout = EventDetailCollectionViewFlowLayout()
         
         self.collectionViewLayout = customLayout
-    }
-    
-    func returnToMainTimelinGrid() {
-        NotificationManager.instance.postMainRootTabViewSwitchNotification(forTab: .mainTimleineGrid)
     }
     
 }

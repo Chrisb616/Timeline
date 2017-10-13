@@ -955,7 +955,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="backButtonClickAction" target="1ZY-0m-wqf" id="uda-kN-x87"/>
+                                            <action selector="backButtonClickAction:" target="aic-fD-o89" id="UJd-g3-Hmz"/>
                                         </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="oBn-rX-Ct2">
@@ -967,6 +967,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="toggleEditEventClickAction:" target="aic-fD-o89" id="daf-xY-USI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -993,6 +996,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="1ZY-0m-wqf" id="6Uc-Ry-67b"/>
+                        <outlet property="toggleEditEventButton" destination="oBn-rX-Ct2" id="fdq-4r-2a8"/>
                     </connections>
                 </viewController>
                 <customObject id="Pyb-4t-PaW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

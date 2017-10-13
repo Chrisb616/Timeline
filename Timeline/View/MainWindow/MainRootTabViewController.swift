@@ -10,6 +10,8 @@ import Cocoa
 
 class MainRootTabViewController: NSTabViewController {
     
+    weak var eventDetailViewController: EventDetailViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +20,12 @@ class MainRootTabViewController: NSTabViewController {
         
         NotificationManager.instance.addMainRootTabViewSwitchObserver(forTab: .mainTimleineGrid, observer: self, selector: #selector(showMainTimelineGrid(_:)))
         NotificationManager.instance.addShowEventDetailObserver(observer: self, selector: #selector(showEventDetailTab(_:)))
+    }
+    
+    func configureViewControllers() {
+        if let eventDetailViewController = tabView.tabViewItem(at: 1).viewController as? EventDetailViewController {
+            self.eventDetailViewController = eventDetailViewController
+        }
     }
     
     @objc func showMainTimelineGrid(_ notification: Notification) {

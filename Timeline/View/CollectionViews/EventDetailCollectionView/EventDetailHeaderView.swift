@@ -9,6 +9,8 @@
 import Cocoa
 
 class EventDetailHeaderView: NSView {
+    
+    private var needsConfiguration: Bool = true
 
     @IBOutlet weak var imageView: NSImageView!
     
@@ -23,5 +25,24 @@ class EventDetailHeaderView: NSView {
         self.dateRangeTextField.stringValue = Date.timeRangeString(start: event.startDate, end: event.endDate)
     }
     
+    func editModeOn() {
+        nameTextField.isEditable = true
+        narrativeTextView.isEditable = true
+        
+        nameTextField.becomeFirstResponder()
+    }
+    
+    func editModeOff() {
+        nameTextField.isEditable = false
+        narrativeTextView.isEditable = false
+        
+        nameTextField.window?.becomeFirstResponder()
+    }
+    
+    
+    
+    func changesMade() {
+        NotificationManager.instance.postEventWasEditedNotification()
+    }
     
 }
