@@ -88,11 +88,15 @@ class Event: HasUniqueID {
     
     func addMoment(_ moment: Moment) {
         self._moments.add(moment)
+        moment.parentEvent = self
         recaculateDates()
     }
     
     func addMoments(_ moments: [Moment]) {
-        self._moments.add(moments)
+        for moment in moments {
+            moment.parentEvent = self
+            self._moments.add(moment)
+        }
         recaculateDates()
     }
     

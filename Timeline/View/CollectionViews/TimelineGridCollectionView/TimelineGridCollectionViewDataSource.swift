@@ -11,9 +11,15 @@ import Cocoa
 class TimelineGridCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
     
     weak var timeline: Timeline!
+    
+    var chronological = [Event]()
+    
+    func reloadChronlogicalItems() {
+        chronological = timeline.events.all.chronological
+    }
 
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return timeline.events.count
+        return chronological.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
@@ -24,7 +30,7 @@ class TimelineGridCollectionViewDataSource: NSObject, NSCollectionViewDataSource
             return item
         }
         
-        let event = timeline.events.at(index: indexPath.item)
+        let event = chronological[indexPath.item]
         
         collectionViewItem.load(event: event)
         

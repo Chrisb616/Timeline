@@ -55,4 +55,10 @@ class TimelineGridCollectionView: NSCollectionView {
         dataSource = customDataSource
     }
     
+    override func reloadData() {
+        customDataSource.reloadChronlogicalItems()
+        
+        super.reloadData()
+    }
+    
 }
