@@ -43,6 +43,8 @@
 		139F5BFC1F76A5CD00771751 /* MainTimelineGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */; };
 		139F5C021F76B0A500771751 /* CreateTimelineItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5C001F76B0A500771751 /* CreateTimelineItemViewController.swift */; };
 		139F5C031F76B0A500771751 /* CreateTimelineItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139F5C011F76B0A500771751 /* CreateTimelineItemViewController.xib */; };
+		13CFDDD41F9130C800DB6D30 /* EventDetailCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CFDDD21F9130C800DB6D30 /* EventDetailCollectionViewItem.swift */; };
+		13CFDDD51F9130C800DB6D30 /* EventDetailCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CFDDD31F9130C800DB6D30 /* EventDetailCollectionViewItem.xib */; };
 		84833A831F7A8397001EBA03 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84833A821F7A8397001EBA03 /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,8 @@
 		139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimelineGridViewController.swift; sourceTree = "<group>"; };
 		139F5C001F76B0A500771751 /* CreateTimelineItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimelineItemViewController.swift; sourceTree = "<group>"; };
 		139F5C011F76B0A500771751 /* CreateTimelineItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTimelineItemViewController.xib; sourceTree = "<group>"; };
+		13CFDDD21F9130C800DB6D30 /* EventDetailCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewItem.swift; sourceTree = "<group>"; };
+		13CFDDD31F9130C800DB6D30 /* EventDetailCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailCollectionViewItem.xib; sourceTree = "<group>"; };
 		84833A821F7A8397001EBA03 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +132,8 @@
 				1363DCE61F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift */,
 				132E0AE71F797795003D3258 /* EventDetailHeaderView.swift */,
 				13074A6A1F793859005D8005 /* EventDetailHeaderView.xib */,
+				13CFDDD21F9130C800DB6D30 /* EventDetailCollectionViewItem.swift */,
+				13CFDDD31F9130C800DB6D30 /* EventDetailCollectionViewItem.xib */,
 			);
 			path = EventDetailCollectionView;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				TargetAttributes = {
 					139CA8E01F759A0400461FAE = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					139CA8F21F759A0400461FAE = {
@@ -367,6 +374,7 @@
 				139CA8EC1F759A0400461FAE /* Main.storyboard in Resources */,
 				139F5C031F76B0A500771751 /* CreateTimelineItemViewController.xib in Resources */,
 				139F5BF61F769C6100771751 /* TimelineGridCollectionViewItem.xib in Resources */,
+				13CFDDD51F9130C800DB6D30 /* EventDetailCollectionViewItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +409,7 @@
 				135EE0801F76BDB6009C7A59 /* UniqueIDGenerator.swift in Sources */,
 				139F5BF21F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift in Sources */,
 				132E0AE81F797795003D3258 /* EventDetailHeaderView.swift in Sources */,
+				13CFDDD41F9130C800DB6D30 /* EventDetailCollectionViewItem.swift in Sources */,
 				132E0AEA1F797FD0003D3258 /* TimelineGridCollectionViewDelegate.swift in Sources */,
 				139F5BF51F769C6100771751 /* TimelineGridCollectionViewItem.swift in Sources */,
 				139F5BFC1F76A5CD00771751 /* MainTimelineGridViewController.swift in Sources */,
@@ -558,6 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Timeline/Timeline.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -566,6 +576,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.Timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -574,6 +585,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Timeline/Timeline.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

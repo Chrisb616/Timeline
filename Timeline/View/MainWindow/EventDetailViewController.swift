@@ -67,8 +67,7 @@ class EventDetailViewController: NSViewController {
         guard let header = collectionView.customDataSource.header else { Debugger.log(string: "Cannot find header in changes check", logType: .warning, logLevel: .full); return }
         guard let event = event else { Debugger.log(string: "Cannot find event in changes check", logType: .warning, logLevel: .full); return }
         
-        if header.nameTextField.stringValue != event.name ||
-            header.narrativeTextView.string != event.narrative {
+        if header.nameTextField.stringValue != event.name || header.narrativeTextView.string != (event.narrative ?? "")  {
             
             let alert = NSAlert()
             

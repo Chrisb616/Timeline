@@ -53,16 +53,19 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, acceptDrop draggingInfo: NSDraggingInfo, indexPath: IndexPath, dropOperation: NSCollectionView.DropOperation) -> Bool {
         
+        //Iterate over Items dragged in
         draggingInfo.enumerateDraggingItems(options: .clearNonenumeratedImages, for: collectionView, classes: [NSString.self, NSURL.self], searchOptions: [:]) { (item, index, stop) in
             
             if let url = item.item as? URL {
                 ImageManager.instance.importImage(from: url, completion: { (nsImage) in
-                    let event = Event.new(withMomentDate: Date())
+                    
                     if let nsImage = nsImage {
                         let image = Image(image: nsImage, fromURL: url)
+                        let event = Event.new(withMomentDate: Date(), image: image)
                         event.mainImage = image
+                        self.customCollectionView?.timeline.events.add(event)
                     }
-                    self.customCollectionView?.timeline.events.add(event)
+                    
                 })
             }
             

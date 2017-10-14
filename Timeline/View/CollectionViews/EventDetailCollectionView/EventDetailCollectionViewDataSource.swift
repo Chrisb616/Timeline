@@ -18,10 +18,20 @@ class EventDetailCollectionViewDataSource: NSObject, NSCollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let item = collectionView.makeItem(withIdentifier: .init("EventDetailCollectionViewItem"), for: indexPath)
         
-        let collectionViewItem = NSCollectionViewItem(nibName: NSNib.Name("TimelineGridCollectionViewItem"), bundle: nil)
+        guard let collectionViewItem = item as? EventDetailCollectionViewItem else {
+            Debugger.log(string: "Cannot convert collection view itme into EventDetailCollectionViewItem", logType: .failure, logLevel: .minimal)
+            return item
+        }
+        
+        let moment = event.moments.at(index: indexPath.item)
+        
+        collectionViewItem.load(moment: moment)
         
         return collectionViewItem
+        
+
     }
     
     func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {

@@ -29,7 +29,10 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
     }
     
     override func mouseDown(with event: NSEvent) {
-        NotificationManager.instance.postShowEventDetailNotification(forEventWithUniqueID: self.event.uniqueID)
+        super.mouseDown(with: event)
+        if event.clickCount == 2 {
+            NotificationManager.instance.postShowEventDetailNotification(forEventWithUniqueID: self.event.uniqueID)
+        }
     }
     
 }

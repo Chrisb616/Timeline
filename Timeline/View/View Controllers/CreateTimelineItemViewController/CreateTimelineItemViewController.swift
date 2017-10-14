@@ -108,7 +108,7 @@ class CreateTimelineItemViewController: NSViewController {
     }
     
     func createMoment() {
-        let event = Event.new(withMomentDate: startDatePicker.dateValue)
+        let event = Event.new(withMomentDate: startDatePicker.dateValue, image: Image.blank)
         
         if nameTextField.stringValue != "" {
             event.setName(nameTextField.stringValue)

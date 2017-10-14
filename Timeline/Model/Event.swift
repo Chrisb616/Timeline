@@ -42,11 +42,11 @@ class Event: HasUniqueID {
     
     //MARK: - Creation Methods
     
-    static func new(withMomentDate date: Date) -> Event {
+    static func new(withMomentDate date: Date, image: Image?) -> Event {
         let uniqueID = UniqueIDGenerator.instance.event
         
         let event = Event(uniqueID: uniqueID, name: nil, narrative: nil, startDateOverride: nil, endDateOverride: nil, mainImage: Image.blank)
-        event.createMomentWithinEvent(atDate: date)
+        event.createMomentWithinEvent(atDate: date, image: image)
         
         return event
     }
@@ -76,9 +76,12 @@ class Event: HasUniqueID {
     
     //MARK: - Moment Methods
     
-    func createMomentWithinEvent(atDate date: Date) {
+    func createMomentWithinEvent(atDate date: Date, image: Image?) {
         let momentUniqueID = UniqueIDGenerator.instance.moment
-        let moment = Moment(uniqueID: momentUniqueID, name: nil, narrative: nil, date: date, image: Image.blank, parentEvent: self)
+        
+        let usedImage = image ?? Image.blank
+        
+        let moment = Moment(uniqueID: momentUniqueID, name: nil, narrative: nil, date: date, image: usedImage, parentEvent: self)
         
         self.addMoment(moment)
     }
