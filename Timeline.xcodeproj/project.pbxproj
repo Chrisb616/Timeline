@@ -43,6 +43,8 @@
 		139F5BFC1F76A5CD00771751 /* MainTimelineGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */; };
 		139F5C021F76B0A500771751 /* CreateTimelineItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F5C001F76B0A500771751 /* CreateTimelineItemViewController.swift */; };
 		139F5C031F76B0A500771751 /* CreateTimelineItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139F5C011F76B0A500771751 /* CreateTimelineItemViewController.xib */; };
+		13A164221F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A164201F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.swift */; };
+		13A164231F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A164211F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.xib */; };
 		13CFDDD41F9130C800DB6D30 /* EventDetailCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CFDDD21F9130C800DB6D30 /* EventDetailCollectionViewItem.swift */; };
 		13CFDDD51F9130C800DB6D30 /* EventDetailCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CFDDD31F9130C800DB6D30 /* EventDetailCollectionViewItem.xib */; };
 		84833A831F7A8397001EBA03 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84833A821F7A8397001EBA03 /* ImageManager.swift */; };
@@ -100,6 +102,8 @@
 		139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimelineGridViewController.swift; sourceTree = "<group>"; };
 		139F5C001F76B0A500771751 /* CreateTimelineItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimelineItemViewController.swift; sourceTree = "<group>"; };
 		139F5C011F76B0A500771751 /* CreateTimelineItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTimelineItemViewController.xib; sourceTree = "<group>"; };
+		13A164201F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewQuickEditViewController.swift; sourceTree = "<group>"; };
+		13A164211F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineGridCollectionViewQuickEditViewController.xib; sourceTree = "<group>"; };
 		13CFDDD21F9130C800DB6D30 /* EventDetailCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewItem.swift; sourceTree = "<group>"; };
 		13CFDDD31F9130C800DB6D30 /* EventDetailCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailCollectionViewItem.xib; sourceTree = "<group>"; };
 		84833A821F7A8397001EBA03 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 				139F5BF81F769D7000771751 /* TimelineGridCollectionViewFlowLayout.swift */,
 				139F5BF31F769C6100771751 /* TimelineGridCollectionViewItem.swift */,
 				139F5BF41F769C6100771751 /* TimelineGridCollectionViewItem.xib */,
+				13A164201F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.swift */,
+				13A164211F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.xib */,
 			);
 			path = TimelineGridCollectionView;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 			files = (
 				13074A6B1F793859005D8005 /* EventDetailHeaderView.xib in Resources */,
 				139CA8E91F759A0400461FAE /* Assets.xcassets in Resources */,
+				13A164231F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.xib in Resources */,
 				139CA8EC1F759A0400461FAE /* Main.storyboard in Resources */,
 				139F5C031F76B0A500771751 /* CreateTimelineItemViewController.xib in Resources */,
 				139F5BF61F769C6100771751 /* TimelineGridCollectionViewItem.xib in Resources */,
@@ -402,6 +409,7 @@
 				139CA9191F759BA700461FAE /* URL.swift in Sources */,
 				135EE0821F76C069009C7A59 /* NotificationManager.swift in Sources */,
 				139F5BF01F76996400771751 /* TimelineGridCollectionView.swift in Sources */,
+				13A164221F925242000A808B /* TimelineGridCollectionViewQuickEditViewController.swift in Sources */,
 				1363DCED1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift in Sources */,
 				13074A6E1F793E6C005D8005 /* EventDetailCollectionView.swift in Sources */,
 				1363DCE71F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift in Sources */,

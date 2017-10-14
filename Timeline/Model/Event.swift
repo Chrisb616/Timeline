@@ -111,7 +111,7 @@ class Event: HasUniqueID {
             }
         }
         
-        if let lastItemDate = moments.all.chronological.first?.date {
+        if let lastItemDate = moments.all.chronologicalReversed.first?.date {
             if let override = endDateOverride {
                 endDate = lastItemDate < override ? lastItemDate : override
             } else {

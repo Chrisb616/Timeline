@@ -39,7 +39,7 @@ class EventDetailCollectionView: NSCollectionView {
     
     func configureFlowLayout() {
         customLayout = EventDetailCollectionViewFlowLayout()
-        
+        customLayout.configure()
         self.collectionViewLayout = customLayout
     }
     

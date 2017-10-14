@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TimelineGridCollectionViewQuickEditViewController" customModule="Timeline" customModuleProvider="target">
+            <connections>
+                <outlet property="endDatePicker" destination="mSb-SO-vlY" id="9ng-9Q-ABc"/>
+                <outlet property="eventNameTextField" destination="udz-NX-hYI" id="jD1-hT-gQ8"/>
+                <outlet property="startDatePicker" destination="WnV-8Q-4uA" id="dsz-Lq-bsV"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="udz-NX-hYI">
+                    <rect key="frame" x="20" y="230" width="440" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="440" id="qC2-1U-kjf"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Event Name" drawsBackground="YES" id="irT-oj-M9q">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fFI-zp-586">
+                    <rect key="frame" x="306" y="13" width="82" height="32"/>
+                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jRx-Ed-sZB">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="dismissController:" target="-2" id="2lo-ad-yyN"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tjJ-iO-qVw">
+                    <rect key="frame" x="396" y="13" width="70" height="32"/>
+                    <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Snl-l7-HdK">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                    </buttonCell>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v2v-Zl-AY6">
+                    <rect key="frame" x="18" y="199" width="34" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="x6N-mn-bu5"/>
+                        <constraint firstAttribute="height" constant="20" id="xvX-tm-003"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Start" id="ksc-jN-kg9">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9B1-SS-IGA">
+                    <rect key="frame" x="18" y="171" width="34" height="20"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="End" id="V5f-Iv-EEY">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mSb-SO-vlY">
+                    <rect key="frame" x="70" y="171" width="393" height="24"/>
+                    <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="odA-Ms-toc">
+                        <font key="font" metaFont="system"/>
+                        <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                            <!--1982-02-12 16:00:00 +0000-->
+                        </date>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <datePickerElements key="datePickerElements" year="YES" month="YES" day="YES" hour="YES" minute="YES" second="YES"/>
+                    </datePickerCell>
+                </datePicker>
+                <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WnV-8Q-4uA">
+                    <rect key="frame" x="70" y="199" width="393" height="24"/>
+                    <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="dNF-Ic-V5l">
+                        <font key="font" metaFont="system"/>
+                        <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                            <!--1982-02-12 16:00:00 +0000-->
+                        </date>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <datePickerElements key="datePickerElements" year="YES" month="YES" day="YES" hour="YES" minute="YES" second="YES"/>
+                    </datePickerCell>
+                </datePicker>
+            </subviews>
+            <constraints>
+                <constraint firstItem="v2v-Zl-AY6" firstAttribute="leading" secondItem="udz-NX-hYI" secondAttribute="leading" id="1s4-ic-mho"/>
+                <constraint firstAttribute="bottom" secondItem="tjJ-iO-qVw" secondAttribute="bottom" constant="20" id="4Hj-7w-cFR"/>
+                <constraint firstItem="WnV-8Q-4uA" firstAttribute="bottom" secondItem="v2v-Zl-AY6" secondAttribute="bottom" id="6IL-7c-er0"/>
+                <constraint firstItem="fFI-zp-586" firstAttribute="bottom" secondItem="tjJ-iO-qVw" secondAttribute="bottom" id="6hU-4d-RVu"/>
+                <constraint firstItem="9B1-SS-IGA" firstAttribute="top" secondItem="v2v-Zl-AY6" secondAttribute="bottom" constant="8" id="8Ma-ut-VNI"/>
+                <constraint firstItem="tjJ-iO-qVw" firstAttribute="leading" secondItem="fFI-zp-586" secondAttribute="trailing" constant="20" id="HHF-l3-LD5"/>
+                <constraint firstItem="udz-NX-hYI" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="Lzm-CA-bVz"/>
+                <constraint firstItem="9B1-SS-IGA" firstAttribute="trailing" secondItem="v2v-Zl-AY6" secondAttribute="trailing" id="QYX-KH-Kp0"/>
+                <constraint firstAttribute="trailing" secondItem="udz-NX-hYI" secondAttribute="trailing" constant="20" id="TdG-zr-bxS"/>
+                <constraint firstItem="9B1-SS-IGA" firstAttribute="leading" secondItem="v2v-Zl-AY6" secondAttribute="leading" id="YSH-3v-2MG"/>
+                <constraint firstItem="mSb-SO-vlY" firstAttribute="height" secondItem="WnV-8Q-4uA" secondAttribute="height" id="Yiu-W2-9db"/>
+                <constraint firstItem="mSb-SO-vlY" firstAttribute="leading" secondItem="WnV-8Q-4uA" secondAttribute="leading" id="cLO-cw-3Hf"/>
+                <constraint firstItem="udz-NX-hYI" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="crI-tL-Usr"/>
+                <constraint firstAttribute="trailing" secondItem="WnV-8Q-4uA" secondAttribute="trailing" constant="20" id="d7c-ZN-hxq"/>
+                <constraint firstItem="v2v-Zl-AY6" firstAttribute="top" secondItem="udz-NX-hYI" secondAttribute="bottom" constant="11" id="eRN-Dp-RwR"/>
+                <constraint firstItem="WnV-8Q-4uA" firstAttribute="top" secondItem="v2v-Zl-AY6" secondAttribute="top" id="gBz-Vq-XXH"/>
+                <constraint firstAttribute="trailing" secondItem="tjJ-iO-qVw" secondAttribute="trailing" constant="20" id="gOa-5H-Uso"/>
+                <constraint firstItem="WnV-8Q-4uA" firstAttribute="leading" secondItem="v2v-Zl-AY6" secondAttribute="trailing" constant="20" id="nwh-jg-j7s"/>
+                <constraint firstItem="9B1-SS-IGA" firstAttribute="height" secondItem="v2v-Zl-AY6" secondAttribute="height" id="pBT-gb-drD"/>
+                <constraint firstItem="mSb-SO-vlY" firstAttribute="top" secondItem="WnV-8Q-4uA" secondAttribute="bottom" constant="8" id="van-Ix-mzD"/>
+                <constraint firstItem="mSb-SO-vlY" firstAttribute="trailing" secondItem="WnV-8Q-4uA" secondAttribute="trailing" id="zi3-mk-giH"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>
