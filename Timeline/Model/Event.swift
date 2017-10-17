@@ -126,4 +126,12 @@ class Event: HasUniqueID {
         self._name = name
     }
     
+    func setStartDate(_ date: Date?) {
+        self.startDateOverride = date
+    }
+    
+    func setEndDate(_ date: Date?) {
+        self.endDateOverride = date
+    }
+    
 }

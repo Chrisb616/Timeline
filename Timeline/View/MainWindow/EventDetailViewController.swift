@@ -52,6 +52,7 @@ class EventDetailViewController: NSViewController {
         }
         
         loadEvent(event)
+  
     }
     
     func loadEvent(_ event: Event) {

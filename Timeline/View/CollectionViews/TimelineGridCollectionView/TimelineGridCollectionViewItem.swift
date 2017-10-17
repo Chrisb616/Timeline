@@ -37,9 +37,8 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
     
     override func rightMouseDown(with event: NSEvent) {
         super.rightMouseDown(with: event)
-        if event.clickCount == 2 {
-            presentViewController(TimelineGridCollectionViewQuickEditViewController.instanceFromNib(forEvent: self.event), asPopoverRelativeTo: eventImageView.frame, of: eventImageView, preferredEdge: NSRectEdge.minY, behavior: .applicationDefined)
-        }
+        presentViewController(TimelineGridQuickDetailViewController.instanceFromNib(forEvent: self.event), asPopoverRelativeTo: eventImageView.frame, of: eventImageView, preferredEdge: NSRectEdge.minY, behavior: .transient)
+        
     }
     
 }
