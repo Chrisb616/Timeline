@@ -14,6 +14,8 @@ class ImageManager {
     private init() {}
     
     func importImage(from url: URL, completion: @escaping (NSImage?) -> Void) {
+        Debugger.log(string: "Importing image from \(url).", logType: .process, logLevel: .verbose)
+        
         let image = NSImage(contentsOf: url)
         completion(image)
     }
