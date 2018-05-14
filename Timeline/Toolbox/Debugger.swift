@@ -50,8 +50,8 @@ class Debugger {
     enum LogLevel: Int {
         case none = 0
         case minimal
-        case full
         case verbose
+        case full
     }
     
 }
