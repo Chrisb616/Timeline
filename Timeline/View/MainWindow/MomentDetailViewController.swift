@@ -19,13 +19,28 @@ class MomentDetailViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        NotificationManager.instance.addShowMomentDetailObserver(observer: self, selector: #selector(showMomentDetail(_:)))
     }
     
     func loadMoment(_ moment: Moment) {
         imageView.image = moment.image.valueOrDefault
         nameTextField.stringValue = moment.name
         narrativeTextView.string = moment.narrative ?? ""
+    }
+    
+    @objc func showMomentDetail(_ notification: Notification) {
+        guard let uniqueID = notification.userInfo?["momentUniqueID"] as? UniqueID else {
+            Debugger.log(string: "No moment  unique ID in notification info", logType: .failure, logLevel: .minimal)
+            return
+        }
+        
+        guard let moment = Timeline.main.moments.with(uniqueID: uniqueID) else {
+            Debugger.log(string: "No moment with uniqueID \(uniqueID)", logType: .failure, logLevel: .minimal)
+            return
+        }
+        
+        loadMoment(moment)
     }
     
 }

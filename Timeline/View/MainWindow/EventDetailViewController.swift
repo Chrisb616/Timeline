@@ -43,7 +43,7 @@ class EventDetailViewController: NSViewController {
     
     @objc func showEventDetail(_ notification: Notification) {
         guard let uniqueID = notification.userInfo?["eventUniqueID"] as? UniqueID else {
-            Debugger.log(string: "No unique ID in notification info", logType: .failure, logLevel: .minimal)
+            Debugger.log(string: "No event unique ID in notification info", logType: .failure, logLevel: .minimal)
             return
         }
         guard let event = Timeline.main.events.with(uniqueID: uniqueID) else {

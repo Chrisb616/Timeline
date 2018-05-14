@@ -33,8 +33,21 @@ class Event: HasUniqueID {
     
     //MARK: - Moments
     
-    private var _moments = IndexedDictionary<Moment>()
-    var moments: IndexedDictionary<Moment> { return _moments }
+    private var _momentDictionary = [UniqueID:Bool]()
+    var moments: [Moment] {
+        var moments = [Moment]()
+        
+        for uniqueID in _momentDictionary.keys {
+            guard let moment = Timeline.main.moments.with(uniqueID: uniqueID) else {
+                Debugger.log(string: "Could not find moment with ID \(uniqueID) when listing moments for event with ID \(uniqueID)", logType: .failure, logLevel: .minimal)
+                continue
+            }
+            
+            moments.append(moment)
+        }
+        
+        return moments
+    }
     
     //MARK: - Image
     
@@ -87,7 +100,8 @@ class Event: HasUniqueID {
     }
     
     func addMoment(_ moment: Moment) {
-        self._moments.add(moment)
+        Timeline.main.moments.add(moment)
+        self._momentDictionary.updateValue(true, forKey: moment.uniqueID)
         moment.parentEvent = self
         recaculateDates()
     }
@@ -95,7 +109,8 @@ class Event: HasUniqueID {
     func addMoments(_ moments: [Moment]) {
         for moment in moments {
             moment.parentEvent = self
-            self._moments.add(moment)
+            Timeline.main.moments.add(moment)
+            self._momentDictionary.updateValue(true, forKey: moment.uniqueID)
         }
         recaculateDates()
     }
@@ -103,7 +118,9 @@ class Event: HasUniqueID {
     //MARK: - Date Methods
  
     private func recaculateDates() {
-        if let firstItemDate = moments.all.chronological.first?.date {
+        
+        
+        if let firstItemDate = moments.chronological.first?.date {
             if let override = startDateOverride {
                 startDate = firstItemDate < override ? firstItemDate : override
             } else {
@@ -111,7 +128,7 @@ class Event: HasUniqueID {
             }
         }
         
-        if let lastItemDate = moments.all.chronologicalReversed.first?.date {
+        if let lastItemDate = moments.chronologicalReversed.first?.date {
             if let override = endDateOverride {
                 endDate = lastItemDate < override ? lastItemDate : override
             } else {

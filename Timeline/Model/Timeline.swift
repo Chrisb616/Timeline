@@ -17,6 +17,7 @@ class Timeline {
     //MARK: - Properties
     
     var events = IndexedDictionary<Event>()
+    var moments = IndexedDictionary<Moment>()
     
     //MARK: - Methods
     
@@ -26,7 +27,7 @@ class Timeline {
             let eventTwo = events.with(uniqueID: uniqueIDTwo)
             else { return }
         
-        eventTwo.addMoments(eventOne.moments.all)
+        eventTwo.addMoments(eventOne.moments)
         
         events.remove(eventOne)
         

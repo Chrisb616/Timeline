@@ -25,7 +25,7 @@ class EventDetailCollectionViewDataSource: NSObject, NSCollectionViewDataSource 
             return item
         }
         
-        let moment = event.moments.at(index: indexPath.item)
+        let moment = event.moments[indexPath.item]
         
         collectionViewItem.load(moment: moment)
         

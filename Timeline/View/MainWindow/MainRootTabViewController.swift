@@ -17,11 +17,13 @@ class MainRootTabViewController: NSTabViewController {
         
         super.viewDidLoad()
         
+        self.selectedTabViewItemIndex = 2
         self.selectedTabViewItemIndex = 1
         self.selectedTabViewItemIndex = 0
         
         NotificationManager.instance.addMainRootTabViewSwitchObserver(forTab: .mainTimleineGrid, observer: self, selector: #selector(showMainTimelineGrid(_:)))
         NotificationManager.instance.addShowEventDetailObserver(observer: self, selector: #selector(showEventDetailTab(_:)))
+        NotificationManager.instance.addShowMomentDetailObserver(observer: self, selector: #selector(showMomentDetailTab(_:)))
     }
     
     func configureViewControllers() {
@@ -37,6 +39,9 @@ class MainRootTabViewController: NSTabViewController {
     }
     @objc func showEventDetailTab(_ notification: Notification) {
         self.selectedTabViewItemIndex = 1
+    }
+    @objc func showMomentDetailTab(_ notification: Notification) {
+        self.selectedTabViewItemIndex = 2
     }
     
 }
