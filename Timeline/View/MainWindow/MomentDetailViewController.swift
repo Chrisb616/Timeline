@@ -13,7 +13,7 @@ class MomentDetailViewController: NSViewController {
     @IBOutlet weak var imageView: NSImageView!
     
     @IBOutlet weak var nameTextField: NSTextField!
-    //@IBOutlet weak var narrativeTextView: NSTextView!
+    @IBOutlet weak var narrativeTextView: NSTextView!
     
     @IBAction func backButtonClickAction(_ sender: Any) {
         returnToEventDetail()
@@ -28,7 +28,7 @@ class MomentDetailViewController: NSViewController {
     func loadMoment(_ moment: Moment) {
         imageView.image = moment.image.valueOrDefault
         nameTextField.stringValue = moment.name
-        //narrativeTextView.string = moment.narrative ?? ""
+        narrativeTextView.string = moment.narrative ?? ""
     }
     
     @objc func showMomentDetail(_ notification: Notification) {

@@ -1059,8 +1059,38 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWy-dZ-thV">
+                                            <rect key="frame" x="287" y="20" width="226" height="385"/>
+                                            <clipView key="contentView" id="T4l-LL-hCe">
+                                                <rect key="frame" x="1" y="1" width="224" height="383"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="4lS-Da-v2w">
+                                                        <rect key="frame" x="0.0" y="0.0" width="224" height="383"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="minSize" width="224" height="383"/>
+                                                        <size key="maxSize" width="463" height="10000000"/>
+                                                        <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="a73-8D-xlt">
+                                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="BNI-Cl-v9d">
+                                                <rect key="frame" x="209" y="1" width="16" height="383"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="AWy-dZ-thV" firstAttribute="trailing" secondItem="7t6-eL-aZy" secondAttribute="trailing" id="6QG-re-mwt"/>
+                                        <constraint firstItem="AWy-dZ-thV" firstAttribute="top" secondItem="7t6-eL-aZy" secondAttribute="bottom" constant="8" id="6XM-Wg-RLT"/>
+                                        <constraint firstItem="AWy-dZ-thV" firstAttribute="bottom" secondItem="LZq-7k-IdB" secondAttribute="bottom" id="LYU-sE-Dv5"/>
+                                        <constraint firstItem="AWy-dZ-thV" firstAttribute="leading" secondItem="7t6-eL-aZy" secondAttribute="leading" id="fRV-lq-SPi"/>
                                         <constraint firstAttribute="trailing" secondItem="7t6-eL-aZy" secondAttribute="trailing" constant="20" id="klG-zu-Kgb"/>
                                         <constraint firstItem="7t6-eL-aZy" firstAttribute="leading" secondItem="LZq-7k-IdB" secondAttribute="trailing" constant="40" id="lez-lJ-fEH"/>
                                         <constraint firstItem="7t6-eL-aZy" firstAttribute="top" secondItem="LZq-7k-IdB" secondAttribute="top" id="vkL-Cr-qg2"/>
@@ -1088,6 +1118,7 @@
                     <connections>
                         <outlet property="imageView" destination="LZq-7k-IdB" id="FSY-XI-WtY"/>
                         <outlet property="nameTextField" destination="7t6-eL-aZy" id="nEz-Qh-M47"/>
+                        <outlet property="narrativeTextView" destination="4lS-Da-v2w" id="ZdE-0N-dff"/>
                     </connections>
                 </viewController>
                 <customObject id="ygI-aK-mum" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
