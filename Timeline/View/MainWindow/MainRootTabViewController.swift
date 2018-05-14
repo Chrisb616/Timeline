@@ -22,6 +22,7 @@ class MainRootTabViewController: NSTabViewController {
         self.selectedTabViewItemIndex = 0
         
         NotificationManager.instance.addMainRootTabViewSwitchObserver(forTab: .mainTimleineGrid, observer: self, selector: #selector(showMainTimelineGrid(_:)))
+        NotificationManager.instance.addMainRootTabViewSwitchObserver(forTab: .eventDetail, observer: self, selector: #selector(showEventDetailTab(_:)))
         NotificationManager.instance.addShowEventDetailObserver(observer: self, selector: #selector(showEventDetailTab(_:)))
         NotificationManager.instance.addShowMomentDetailObserver(observer: self, selector: #selector(showMomentDetailTab(_:)))
     }

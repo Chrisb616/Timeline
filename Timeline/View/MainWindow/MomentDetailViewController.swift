@@ -13,9 +13,11 @@ class MomentDetailViewController: NSViewController {
     @IBOutlet weak var imageView: NSImageView!
     
     @IBOutlet weak var nameTextField: NSTextField!
-    @IBOutlet weak var narrativeTextView: NSTextView!
+    //@IBOutlet weak var narrativeTextView: NSTextView!
     
-    @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
+    @IBAction func backButtonClickAction(_ sender: Any) {
+        returnToEventDetail()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,7 @@ class MomentDetailViewController: NSViewController {
     func loadMoment(_ moment: Moment) {
         imageView.image = moment.image.valueOrDefault
         nameTextField.stringValue = moment.name
-        narrativeTextView.string = moment.narrative ?? ""
+        //narrativeTextView.string = moment.narrative ?? ""
     }
     
     @objc func showMomentDetail(_ notification: Notification) {
@@ -43,4 +45,7 @@ class MomentDetailViewController: NSViewController {
         loadMoment(moment)
     }
     
+    func returnToEventDetail() {
+        NotificationManager.instance.postMainRootTabViewSwitchNotification(forTab: .eventDetail)
+    }
 }
