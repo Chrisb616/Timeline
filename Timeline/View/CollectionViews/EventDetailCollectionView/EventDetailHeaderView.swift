@@ -22,7 +22,7 @@ class EventDetailHeaderView: NSView {
         self.imageView.image = event.mainImage.valueOrDefault
         self.nameTextField.stringValue = event.name
         self.narrativeTextView.string = event.narrative ?? ""
-        self.dateRangeTextField.stringValue = Date.timeRangeString(start: event.startDate, end: event.endDate)
+        self.dateRangeTextField.stringValue = event.dateRangeString
     }
     
     func editModeOn() {

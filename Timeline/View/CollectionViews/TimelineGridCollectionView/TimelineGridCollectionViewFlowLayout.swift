@@ -16,7 +16,7 @@ class TimelineGridCollectionViewFlowLayout: NSCollectionViewFlowLayout {
     var overrideMinimumInteritemSpacing: CGFloat?
     var overrideHeaderReferenceSize: NSSize?
     
-    private var standardItemSize: NSSize = NSSize(width: 150, height: 200)
+    private var standardItemSize: NSSize = NSSize(width: 150, height: 226)
     private var standardSectionInset: NSEdgeInsets = NSEdgeInsetsMake(10, 10, 10, 10)
     private var standardMinimumLineSpacing: CGFloat = 10
     private var standardMinimumInteritemSpacing: CGFloat = 5

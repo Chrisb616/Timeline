@@ -135,3 +135,43 @@ class Event: HasUniqueID {
     }
     
 }
+
+extension Event {
+    
+    //MARK: - Computed Properties
+    
+    var dateRangeString: String {
+        if startDate.year == endDate.year {
+            
+            if startDate.month == endDate.month {
+                
+                if startDate.day == endDate.day {
+                    
+                    if startDate.hour == endDate.hour && startDate.minute == endDate.minute {
+                        
+                        return startDate.formatted(as: "d MMM, YYYY hh:mma")
+                        
+                    } else {
+                        
+                        return startDate.formatted(as: "d MMM, YYYY hh:mma") + " - " + endDate.formatted(as: "hh:mma")
+                    }
+                    
+                } else {
+                    
+                    return startDate.formatted(as: "d") + " - " + endDate.formatted(as: "d MMM, YYYY")
+                    
+                }
+                
+            } else {
+                
+                return startDate.formatted(as: "d MMM") + " - " + endDate.formatted(as: "d MMM, YYYY")
+                
+            }
+            
+        } else {
+            
+            return startDate.formatted(as: "d MMM, YYYY") + " - " + endDate.formatted(as: "d MMM, YYYY")
+        }
+    }
+    
+}

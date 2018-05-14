@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TimelineGridCollectionViewItem" customModule="Timeline" customModuleProvider="target">
             <connections>
+                <outlet property="eventDateTextField" destination="Pjc-im-qPc" id="inU-62-MDa"/>
                 <outlet property="eventImageView" destination="ghI-eQ-5o2" id="TGb-B0-R5w"/>
                 <outlet property="eventNameTextField" destination="YSD-sQ-pq2" id="5xq-Fb-2V5"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -17,11 +18,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="208"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="226"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghI-eQ-5o2">
-                    <rect key="frame" x="0.0" y="58" width="150" height="150"/>
+                    <rect key="frame" x="0.0" y="76" width="150" height="150"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="4jq-PL-kJ7"/>
                         <constraint firstAttribute="width" secondItem="ghI-eQ-5o2" secondAttribute="height" multiplier="1:1" id="YN2-EC-pkb"/>
@@ -29,21 +30,36 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Snj-nU-Tor"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YSD-sQ-pq2">
-                    <rect key="frame" x="-2" y="0.0" width="154" height="50"/>
+                    <rect key="frame" x="-2" y="34" width="154" height="34"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="jDD-i5-tSB"/>
+                        <constraint firstAttribute="height" constant="34" id="jDD-i5-tSB"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="ba1-H7-I6e">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Title" id="ba1-H7-I6e">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pjc-im-qPc">
+                    <rect key="frame" x="-2" y="0.0" width="154" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="meI-0R-Knm"/>
+                    </constraints>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Date" id="Kqw-Jy-5nF">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" white="0.5" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="YSD-sQ-pq2" firstAttribute="top" secondItem="ghI-eQ-5o2" secondAttribute="bottom" constant="8" id="4n5-qP-Urw"/>
+                <constraint firstAttribute="bottom" secondItem="Pjc-im-qPc" secondAttribute="bottom" id="9Kk-6N-pYx"/>
+                <constraint firstAttribute="trailing" secondItem="Pjc-im-qPc" secondAttribute="trailing" id="PC7-uy-ofB"/>
+                <constraint firstItem="Pjc-im-qPc" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="UZf-Il-Ws6"/>
                 <constraint firstAttribute="trailing" secondItem="ghI-eQ-5o2" secondAttribute="trailing" id="Yhk-fU-YSo"/>
                 <constraint firstItem="ghI-eQ-5o2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="asB-yG-lM2"/>
+                <constraint firstItem="Pjc-im-qPc" firstAttribute="top" secondItem="YSD-sQ-pq2" secondAttribute="bottom" id="flE-jE-ckR"/>
                 <constraint firstItem="ghI-eQ-5o2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="qBt-fw-kvW"/>
                 <constraint firstItem="YSD-sQ-pq2" firstAttribute="trailing" secondItem="ghI-eQ-5o2" secondAttribute="trailing" id="tXM-wr-OaK"/>
                 <constraint firstItem="YSD-sQ-pq2" firstAttribute="leading" secondItem="ghI-eQ-5o2" secondAttribute="leading" id="tpZ-Ao-JL9"/>

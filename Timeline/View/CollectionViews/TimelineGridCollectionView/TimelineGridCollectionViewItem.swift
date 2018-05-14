@@ -14,6 +14,7 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
 
     @IBOutlet weak var eventImageView: NSImageView!
     @IBOutlet weak var eventNameTextField: NSTextField!
+    @IBOutlet weak var eventDateTextField: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class TimelineGridCollectionViewItem: NSCollectionViewItem {
         self.eventImageView.image = event.mainImage.valueOrDefault
         self.event = event
         self.eventNameTextField.stringValue = event.name
-    
+        self.eventDateTextField.stringValue = event.dateRangeString
     }
     
     override func mouseDown(with event: NSEvent) {
