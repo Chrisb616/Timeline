@@ -30,7 +30,6 @@ class EventDetailCollectionViewDataSource: NSObject, NSCollectionViewDataSource 
         collectionViewItem.load(moment: moment)
         
         return collectionViewItem
-        
 
     }
     

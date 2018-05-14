@@ -11,6 +11,7 @@
 		13074A6E1F793E6C005D8005 /* EventDetailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13074A6D1F793E6C005D8005 /* EventDetailCollectionView.swift */; };
 		132E0AE81F797795003D3258 /* EventDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132E0AE71F797795003D3258 /* EventDetailHeaderView.swift */; };
 		132E0AEA1F797FD0003D3258 /* TimelineGridCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132E0AE91F797FD0003D3258 /* TimelineGridCollectionViewDelegate.swift */; };
+		134BBE0C1F96A08000C50643 /* MomentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BBE0B1F96A08000C50643 /* MomentDetailViewController.swift */; };
 		135EE0801F76BDB6009C7A59 /* UniqueIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */; };
 		135EE0821F76C069009C7A59 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EE0811F76C069009C7A59 /* NotificationManager.swift */; };
 		1363DCE51F795865007B7A38 /* EventDetailCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCE41F795865007B7A38 /* EventDetailCollectionViewDataSource.swift */; };
@@ -65,6 +66,7 @@
 		13074A6D1F793E6C005D8005 /* EventDetailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionView.swift; sourceTree = "<group>"; };
 		132E0AE71F797795003D3258 /* EventDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailHeaderView.swift; sourceTree = "<group>"; };
 		132E0AE91F797FD0003D3258 /* TimelineGridCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineGridCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		134BBE0B1F96A08000C50643 /* MomentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetailViewController.swift; sourceTree = "<group>"; };
 		135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIDGenerator.swift; sourceTree = "<group>"; };
 		135EE0811F76C069009C7A59 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		1363DCE41F795865007B7A38 /* EventDetailCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				1363DCE81F795BC7007B7A38 /* MainRootTabViewController.swift */,
 				139F5BFA1F76A5CD00771751 /* MainTimelineGridViewController.swift */,
 				1363DCEA1F796D35007B7A38 /* EventDetailViewController.swift */,
+				134BBE0B1F96A08000C50643 /* MomentDetailViewController.swift */,
 			);
 			path = MainWindow;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				13CFDDD41F9130C800DB6D30 /* EventDetailCollectionViewItem.swift in Sources */,
 				132E0AEA1F797FD0003D3258 /* TimelineGridCollectionViewDelegate.swift in Sources */,
 				139F5BF51F769C6100771751 /* TimelineGridCollectionViewItem.swift in Sources */,
+				134BBE0C1F96A08000C50643 /* MomentDetailViewController.swift in Sources */,
 				139F5BFC1F76A5CD00771751 /* MainTimelineGridViewController.swift in Sources */,
 				139CA90C1F759B1F00461FAE /* IndexedDictionary.swift in Sources */,
 				1384592D1F8065620027AF9D /* Timeline.swift in Sources */,

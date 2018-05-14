@@ -43,11 +43,10 @@ class UniqueIDGenerator {
     
     //MARK: - Advance Functions
     private func advanced(_ ID: String) -> String {
-        var characters = ID.characters
         
-        if characters.count == 0 { return "0" }
+        if ID.count == 0 { return "0" }
         
-        let last = characters.removeLast() as Character
+        let last = ID.removeLast() as Character
         
         
         if last == "Z" {
@@ -57,9 +56,9 @@ class UniqueIDGenerator {
                 truncatedID.append(character)
             }
             
-            characters = advanced(truncatedID).characters
+            advanced = advanced(truncatedID)
             
-            characters.append("0")
+            advanced.append("0")
         } else {
             characters.append(advanced(character: last))
         }

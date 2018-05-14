@@ -15,6 +15,7 @@ class NotificationManager {
     
     private let mainTimelineUpdateName = NSNotification.Name("MainTimelineUpdate")
     private let showEventDetailName = NSNotification.Name("ShowEventDetail")
+    private let showMomentDetailName = NSNotification.Name("ShowMomentDetail")
     private let mergeEventName = NSNotification.Name("MergeEvent")
     
     private func mainRootTabSwitchName(forTab tab: MainRootTabViewController.Tab) -> NSNotification.Name {
@@ -55,6 +56,14 @@ class NotificationManager {
     
     func postShowEventDetailNotification(forEventWithUniqueID uniqueID: UniqueID) {
         NotificationCenter.default.post(name: showEventDetailName, object: nil, userInfo: ["eventUniqueID":uniqueID])
+    }
+    
+    func addShowMomentDetailObserver(observer: Any, selector: Selector) {
+        NotificationCenter.default.addObserver(observer, selector: selector, name: showMomentDetailName, object: nil)
+    }
+    
+    func postShowMomentDetailNotification(forMomentWithUniqueID uniqueID: UniqueID) {
+        NotificationCenter.default.post(name: showMomentDetailName, object: nil, userInfo: ["momentUniqueID":uniqueID])
     }
     
     //MARK: - Event Detail
