@@ -10,50 +10,39 @@ import Cocoa
 
 class Event: HasUniqueID {
     
-    //MARK: - UniqueID
+    //MARK: - Stored Properties
     
     var uniqueID: UniqueID
-    
-    //MARK: - Name
-    
-    private var _name: String?
-    var name: String { return _name ?? startDate.formatted(as: "MMMM dd, yyyy")}
-    
-    //MARK: - Narrative
-    
     var narrative: String?
     
-    //MARK: - Dates
-    
-    private var startDateOverride: Date?
-    private var endDateOverride: Date?
-    
-    var startDate: Date
-    var endDate: Date
-    
-    //MARK: - Moments
-    
-    private var _momentDictionary = [UniqueID:Bool]()
-    var moments: [Moment] {
-        var moments = [Moment]()
-        
-        for uniqueID in _momentDictionary.keys {
-            guard let moment = Timeline.main.moments.with(uniqueID: uniqueID) else {
-                Debugger.log(string: "Could not find moment with ID \(uniqueID) when listing moments for event with ID \(uniqueID)", logType: .failure, logLevel: .minimal)
-                continue
-            }
-            
-            moments.append(moment)
-        }
-        
-        return moments
-    }
-    
-    //MARK: - Image
+    var startDateOverride: Date?
+    var endDateOverride: Date?
     
     var mainImage: Image
     
-    //MARK: - Creation Methods
+    private var _name: String?
+    
+    private var _startDate: Date
+    private var _endDate: Date
+    
+    private var _momentIDs = [UniqueID:Bool]()
+    
+    //MARK: - Initialization
+    
+    private init(uniqueID: UniqueID, name: String?, narrative: String?, startDateOverride: Date?, endDateOverride: Date?, mainImage: Image) {
+        self.uniqueID = uniqueID
+        self._name = name
+        self.narrative = narrative
+        self.startDateOverride = startDateOverride
+        self._startDate = Date()
+        self.endDateOverride = endDateOverride
+        self._endDate = Date()
+        self.mainImage = mainImage
+        
+        //recaculateDates()
+    }
+    
+    //MARK: - Public Initialization Methods
     
     static func new(withMomentDate date: Date, image: Image?) -> Event {
         let uniqueID = UniqueIDGenerator.instance.event
@@ -72,20 +61,6 @@ class Event: HasUniqueID {
         return event
     }
     
-    //MARK: - Initialization
-    
-    private init(uniqueID: UniqueID, name: String?, narrative: String?, startDateOverride: Date?, endDateOverride: Date?, mainImage: Image) {
-        self.uniqueID = uniqueID
-        self._name = name
-        self.narrative = narrative
-        self.startDateOverride = startDateOverride
-        self.startDate = Date()
-        self.endDateOverride = endDateOverride
-        self.endDate = Date()
-        self.mainImage = mainImage
-        
-        //recaculateDates()
-    }
     
     //MARK: - Moment Methods
     
@@ -101,7 +76,7 @@ class Event: HasUniqueID {
     
     func addMoment(_ moment: Moment) {
         Timeline.main.moments.add(moment)
-        self._momentDictionary.updateValue(true, forKey: moment.uniqueID)
+        self._momentIDs.updateValue(true, forKey: moment.uniqueID)
         moment.parentEvent = self
         recaculateDates()
     }
@@ -110,7 +85,7 @@ class Event: HasUniqueID {
         for moment in moments {
             moment.parentEvent = self
             Timeline.main.moments.add(moment)
-            self._momentDictionary.updateValue(true, forKey: moment.uniqueID)
+            self._momentIDs.updateValue(true, forKey: moment.uniqueID)
         }
         recaculateDates()
     }
@@ -119,36 +94,53 @@ class Event: HasUniqueID {
  
     private func recaculateDates() {
         
-        
         if let firstItemDate = moments.chronological.first?.date {
             if let override = startDateOverride {
-                startDate = firstItemDate < override ? firstItemDate : override
+                _startDate = firstItemDate < override ? firstItemDate : override
             } else {
-                startDate = firstItemDate
+                _startDate = firstItemDate
             }
         }
         
         if let lastItemDate = moments.chronologicalReversed.first?.date {
             if let override = endDateOverride {
-                endDate = lastItemDate < override ? lastItemDate : override
+                _endDate = lastItemDate < override ? lastItemDate : override
             } else {
-                endDate = lastItemDate
+                _endDate = lastItemDate
             }
         }
+        
     }
     
-    //MARK: - Private Variable Access Methods
+    //MARK: - Public Access Get Properties
+    
+    var name: String {
+        return _name ?? startDate.formatted(as: "MMMM dd, yyyy")
+        
+    }
+    
+    var startDate: Date { return _startDate }
+    var endDate: Date { return _endDate }
+
+    var moments: [Moment] {
+        var moments = [Moment]()
+        
+        for uniqueID in _momentIDs.keys {
+            guard let moment = Timeline.main.moments.with(uniqueID: uniqueID) else {
+                Debugger.log(string: "Could not find moment with ID \(uniqueID) when listing moments for event with ID \(uniqueID)", logType: .failure, logLevel: .minimal)
+                continue
+            }
+            
+            moments.append(moment)
+        }
+        
+        return moments
+    }
+    
+    //MARK: - Public Access Set Methods
     
     func setName(_ name: String?) {
         self._name = name
-    }
-    
-    func setStartDate(_ date: Date?) {
-        self.startDateOverride = date
-    }
-    
-    func setEndDate(_ date: Date?) {
-        self.endDateOverride = date
     }
     
 }
