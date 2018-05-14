@@ -13,7 +13,7 @@ class Debugger {
     private static let instance = Debugger()
     private init() {}
     
-    var logLevel: LogLevel = .verbose
+    var logLevel: LogLevel = .full
     
     static func setLogLevel(_ logLevel: LogLevel) {
         Debugger.instance.logLevel = logLevel

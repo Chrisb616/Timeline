@@ -21,6 +21,8 @@ class MainTimelineGridViewController: NSViewController {
     }
     
     override func viewDidLoad() {
+        Debugger.log(string: "MainTimelineGridViewController finished load", logType: .process, logLevel: .full)
+        
         super.viewDidLoad()
         collectionView.configure(forTimeline: Timeline.main)
         configureNotifications()
@@ -28,7 +30,7 @@ class MainTimelineGridViewController: NSViewController {
     
     func configureNotifications() {
         NotificationManager.instance.addMainTimelineUpdateObserver(observer: self, selector: #selector(updateCollectionView))
-        NotificationManager.instance.addMergeEventNotification(observer: self, selector: #selector(promptMergeEvents(_:)))
+        NotificationManager.instance.addMergeEventObserver(observer: self, selector: #selector(promptMergeEvents(_:)))
     }
     
     @objc func promptMergeEvents(_ notification: Notification) {

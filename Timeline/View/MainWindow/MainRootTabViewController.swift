@@ -13,6 +13,8 @@ class MainRootTabViewController: NSTabViewController {
     weak var eventDetailViewController: EventDetailViewController!
     
     override func viewDidLoad() {
+        Debugger.log(string: "MainRootTabViewController finished load", logType: .process, logLevel: .full)
+        
         super.viewDidLoad()
         
         self.selectedTabViewItemIndex = 1
@@ -23,6 +25,8 @@ class MainRootTabViewController: NSTabViewController {
     }
     
     func configureViewControllers() {
+        Debugger.log(string: "Event Detail View Controller configuring tabs", logType: .process, logLevel: .full)
+        
         if let eventDetailViewController = tabView.tabViewItem(at: 1).viewController as? EventDetailViewController {
             self.eventDetailViewController = eventDetailViewController
         }
