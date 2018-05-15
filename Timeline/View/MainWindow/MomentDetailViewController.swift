@@ -25,6 +25,11 @@ class MomentDetailViewController: NSViewController {
         NotificationManager.instance.addShowMomentDetailObserver(observer: self, selector: #selector(showMomentDetail(_:)))
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        SaveDataManager.instance.saveTimelineInfo()
+    }
+    
     func loadMoment(_ moment: Moment) {
         imageView.image = moment.image.valueOrDefault
         nameTextField.stringValue = moment.name

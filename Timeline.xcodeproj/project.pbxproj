@@ -19,6 +19,7 @@
 		1363DCE91F795BC7007B7A38 /* MainRootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCE81F795BC7007B7A38 /* MainRootTabViewController.swift */; };
 		1363DCEB1F796D35007B7A38 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCEA1F796D35007B7A38 /* EventDetailViewController.swift */; };
 		1363DCED1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363DCEC1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift */; };
+		13642E8020AA0530006D0E7C /* SaveDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13642E7F20AA0530006D0E7C /* SaveDataManager.swift */; };
 		1384592B1F7DA4480027AF9D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384592A1F7DA4480027AF9D /* Image.swift */; };
 		1384592D1F8065620027AF9D /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384592C1F8065620027AF9D /* Timeline.swift */; };
 		139CA8E51F759A0400461FAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139CA8E41F759A0400461FAE /* AppDelegate.swift */; };
@@ -74,6 +75,7 @@
 		1363DCE81F795BC7007B7A38 /* MainRootTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootTabViewController.swift; sourceTree = "<group>"; };
 		1363DCEA1F796D35007B7A38 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		1363DCEC1F797283007B7A38 /* EventDetailCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		13642E7F20AA0530006D0E7C /* SaveDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataManager.swift; sourceTree = "<group>"; };
 		1384592A1F7DA4480027AF9D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		1384592C1F8065620027AF9D /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		139CA8E11F759A0400461FAE /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +292,7 @@
 				135EE0811F76C069009C7A59 /* NotificationManager.swift */,
 				135EE07F1F76BDB6009C7A59 /* UniqueIDGenerator.swift */,
 				84833A821F7A8397001EBA03 /* ImageManager.swift */,
+				13642E7F20AA0530006D0E7C /* SaveDataManager.swift */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				1363DCE71F7959F1007B7A38 /* EventDetailCollectionViewFlowLayout.swift in Sources */,
 				1384592B1F7DA4480027AF9D /* Image.swift in Sources */,
 				135EE0801F76BDB6009C7A59 /* UniqueIDGenerator.swift in Sources */,
+				13642E8020AA0530006D0E7C /* SaveDataManager.swift in Sources */,
 				139F5BF21F769BBE00771751 /* TimelineGridCollectionViewDataSource.swift in Sources */,
 				132E0AE81F797795003D3258 /* EventDetailHeaderView.swift in Sources */,
 				13CFDDD41F9130C800DB6D30 /* EventDetailCollectionViewItem.swift in Sources */,

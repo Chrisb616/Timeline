@@ -61,7 +61,6 @@ class Event: HasUniqueID {
         return event
     }
     
-    
     //MARK: - Moment Methods
     
     func createMomentWithinEvent(atDate date: Date, image: Image?) {
@@ -141,6 +140,34 @@ class Event: HasUniqueID {
     
     func setName(_ name: String?) {
         self._name = name
+    }
+    
+    //MARK: - Save Info
+    
+    var saveDictionary: [String: Any] {
+        
+        var saveDictionary = [String: Any]()
+        
+        if let name = _name {
+            saveDictionary.updateValue(name, forKey: "name")
+        }
+        
+        if let startDateOverride = startDateOverride {
+            saveDictionary.updateValue(startDateOverride, forKey: "startDateOverride")
+        }
+        
+        if let endDateOverride = endDateOverride {
+            saveDictionary.updateValue(endDateOverride, forKey: "endDateOverride")
+        }
+        
+        if let narrative = narrative {
+            saveDictionary.updateValue(narrative, forKey: "narrative")
+        }
+        
+        saveDictionary.updateValue(moments, forKey: "moments")
+        
+        return [uniqueID : saveDictionary]
+        
     }
     
 }

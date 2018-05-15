@@ -40,7 +40,6 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
         } else {
             return NSDragOperation.copy
         }
-        
     }
     
     func collectionView(_ collectionView: NSCollectionView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, dragOperation operation: NSDragOperation) {
@@ -70,6 +69,8 @@ class TimelineGridCollectionViewDelegate: NSObject, NSCollectionViewDelegate {
             }
             
             if let from = item.item as? String, let to = (collectionView.item(at: indexPath.item) as? TimelineGridCollectionViewItem)?.event.uniqueID {
+                
+                if from == to { return }
                 
                 NotificationManager.instance.postMergeEventNotification(mergeEventWithUniqueID: from, intoEventWithUniqueID: to)
             }
