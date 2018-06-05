@@ -164,7 +164,7 @@ class Event: HasUniqueID {
             saveDictionary.updateValue(narrative, forKey: "narrative")
         }
         
-        saveDictionary.updateValue(moments, forKey: "moments")
+        saveDictionary.updateValue(moments.uniqueIDs, forKey: "moments")
         
         return [uniqueID : saveDictionary]
         

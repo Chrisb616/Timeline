@@ -16,3 +16,10 @@ protocol HasUniqueID: class {
     
 }
 
+extension Array where Element : HasUniqueID {
+    
+    var uniqueIDs: [UniqueID] {
+        return self.map { $0.uniqueID }
+    }
+    
+}

@@ -18,6 +18,10 @@ class SaveDataManager {
     private var documentsDirectory: URL {
         return fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
+    
+    public var projectDirectory: URL {
+        return documentsDirectory.appendingPathComponent("BoyntonApps").appendingPathComponent("Timeline")
+    }
    
     func saveTimelineInfo() {
         
@@ -25,7 +29,7 @@ class SaveDataManager {
         
         saveDictionary.updateValue(Timeline.main.events.all.map{ $0.saveDictionary }, forKey: "events")
         
-        dump(saveDictionary)
+        print(saveDictionary)
     }
     
 }
